@@ -1,0 +1,91 @@
+---
+title: "Decompose strain genomes from pangenome mapping data"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load package
+```{r}
+library(strainpandar)
+```
+
+## A demo dataset
+
+Each row is one gene and each column is one sample:
+
+```{r}
+data(fprausnitzii)
+```
+
+## Preprocessing
+
+```{r}
+demo.preprocessed <- preprocess(fprausnitzii$data, pangenome.file = fprausnitzii$pangenome)
+```
+
+## Run main program
+
+```{r}
+res <- strain.decompose(demo.preprocessed)
+```
+
+Visulaize the strain profile
+
+```{r fig.height=3, fig.width=8}
+## match predicted with the ground truth
+ans <- fprausnitzii$ans[rank(apply(fprausnitzii$ans[,c(1,7,8,9,10)], 2, which.max)),]
+ans$strain <- rownames(ans)
+pred <- data.frame(res$S[rank(apply(res$S[,c(1,7,8,9,10)], 2, which.max)),])
+pred$strain <- rownames(ans)
+
+library(ggplot2)
+library(dplyr)
+library(reshape2)
+
+rbind(data.frame(melt(ans), v="Ground truth"), 
+      data.frame(melt(pred), v="StrainPanDA prediction")) %>% 
+  ggplot(aes(x=variable, y=value, fill=strain)) + 
+  geom_bar(stat="identity") +
+  facet_wrap(~v) + 
+  theme_bw() + 
+  labs(x=NULL, y="relative abundances") + 
+  theme(axis.text.x = element_text(angle=45, vjust=1,hjust=1))
+```
+
+```{r fig.height=3, fig.width=5}
+library(PRROC)
+scores <- res$P_est[,rownames(pred)]
+truth <- demo.preprocessed$reference[, rownames(ans)]
+truth <- truth[rowSums(truth)!=0,]
+merged <- merge(scores, truth, by=0, all=TRUE)
+merged[is.na(merged)] <- 0
+
+
+s1 <- pr.curve(weights.class0 = merged[,7], scores.class0 = merged[,2], curve = TRUE) 
+s2 <- pr.curve(weights.class0 = merged[,8], scores.class0 = merged[,3], curve = TRUE) 
+s3 <- pr.curve(weights.class0 = merged[,9], scores.class0 = merged[,4], curve = TRUE) 
+s4 <- pr.curve(weights.class0 = merged[,10], scores.class0 = merged[,5], curve = TRUE) 
+s5 <- pr.curve(weights.class0 = merged[,11], scores.class0 = merged[,6], curve = TRUE) 
+
+rbind(
+  data.frame(s1$curve, Label='Strain1'),
+  data.frame(s2$curve, Label='Strain2'),
+  data.frame(s3$curve, Label='Strain3'),
+  data.frame(s3$curve, Label='Strain4'),
+  data.frame(s3$curve, Label='Strain5')
+) %>% 
+  dplyr::select(Recall=X1, Precision=X2, Label) %>% 
+  ggplot(aes(x=Recall, y=Precision, col=Label))+
+  geom_path(lwd=1) + 
+  theme_bw()
+```
+
+
+
+Session information
+```{r}
+sessionInfo()
+```

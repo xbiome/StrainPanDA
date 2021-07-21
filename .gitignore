@@ -1,0 +1,13 @@
+*~
+*#
+dev
+.Rhistory
+.Rproj.user/
+.nextflow.log*
+work
+.nextflow/
+.Rproj.user
+strainpanda_out
+reads
+awsbatch.config
+src/strainpanda/analysis*
