@@ -1,0 +1,2 @@
+/home/tanyuxiang/SIM_data/spike_ins/Ecoli_99_3group_1X_4str/XT/1x_ERR/eval/Ecoli99_WGS_4str_1x_ERR_XT_stat_all.csv	pWGS_1X-XT
+/home/tanyuxiang/SIM_data/spike_ins/Ecoli_99_3group_1X_4str/EST/1x_ERR/eval/Ecoli99_WGS_4str_1x_ERR_EST_stat_all.csv	pWGS_1X-EST
