@@ -1,0 +1,9 @@
+/data/Xianjinyuan/tanyuxiang/SIM_data/spike_ins/Ecoli_99_3group_1X_4str/XT/1x_pWGS/eval/Ecoli99_WGS_4str_1x_pWGS_XT_sorted_JSD_all.csv	1x-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/spike_ins/Ecoli_99_3group_1X_4str/EST/1x_pWGS/eval/Ecoli99_WGS_4str_1x_pWGS_EST_sorted_JSD_all.csv	1x-EST
+/data/Xianjinyuan/tanyuxiang/SIM_data/spike_ins/Ecoli_99_3group_1X_4str/PS/1x_pWGS/eval/Ecoli99_WGS_4str_1x_pWGS_PS_sorted_JSD_all.csv	1x-PS
+/data/Xianjinyuan/tanyuxiang/SIM_data/spike_ins/Ecoli_99_3group_1X_4str/XT/2x_pWGS/eval/Ecoli99_WGS_4str_2x_pWGS_XT_sorted_JSD_all.csv	2x-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/spike_ins/Ecoli_99_3group_1X_4str/EST/2x_pWGS/eval/Ecoli99_WGS_4str_2x_pWGS_EST_sorted_JSD_all.csv	2x-EST
+/data/Xianjinyuan/tanyuxiang/SIM_data/spike_ins/Ecoli_99_3group_1X_4str/PS/2x_pWGS/eval/Ecoli99_WGS_4str_2x_pWGS_PS_sorted_JSD_all.csv	2x-PS
+/data/Xianjinyuan/tanyuxiang/SIM_data/spike_ins/Ecoli_99_3group_1X_4str/XT/5x_pWGS/eval/Ecoli99_WGS_4str_5x_pWGS_XT_sorted_JSD_all.csv	5x-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/spike_ins/Ecoli_99_3group_1X_4str/EST/5x_pWGS/eval/Ecoli99_WGS_4str_5x_pWGS_EST_sorted_JSD_all.csv	5x-EST
+/data/Xianjinyuan/tanyuxiang/SIM_data/spike_ins/Ecoli_99_3group_1X_4str/PS/5x_pWGS/eval/Ecoli99_WGS_4str_5x_pWGS_PS_sorted_JSD_all.csv	5x-PS
