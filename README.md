@@ -38,18 +38,7 @@ https://github.com/SegataLab/panphlan/wiki#download-the-panphlan-software
 
 3. install strainpandar
 
-TODO: required packages `dplyr`, `nnlm`, `foreach`, `MASS`
-
-```sh
-# Setup ssh connection auth files (private repository).
-creds = git2r::cred_ssh_key(publickey="~/.ssh/gitlab_key.pub",
-    privatekey="~/.ssh/gitlab_key")
-
-# Install 
-devtools::install_git("git@gitlab.com:xbiome/system-development/xviz.git",
-    #branch="develop",
-    credentials=creds)
-```
+Install required packages `dplyr`, `nnlm`, `foreach`, `MASS`
 
 ```sh
 tar -czf strainpandar.tar.gz src/strainpandar
