@@ -1,12 +1,11 @@
 # StrainPanDA -- A strain analysis pipeline based on pangenome
 
-TODO: Intoduction/Abstract
+StrainPanDA is a tool that deconvolute pangenome coverage into strain composition and strain gene profile.
 
 ## Dependencies
 
 ### Using the strainpanda container (recommended)
 1. docker
-1. **or** singularity (TODO: this should work with the docker container)
 
 ### Local installation
 1. [Nextflow](https://www.nextflow.io/): full pipeline
