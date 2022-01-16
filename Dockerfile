@@ -23,7 +23,7 @@ RUN conda install r-getopt -c r
 RUN conda install r-pracma -c r
 RUN conda install r-pheatmap r-reshape2 r-ggplot2 -c r
 RUN conda install r-permute r-cluster -c r
-RUN curl -O https://cran.r-project.org/src/contrib/vegan_2.5-6.tar.gz
+RUN curl -O https://cran.r-project.org/src/contrib/Archive/vegan/vegan_2.5-6.tar.gz 
 RUN R CMD INSTALL vegan_2.5-6.tar.gz
 RUN conda install r-data.table r-r.utils -c r
 RUN conda install r-nmf -c r
