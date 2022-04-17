@@ -7,7 +7,7 @@
 #
 # SimStr is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
+# the Free Software Foundation, either version 2 of the License, or
 # (at your option) any later version.
 #
 # SimStr is distributed in the hope that it will be useful,
@@ -19,8 +19,8 @@
 # along with SimStr.  If not, see <https://www.gnu.org/licenses/>.
 
 
-#This script will check the integrity of all gz files in the target folder.
-#output will be the broken_files.txt in the target folder
+#This script will check the integrity of all gz files in the target folder, and remove the files with decompression errors.
+#output will be the broken_files.txt in the target folder, and the broken_ID.txt can be used to grep -f and get the subset of list to re-download.
 
 if [ $# -ne 1 ]
 then
@@ -49,8 +49,13 @@ cd $in_folder
 for i in `find . -name "*.gz*"`; 
  do 
  gunzip -t $i 2>$i.err
- done
+done
 
- find . -name "*err" -type f -size +0c > broken_files.txt
+find . -name "*err" -type f -size +0c > broken_files.txt
+cut -f2 -d"/" broken_files.txt | cut -f1 -d"." | sort -u > broken_ID.txt
+rm *gz*.err
+sed -i "s/.err//g" broken_files.txt
 
- rm *gz*.err
+for i in $(cat broken_files.txt);do 
+    rm $i
+done

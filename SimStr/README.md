@@ -26,7 +26,7 @@ For this step, -u option of docker run might lead to the fail of fastq-dump, you
 Usage: sh $Path_to_SimStr/SIM_str_ANI_PAN_mash.sh sra_result.csv SraRunInfo.csv strs.csv fileout_header $Path_to_SimStr range_type min_ANI
     
 
-    Required: (all of these files need to be download manually)
+    Required: (all of these files need to be download manually. Because of the NCBI update, old file might fail because of the update of link of versions.)
     	sra_result.csv: from https://www.ncbi.nlm.nih.gov/sra/, select the target species and select the sent to (top right) -> file -> save summary.
     	SraRunInfo.csv: from https://www.ncbi.nlm.nih.gov/sra/, select the target species and select the sent to (top right) -> file -> save Runinfo.
     	strs.csv: from https://www.ncbi.nlm.nih.gov/genome/browse/#!/prokaryotes/, select the target species; Select all the strains or subset of the target strains; click download
@@ -67,9 +67,9 @@ Intermediate output folders:
 
 **NOTE 1! Each simulation must run in separated folder, otherwise the references data will disturb each other.** 
 
-**NOTE 2! If the panphlan failed, need to delete all the panphlan related output and rerun the pipeline (generally, this is caused by the disconnection of download, or users could download first and run panphlan separately), or panphlan will crash again because of the existing files.**
+**NOTE 2! If the panphlan failed with error message like "zlib.error: Error -3 while decompressing: invalid block type", it is caused by the fail of download by wget in the strain-ref folder. In this case, users need to replace them by correct files manually. Users can check the fail of files by check_gz_integrity.sh, and use the broken_ID.txt to extract the subset of download list (For example, grep -f broken_ID.txt Ecoli99_panphlan3_ref_dl_list.txt > broken_ref_dl_list.txt). Sometimes the broken file is caused by wget -c, so you can use wget to download again into the target folder (for example, strain-ref).**
 
-**NOTE 3! If the panphlan failed, need to delete all the panphlan related output and rerun the pipeline (generally, this is caused by the disconnection of download, or users could download first and run panphlan separately), or panphlan will crash again because of the existing files.**
+**NOTE 3! If the panphlan failed, need to delete all the panphlan related output and rerun the pipeline (generally, this is caused by the disconnection of download, or users could download first and run panphlan separately), or panphlan will crash again because of the existing files. **
 
 **NOTE 4! SraRunInfo.csv and strs.csv must be the newest one, or the link might be expired and failed.**
 
