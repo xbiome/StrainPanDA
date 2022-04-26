@@ -30,6 +30,10 @@ strain.decompose <- function(obj, rank=NULL,
   
     message(paste0("\nUsing NMF with rank ", rank, "..."))
 
+    if (is.na(rank)){
+      stop("NMF returned NA, which means there is only 1 strain in this species and the following decomposition step will be passed.")
+    }
+
     S <- scoef(nmf.rank$solutions$fit[[rank]])
     P_est <- basis(nmf.rank$solutions$fit[[rank]])
   }
