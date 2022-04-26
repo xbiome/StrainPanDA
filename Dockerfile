@@ -1,3 +1,4 @@
+
 ############################################################
 # Dockerfile to build strainpanda pipeline
 # Based on ubuntu
@@ -26,7 +27,11 @@ RUN conda install r-permute r-cluster -c r
 RUN curl -O https://cran.r-project.org/src/contrib/vegan_2.5-6.tar.gz
 RUN R CMD INSTALL vegan_2.5-6.tar.gz
 RUN conda install r-data.table r-r.utils -c r
-RUN conda install r-nmf -c r
+RUN conda install r-nmf -c r ## install dependencies via conda
+RUN conda install r-biocmanager
+RUN conda install -c bioconda bioconductor-biobase 
+RUN curl -O https://cran.r-project.org/src/contrib/NMF_0.23.0.tar.gz
+RUN R CMD INSTALL NMF_0.23.0.tar.gz ## install latest version
 
 ## install StrainPanDAr
 COPY ./src/strainpandar	 /strainpandar
@@ -37,7 +42,7 @@ RUN R CMD INSTALL strainpandar.tar.gz
 COPY ./src/MinPath /MinPath
 ENV MinPath /MinPath
 
-RUN rm -r strainpandar && rm -r strainpandar.tar.gz && rm -r vegan_2.5-6.tar.gz
+RUN rm -r strainpandar && rm -r strainpandar.tar.gz && rm -r vegan_2.5-6.tar.gz && rm -r NMF_0.23.0.tar.gz
 
 ##################### INSTALLATION END #####################
 

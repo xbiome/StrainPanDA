@@ -27,7 +27,8 @@ profile <- read.csv(counts.file, row.names=1)
 profile.preprocessed <- preprocess(profile, pangenome.file = pangenome.file)	
 
 if(ncol(profile.preprocessed$data)<5){
-  stop("Less than 5 samples left after preprocessing...")
+  message("Less than 5 samples left after preprocessing...\n")
+  q(save="no", status=55)
 }
 
 res <- strain.decompose(profile.preprocessed, ncpu=ncpu)
