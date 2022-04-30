@@ -1,0 +1,49 @@
+############################################################
+# Dockerfile to build strainpanda pipeline
+# Based on ubuntu
+# To build:
+# docker build -t strainpanda .
+############################################################
+
+FROM r-base:3.6.3
+################# BEGIN INSTALLATION ######################
+## install system pacakges
+RUN apt-get update && apt-get -y install procps wget
+
+## install r dependencies
+
+RUN R -e "install.packages('dplyr')"
+RUN R -e "install.packages('MASS')"
+RUN R -e "install.packages('foreach')"
+RUN R -e "install.packages('getopt')"
+RUN R -e "install.packages('pracma')"
+RUN R -e "install.packages('pheatmap')"
+RUN R -e "install.packages('reshape2')"
+RUN R -e "install.packages('ggplot2')"
+RUN R -e "install.packages('permute')"
+RUN R -e "install.packages('cluster')"
+
+RUN wget https://cran.r-project.org/src/contrib/Archive/vegan/vegan_2.5-6.tar.gz && \
+    R CMD INSTALL vegan_2.5-6.tar.gz && \
+        rm vegan_2.5-6.tar.gz
+
+RUN R -e "install.packages('data.table')"
+RUN R -e "install.packages('R.utils')"
+RUN R -e "install.packages('BiocManager')"
+RUN R -e "BiocManager::install('Biobase')"
+RUN R -e "install.packages('NMF')"
+
+RUN wget https://cran.r-project.org/src/contrib/Archive/NMF/NMF_0.23.0.tar.gz && \
+    R CMD INSTALL NMF_0.23.0.tar.gz && \
+        rm NMF_0.23.0.tar.gz
+
+## install StrainPanDAR
+COPY ./src/strainpandar	 /strainpandar
+RUN tar -czf strainpandar.tar.gz strainpandar && \
+    R CMD INSTALL strainpandar.tar.gz && \
+        rm strainpandar.tar.gz
+
+
+ENTRYPOINT ["/bin/bash"]
+##################### INSTALLATION END #####################
+

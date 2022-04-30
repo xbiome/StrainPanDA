@@ -1,0 +1,16 @@
+FROM conda/miniconda3
+
+################# BEGIN INSTALLATION ######################
+## install system pacakges
+RUN apt-get update && apt-get -y install procps
+
+## install panphlan
+RUN conda update -n base -c defaults conda
+RUN conda install samtools=0.1.19 -c bioconda
+RUN conda install -y panphlan -c bioconda
+
+
+## install minpath
+COPY ./src/MinPath /MinPath
+ENV MinPath /MinPath
+COPY ./bin/* /bin/

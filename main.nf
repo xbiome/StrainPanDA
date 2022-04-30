@@ -115,7 +115,7 @@ ch_panphlanmap
     .groupTuple()
     .set {ch_mapped}
 
-process mergePofile {
+process mergeProfile {
     tag "${prefix}"
 
     publishDir params.outdir, mode: 'copy'
