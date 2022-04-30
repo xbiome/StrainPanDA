@@ -8,7 +8,6 @@ Description: Given a pangenome mapping dataset, decompse it into possible strain
 Imports:
     NMF
 Required: 
-    NNLM,
     foreach,
     magrittr,
     MASS
