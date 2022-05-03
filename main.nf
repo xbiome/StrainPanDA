@@ -4,7 +4,7 @@ params.help = false
 
 def parameters_expected = ['path', 'ref_path', 'ref_list', 'singleEnd',
                            'outdir',
-			   'skip_profile', 'run_minpath',
+			   'skip_profile', 'run_minpath', 'strain_rank',
 			   'single-end', // why this is in?
 			   'awsregion','awsqueue',
 			   'max_memory', 'max_cpus', 'max_time',
@@ -151,7 +151,7 @@ process runStrainPanDAR {
     file("${prefix}.*ko.txt") into ch_ko
 
     """
-    run_strainpandar.r $counts $pangenome ${prefix}.strainpanda $task.cpus
+    run_strainpandar.r $counts $pangenome ${prefix}.strainpanda $task.cpus $params.strain_rank
     """
 }
 
