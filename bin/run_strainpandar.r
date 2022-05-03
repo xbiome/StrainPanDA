@@ -14,7 +14,9 @@ counts.file <- args[1]
 pangenome.path <- args[2]
 output <- args[3]
 ncpu <- as.numeric(args[4])
-rank <- as.numeric(args[5])
+max.rank <- as.numeric(args[5])
+rank <- as.numeric(args[6])
+
 ## if 0, run from 1:8, otherwise run with specified rank
 if (rank == 0) {
   rank <- NULL
@@ -37,7 +39,7 @@ if(ncol(profile.preprocessed$data)<5){
   q(save="no", status=55)
 }
 
-res <- strain.decompose(profile.preprocessed, ncpu=ncpu, rank=rank)
+res <- strain.decompose(profile.preprocessed, ncpu=ncpu, rank=rank, max.strain=max.rank)
 
 ## strain-sample plot
 write.table(res$S, file = paste0(output, ".strain_sample.csv"), sep=",",
