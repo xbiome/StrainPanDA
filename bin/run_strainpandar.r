@@ -14,6 +14,12 @@ counts.file <- args[1]
 pangenome.path <- args[2]
 output <- args[3]
 ncpu <- as.numeric(args[4])
+rank <- as.numeric(args[5])
+## if 0, run from 1:8, otherwise run with specified rank
+if (rank == 0) {
+  rank <- NULL
+}
+
 ko.profile <- FALSE
 
 pangenome.file <- list.files(pangenome.path, "*pangenome.csv", full.names = TRUE)
@@ -31,7 +37,7 @@ if(ncol(profile.preprocessed$data)<5){
   q(save="no", status=55)
 }
 
-res <- strain.decompose(profile.preprocessed, ncpu=ncpu)
+res <- strain.decompose(profile.preprocessed, ncpu=ncpu, rank=rank)
 
 ## strain-sample plot
 write.table(res$S, file = paste0(output, ".strain_sample.csv"), sep=",",
@@ -55,34 +61,6 @@ heatmap[is.na(heatmap)] <- 0
 
 write.table(heatmap, file = paste0(output, ".genefamily_strain.csv"), sep=",",
             quote=F, row.names = TRUE, col.names = TRUE)
-
-# prokka <- 
-#   read.table(list.files(pangenome.path, "*prokka.gff", full.names=TRUE, recursive = T),
-#              quote = "$$",
-#              fill=TRUE,
-#              sep="\t")[,c(1,9)] %>% 
-#     filter(V9!="") %>% 
-#     mutate(V9=gsub( ".*product=", "", V9)) %>% 
-#     select(V1, prokka=V9)
-# 
-# panphlan.anno <- read.table(list.files(pangenome.path, "*annotations.csv", full.names=TRUE),
-#            sep="\t", head=T, quote="$$")[, -c(2,3)]
-# panphlan.anno$map <- gsub("\\.[0-9]+", "", panphlan.anno$Protein_id)
-# mapping <- read.table(list.files(pangenome.path, "panphlan.annotation.tsv", full.names = TRUE), 
-#                       sep="\t", head=F)
-# panphlan.anno <- 
-#   merge(panphlan.anno, mapping, by.x="map", by.y="V2", all.x=TRUE) %>% 
-#   select(-V1, -V3, -map) %>% 
-#   select(everything(), KO=V4) %>% 
-#   mutate(KO=ifelse(KO=="", NA, as.character(KO))) 
-# 
-# p.filtered[rowSums(p.filtered)==1 | rowSums(p.filtered)==nrow(p.filtered)-1, ] %>%
-#   merge(panphlan.anno, by.x=0, by.y=1, all.x=TRUE) %>% 
-#   select(gene_family_id=Row.names, everything()) %>% head
-# 
-#   write.table(paste0(output, ".strain_specific_family_annotation.tsv"),
-#               row.names = F,
-#               sep="\t", quote=F)
 
 
 if( nrow(heatmap) < 60000 ){

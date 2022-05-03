@@ -14,7 +14,7 @@
 ##' @export
 strain.decompose <- function(obj, rank=NULL,
                              ## parameters for determining the number of strains
-                             jc.threshold=0.1, abun.threshold=0.1, max.strain=12,
+                             jc.threshold=0.1, abun.threshold=0.1, max.strain=8,
                              presence.thre=0.5,
                              ## run controls
                              ncpu=1, seed=123456, debug=FALSE){
