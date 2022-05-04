@@ -8,7 +8,6 @@ library(data.table)
 
 spec <- matrix(c(
     'help','h',0,'logical','Show this help information',
-    'colPattern','c',1,'character','Regex to match part of file names and use them as the column names [default: .+]',
     'folder', 'f', 1, 'character', 'Folder containing the inputs [default: cwd]',
     'fPattern', 'p', 1, 'character', 'File pattern for the input [default: *]',
     'withHeader', 'H', 1, 'logical', 'The input files contain a header line [default: FALSE]',
@@ -26,7 +25,6 @@ if ( !is.null(opt$help) ) {
 }
 #set some reasonable defaults for the options that are needed,
 #but were not specified.
-if ( is.null(opt$colPattern ) ) {opt$colPattern = '[^_]+'}
 if ( is.null(opt$folder ) ) { opt$folder = '.' }
 if ( is.null(opt$fPattern ) ) { opt$fPattern = '*' }
 if ( is.null(opt$withHeader ) ) { opt$withHeader = FALSE }
@@ -34,7 +32,7 @@ if ( is.null(opt$nThreads ) ) { opt$nThreads = 4 }
 
 
 Merge_Key <- 'Gene'# merge according to this column
-Col_Pattern <- opt$colPattern   # name the columns according to the file name
+Col_Pattern <- '.*.csv.bz2'   # name the columns according to the file name
 Folder <- opt$folder       # folder containing tables
 File_Pattern <- opt$fPattern # Pattern for matching file names
 
@@ -43,7 +41,7 @@ filenames <- list.files(Folder, pattern=File_Pattern, full.names=TRUE)
 
 aux <- function(x) {
     ## closure to use "Merge_Key"
-    names <- c(Merge_Key, regmatches(basename(x), regexpr(Col_Pattern, basename(x), perl=T)))
+    names <- c(Merge_Key, gsub('.csv.bz2', '', basename(x)))
     out <- tryCatch({fread(x, header=opt$withHeader, sep='\t', check.name=F,
 	            col.names=names,
 		    nThread=opt$nThreads)
