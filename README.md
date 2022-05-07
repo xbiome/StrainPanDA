@@ -5,23 +5,6 @@ StrainPanDA is a tool that deconvolute pangenome coverage into strain compositio
 ## Installation
 
 ### Local installation
-1. [PanPhlAn](https://github.com/segatalab/panphlan): mapping to pangenome databases
-1. R and [strainpandar](src/strainpandar): decomposing pangenome into strains
-
-### Pre-built pangenome databases
-
-TODO: url for downloading
-
-## Installation
-
-### Docker
-
-
-```sh
-docker build -t strainpanda:dev .
-```
-
-### Local installation
 
 1. install nextflow
 
@@ -33,7 +16,7 @@ curl -s https://get.nextflow.io | bash
 
 https://github.com/SegataLab/panphlan/wiki#download-the-panphlan-software
 
-3. install strainpandar
+3. install [R](https://www.r-project.org/) and [strainpandar](src/strainpandar): decomposing pangenome into strains
 
 Install required packages `dplyr`, `foreach`, `MASS`, `NMF`
 
