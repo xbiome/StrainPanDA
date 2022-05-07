@@ -1,5 +1,7 @@
 #!/usr/bin/env nextflow
 
+nextflow.enable.dsl = 1
+
 params.help = false
 
 def parameters_expected = ['path', 'ref_path', 'ref_list', 'singleEnd',
@@ -151,7 +153,7 @@ process runStrainPanDAR {
     file("${prefix}.*ko.txt") into ch_ko
 
     """
-    run_strainpandar.r $counts $pangenome ${prefix}.strainpanda $task.cpus $params.max_strain_rank $params.strain_rank
+    run_strainpandar.r -c $counts -r $pangenome -o ${prefix}.strainpanda -t $task.cpus -m $params.max_strain_rank -n $params.strain_rank
     """
 }
 

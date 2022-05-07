@@ -1,21 +1,49 @@
 #!/usr/bin/env Rscript
 
+## getopt
+library(getopt)
+spec <- matrix(c(
+    'help','h',0,'logical','Show this help message',
+    'counts', 'c', 1, 'character', 'Gene-sample count matrix (CSV file) obtained from mapping reads to a reference pangenome [required]',
+    'reference', 'r', 1, 'character', 'Pangenome database path [required]',
+    'output', 'o', 2, 'character', 'Output prefix [default: ./strainpandar]',
+    'threads', 't', 2, 'integer', 'Number of threads to run in parallele [default: 1]',
+    'max_rank', 'm', 2, 'integer', 'Max number of strains expected [default: 8]',
+    'rank', 'n', 2, 'integer', 'Number of strains expected. If 0, try to select from 1 to `max_rank`. If not 0, overwrite `max_rank`. [default: 0]'
+    ), byrow=T, ncol=5)
 
+opt = getopt(spec)
+
+usage_message <- 'A wrapper script to perform strain decomposition using strainpandar package.\n'
+if ( !is.null(opt$help) ) {
+    cat(usage_message)
+    cat(getopt(spec, usage=TRUE));
+    q(status=1);
+}
+if ( is.null(opt$counts   ) ) {
+    cat("Missing input count matrix file. Specify with `-c/--counts`.\n")
+    q(status=1) }
+if ( is.null(opt$reference) ) {
+    cat("Missing input reference path. Specify with `-r/--reference`.\n")
+    q(status=1) }
+if ( is.null(opt$output   ) ) { opt$output = './strainpandar' }
+if ( is.null(opt$threads  ) ) { opt$threads = 1 }
+if ( is.null(opt$max_rank ) ) { opt$max_rank = 8 }
+if ( is.null(opt$rank     ) ) { opt$rank = 0 }
+
+counts.file <- opt$counts
+pangenome.path <- opt$reference
+output <- opt$output
+ncpu <- opt$threads
+max.rank <- opt$max_rank
+rank <- opt$rank
+
+## libraries to load
 library(strainpandar)
 library(ggplot2)
 library(reshape2)
 library(pheatmap)
 library(dplyr)
-
-## replace with getopt
-args <- commandArgs(trailingOnly=TRUE)
-
-counts.file <- args[1]
-pangenome.path <- args[2]
-output <- args[3]
-ncpu <- as.numeric(args[4])
-max.rank <- as.numeric(args[5])
-rank <- as.numeric(args[6])
 
 ## if 0, run from 1:8, otherwise run with specified rank
 if (rank == 0) {
