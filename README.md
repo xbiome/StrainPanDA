@@ -76,6 +76,28 @@ PATH_TO_REPO/main.nf --ref_path PATH_TO_REFERENCE --path reads/ --ref_list speci
 
 ### Run strainpandar
 
+Assuming you have a count matrix generated, we provide a [Rscript wrapper](bin/run_strainpandar.r) to run strainpandar. A sample count matrix can be found [here](data/Faecalibacterium-prausnitzii-202009.counts.csv).
+
+
+```sh
+Rscript bin/run_strainpandar.r -c data/Faecalibacterium-prausnitzii-202009.counts.csv -r data/refs/Faecalibacterium-prausnitzii-202009 -o work -t 8 -m 8 -n 0
+```
+
+The parameters of the wrapper can be found from the help message:
+
+```sh
+> Rscript bin/run_strainpandar.r -h
+A wrapper script to perform strain decomposition using strainpandar package.
+Usage: bin/run_strainpandar.r [-[-help|h]] [-[-counts|c] <character>] [-[-reference|r] <character>] [-[-output|o] [<character>]] [-[-threads|t] [<integer>]] [-[-max_rank|m] [<integer>]] [-[-rank|n] [<integer>]]
+    -h|--help         Show this help message
+    -c|--counts       Gene-sample count matrix (CSV file) obtained from mapping reads to a reference pangenome [required]
+    -r|--reference    Pangenome database path [required]
+    -o|--output       Output prefix [default: ./strainpandar]
+    -t|--threads      Number of threads to run in parallele [default: 1]
+    -m|--max_rank     Max number of strains expected [default: 8]
+    -n|--rank         Number of strains expected. If 0, try to select from 1 to `max_rank`. If not 0, overwrite `max_rank`. [default: 0]
+```
+
 
 ## Outputs
 
