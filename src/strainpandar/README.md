@@ -26,30 +26,24 @@ demo.preprocessed <- preprocess(fprausnitzii$data, pangenome.file = fprausnitzii
 ## Run main program
 
 ``` r
-res <- strain.decompose(demo.preprocessed)
+res <- strain.decompose(demo.preprocessed, ncpu = 8, rank=5)
 ```
 
-    ## Intializing strain-sample matrix (S)...
+    ## Loading required package: pkgmaker
 
-    ## Selected 6 strain references.
+    ## Loading required package: registry
 
-    ## Iteration 1
+    ## Loading required package: rngtools
 
-    ## sum of squared delta: 0.1851
+    ## Loading required package: cluster
 
-    ## Iteration 2
+    ## NMF - BioConductor layer [OK] | Shared memory capabilities [NO: bigmemory] | Cores 175/176
 
-    ## sum of squared delta: 1.0412
+    ##   To enable shared memory capabilities, try: install.extras('
+    ## NMF
+    ## ')
 
-    ## Iteration 3
-
-    ## Dropping genomes due to low number of genes: 1
-
-    ## sum of squared delta: Inf
-
-    ## Iteration 4
-
-    ## sum of squared delta: 0.0000
+    ## Setting the maximum number of strains to 10 (number of samples)...
 
 Visulaize the strain profile
 
@@ -66,6 +60,14 @@ library(dplyr)
 
     ## 
     ## Attaching package: 'dplyr'
+
+    ## The following object is masked from 'package:Biobase':
+    ## 
+    ##     combine
+
+    ## The following objects are masked from 'package:BiocGenerics':
+    ## 
+    ##     combine, intersect, setdiff, union
 
     ## The following objects are masked from 'package:stats':
     ## 
@@ -132,7 +134,7 @@ sessionInfo()
 
     ## R version 3.6.3 (2020-02-29)
     ## Platform: x86_64-pc-linux-gnu (64-bit)
-    ## Running under: Ubuntu 16.04.4 LTS
+    ## Running under: Ubuntu 16.04.7 LTS
     ## 
     ## Matrix products: default
     ## BLAS:   /opt/R-3.6.3/lib/R/lib/libRblas.so
@@ -147,22 +149,27 @@ sessionInfo()
     ## [11] LC_MEASUREMENT=en_IN.UTF-8 LC_IDENTIFICATION=C       
     ## 
     ## attached base packages:
-    ## [1] stats     graphics  grDevices utils     datasets  methods   base     
+    ## [1] parallel  stats     graphics  grDevices utils     datasets  methods  
+    ## [8] base     
     ## 
     ## other attached packages:
-    ## [1] PRROC_1.3.1    reshape2_1.4.4 dplyr_1.0.0    ggplot2_3.3.2  strainpandar_0.1.0
+    ##  [1] PRROC_1.3.1         reshape2_1.4.4      dplyr_1.0.0        
+    ##  [4] ggplot2_3.3.2       doParallel_1.0.15   iterators_1.0.12   
+    ##  [7] foreach_1.5.0       NMF_0.23.0          cluster_2.1.1      
+    ## [10] rngtools_1.5        pkgmaker_0.31.1     registry_0.5-1     
+    ## [13] strainpandar_0.1.0  Biobase_2.46.0      BiocGenerics_0.32.0
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] Rcpp_1.0.5       pracma_2.2.9     pillar_1.4.4     compiler_3.6.3  
-    ##  [5] plyr_1.8.6       iterators_1.0.12 tools_3.6.3      digest_0.6.25   
-    ##  [9] gtable_0.3.0     evaluate_0.14    lifecycle_0.2.0  tibble_3.0.2    
-    ## [13] nlme_3.1-144     lattice_0.20-38  mgcv_1.8-31      pkgconfig_2.0.3 
-    ## [17] rlang_0.4.6      Matrix_1.2-18    foreach_1.5.0    yaml_2.2.1      
-    ## [21] parallel_3.6.3   xfun_0.15        withr_2.2.0      stringr_1.4.0   
-    ## [25] knitr_1.29       cluster_2.1.0    generics_0.0.2   vctrs_0.3.1     
-    ## [29] grid_3.6.3       tidyselect_1.1.0 glue_1.4.1       R6_2.4.1        
-    ## [33] rmarkdown_2.3    farver_2.0.3     purrr_0.3.4      magrittr_1.5    
-    ## [37] scales_1.1.1     codetools_0.2-16 ellipsis_0.3.1   htmltools_0.5.0 
-    ## [41] MASS_7.3-51.5    splines_3.6.3    colorspace_1.4-1 permute_0.9-5   
-    ## [45] labeling_0.3     stringi_1.4.6    munsell_0.5.0    NNLM_0.4.4      
-    ## [49] crayon_1.3.4     vegan_2.5-6
+    ##  [1] tidyselect_1.1.0   xfun_0.15          purrr_0.3.4        splines_3.6.3     
+    ##  [5] lattice_0.20-41    colorspace_1.4-1   vctrs_0.3.1        generics_0.0.2    
+    ##  [9] htmltools_0.5.1.1  yaml_2.2.1         mgcv_1.8-34        rlang_0.4.10      
+    ## [13] pracma_2.2.9       pillar_1.4.4       glue_1.4.1         withr_2.2.0       
+    ## [17] RColorBrewer_1.1-2 lifecycle_0.2.0    plyr_1.8.6         stringr_1.4.0     
+    ## [21] munsell_0.5.0      gtable_0.3.0       codetools_0.2-18   evaluate_0.14     
+    ## [25] labeling_0.3       knitr_1.29         permute_0.9-5      Rcpp_1.0.5        
+    ## [29] xtable_1.8-4       scales_1.1.1       vegan_2.5-6        farver_2.0.3      
+    ## [33] digest_0.6.25      stringi_1.4.6      grid_3.6.3         bibtex_0.4.2.3    
+    ## [37] tools_3.6.3        magrittr_1.5       tibble_3.0.2       crayon_1.3.4      
+    ## [41] pkgconfig_2.0.3    ellipsis_0.3.1     MASS_7.3-53.1      Matrix_1.3-2      
+    ## [45] gridBase_0.4-7     assertthat_0.2.1   rmarkdown_2.3      R6_2.4.1          
+    ## [49] nlme_3.1-152       compiler_3.6.3

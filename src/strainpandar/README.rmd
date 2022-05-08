@@ -29,7 +29,7 @@ demo.preprocessed <- preprocess(fprausnitzii$data, pangenome.file = fprausnitzii
 ## Run main program
 
 ```{r}
-res <- strain.decompose(demo.preprocessed)
+res <- strain.decompose(demo.preprocessed, ncpu = 8, rank=5)
 ```
 
 Visulaize the strain profile
