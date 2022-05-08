@@ -1,0 +1,622 @@
+---
+title: "IBD FMT analysis"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Libraries
+
+```{r}
+library(tidyverse)
+library(ggessentials)
+library(reshape2)
+library(ggExtra)
+```
+
+```{r}
+map <- read_tsv("id_sample.tsv", col_names=F)
+colnames(map) <- c("SampleID", "SeqID")
+meta <- read_csv("sampleMetadata_kong_et_al.csv")
+tmp <- Filter(function(x) !is.na(x), unique(meta$`Donor Sample`))
+meta <- rbind(meta,
+  tibble(
+    SubjectID = str_extract(tmp, "[0-9]+_[0-9]+"),
+    SampleID = tmp,
+    Type = "Donor",
+    `Donor Sample` = SubjectID,
+    Status = NA,
+    RunningStatus=NA
+  )
+)
+meta <- merge(meta, map, by="SampleID")
+meta <- mutate(meta, time=as.factor(str_extract(SampleID, "[DW][-0-9]+"))) 
+meta$time <- 
+  fct_relevel(meta$time, "W-2", after=0) %>%
+  fct_relevel("W2", after=5) %>% fct_relevel("W6", after=6)
+
+species <- read_csv("species_list.txt", col_names = F) %>% pull(1)
+```
+
+
+```{r}
+species.abun <- read_tsv("merged.kraken2.tsv") %>% 
+  filter(str_detect(Index, "s__")) %>% 
+  mutate(Index=str_remove(Index, ".*\\|s__")) %>% 
+  column_to_rownames("Index")
+
+species.abun <- apply(species.abun, 2, function(x) x/sum(x))
+species.abun.f <- species.abun[rowMeans(species.abun) > 0.01 & 
+                        rowSums(species.abun>0.001)/ncol(species.abun)>0.3,]
+```
+
+```{r}
+library(foreach)
+profiles <- foreach(idx=1:length(species), .combine="rbind") %do% {
+  f <- paste0("strain_results/", species[idx], ".strain_sample.csv")
+  if(file.exists(f)){
+    mat <- read.csv(f) %>% t %>% 
+      merge(data.frame(samples=colnames(species.abun)), by.x=0, by.y=1, all.y=T) %>% 
+      data.frame(row.names=1) %>% t
+    mat[is.na(mat)] <- 0
+    data.frame(mat) %>% rownames_to_column("strain") %>% 
+      mutate(species=species[idx]) %>% 
+      select(species, everything()) 
+  }else(NULL)
+}
+```
+
+```{r fig.height=7.5, fig.width=5.5}
+library(ggtree)
+library(ggessentials)
+
+g <- ggtree(hclust(dist(t(profiles[,-c(1:2)])))) %<+% 
+  (select(meta, SeqID, everything()) %>% 
+     mutate(Status=ifelse(is.na(Status), "Donor", Status))) +
+  geom_tippoint( aes(color=SubjectID, shape=Status  ), size=1.5) + 
+  scale_color_manual(values=c(geGetColors(), "black", "steelblue", "firebrick",
+                              "purple", "grey")) + 
+  scale_shape_manual(values=c(15, 19,17), na.value=15) +
+  xlim(0,2.5)
+g
+```
+
+### strain distance
+
+```{r}
+## same subject
+bad <- which(colSums(profiles[,-c(1,2)]) == 0)
+
+strain.dist <- as.matrix(vegan::vegdist(t(apply(profiles[,-c(1:2)], 2, function(x) x/sum(x))), na.rm = T))
+
+species.fil <- intersect(rownames(species.abun),str_replace_all(species, "-", "_"))
+species.dist <- as.matrix(vegan::vegdist(t(species.abun[species.fil,])))
+
+dist.within <- foreach(subject=count(meta, SubjectID) %>% filter(n>1) %>% pull(1),
+                       .combine=rbind) %do% {
+    ids <- filter(meta, SubjectID==subject)  %>% pull(SeqID) 
+    sub <- strain.dist[ids, ids]
+    tmp1 <- data.frame(dist=sub[lower.tri(sub)], var="strain", type="within")
+    #if(sum(is.na(tmp1$dist))>0){print(subject)}
+    sub <- species.dist[ids, ids]
+    tmp2 <- data.frame(dist=sub[lower.tri(sub)], var="species", type="within")
+    rbind(tmp1, tmp2)
+}
+
+## recipient-donor
+dist.paired <- foreach(subject=filter(meta, Type=="Patient") %>% 
+                         pull(SubjectID) %>% unique,
+                       .combine=rbind) %do% {
+    id.s <- filter(meta, SubjectID==subject, time!="D0", time!="W-2")  %>% pull(SeqID) 
+    id.d <- filter(meta, SubjectID==subject) %>% pull(`Donor Sample`) %>% unique
+    id.d <- filter(meta, SampleID==id.d) %>% pull(SeqID)
+    sub <- mean(strain.dist[id.s, id.d])
+    tmp1 <- data.frame(dist=sub, var="strain", type="paired")
+    sub <- mean(species.dist[id.s, id.d])
+    tmp2 <- data.frame(dist=sub, var="species", type="paired")
+    rbind(tmp1, tmp2)
+}
+
+## different subject
+dist.between <- foreach(subject=unique(meta$SubjectID),
+                       .combine=rbind) %do% {
+    ids <- filter(meta, SubjectID==subject)  %>% pull(SeqID) 
+    sub <- strain.dist[ids, !colnames(strain.dist) %in% ids]
+    tmp1 <- data.frame(dist=c(sub), var="strain", type="between")
+    sub <- species.dist[ids, !colnames(species.dist) %in% ids]
+    tmp2 <- data.frame(dist=c(sub), var="species", type="between")
+    rbind(tmp1, tmp2)
+}
+
+```
+
+```{r fig.height=5, fig.width=9}
+dist.all <- bind_rows(dist.between, dist.paired, dist.within) 
+
+tmp <- group_by(dist.all,var, type) %>%
+  summarise(mean=mean(dist, na.rm=T), sd=sd(dist, na.rm=T))
+## strain
+(tmp$mean[1] - tmp$mean[2])/sqrt((tmp$sd[1]^2+tmp$sd[2]^2)/2) ## between vs. paired
+(tmp$mean[1] - tmp$mean[3])/sqrt((tmp$sd[1]^2+tmp$sd[3]^2)/2) ## between vs. within
+## species
+(tmp$mean[4] - tmp$mean[5])/sqrt((tmp$sd[4]^2+tmp$sd[5]^2)/2) ## between vs. paired
+(tmp$mean[4] - tmp$mean[6])/sqrt((tmp$sd[4]^2+tmp$sd[6]^2)/2) ## between vs. within
+ 
+dist.all$type <- fct_relevel(dist.all$type, "paired", after=3) %>% factor(ordered=TRUE)
+
+ggplot(dist.all, aes(x=type, y=dist)) + 
+  geom_violin(aes(fill=type)) +
+  geom_boxplot(width=0.1) +
+  facet_wrap(~var)  + 
+  scale_fill_manual(values=c("orange", "steelblue", "firebrick"), guide=F) + 
+  labs(x=NULL,y="Distance") +
+  theme_classic_ge() + 
+  ggpubr::stat_compare_means(comparisons = 
+                               list(c("between", "within"), c("between", "paired")))
+```
+
+```{r}
+sp.tmp <- melt(species.abun) %>% mutate(Var1=str_replace(Var1, "_", "-")) 
+
+sp.st.dat <- melt(profiles) %>% 
+  merge(meta, by.x="variable", by.y="SeqID") %>% 
+  merge(sp.tmp, by.x=c("variable", "species"), by.y=c("Var2", "Var1")) 
+```
+
+Species abundance test
+
+```{r fig.height=4, fig.width=9}
+plot.dat <- t(species.abun.f) %>% 
+  melt() %>% 
+  merge(meta, by.x=1, by.y="SeqID") %>% 
+  filter(RunningStatus != "relapse") %>% 
+  group_by(species=Var2, SubjectID, Status) %>% 
+  summarise(abundance=mean(value)) 
+
+head(plot.dat)
+
+species.sig <- group_by(plot.dat, species, Status) %>% 
+  summarise(value=list(abundance)) %>% ungroup %>% 
+  spread(Status, value) %>% 
+  group_by(species) %>% 
+  summarise(p=wilcox.test(unlist(relapse), unlist(remission), exact = F)$p.value) %>% 
+  mutate(fdr=p.adjust(.$p, method="fdr")) %>% 
+  filter(fdr<0.2) %>% 
+  slice(-1,-2,-5) ## remove Collinsella and Eubacteria hallii
+  
+
+filter(plot.dat, species %in% species.sig$species)  %>% 
+  mutate(species=str_replace(species, "_", " ")) %>% 
+  ggplot(aes(x=Status, y=abundance, fill=Status)) + 
+  geom_jitter(size=3, aes(color=Status)) + 
+  geom_boxplot(alpha=0.3, outlier.color = NA, lwd=1) + 
+  labs(x=NULL, y="Relative abundances") + 
+  facet_wrap(~species) + 
+  theme_classic_ge() + 
+  theme(legend.position = "none")
+```
+
+Strains correlated with species
+```{r fig.height=12, fig.width=12}
+
+sp.st.dat <- sp.st.dat %>% 
+  group_by(SampleID, species) %>% 
+  mutate(clr.x=log((value.x+0.01)/exp(mean(log(value.x+0.01))))) %>% 
+  filter(species %in% str_replace(species.sig$species, "_", "-"))
+
+sp.st.cor.dat <- filter(sp.st.dat, value.y>1e-2) %>% 
+  group_by(species, strain) %>% 
+  mutate(count=n()) %>% ungroup() %>% 
+  filter(count>30) 
+
+cor.test.res <- group_by(sp.st.cor.dat, species, strain) %>% 
+  summarise(p=suppressWarnings(cor.test(clr.x, value.y, method="spearman")$p.value),
+            cor=suppressWarnings(cor.test(clr.x, value.y, method="spearman")$estimate)) %>% ungroup() %>% 
+  mutate(fdr=p.adjust(p, method="fdr")) %>% 
+  mutate(id = paste0(species, strain))
+
+mutate(sp.st.cor.dat, id = paste0(species, strain)) %>% 
+  filter(id %in% cor.test.res$id) %>% 
+  ggplot(aes(x=clr.x, y=value.y)) + 
+  geom_smooth(method="lm") + 
+  geom_point(size=3) + 
+  facet_wrap(~species + strain, scales="free_y", ncol=3)  + 
+  scale_y_log10() +
+  labs(x="Strain abundance (CLR transformed)", y="Species abundance") + 
+  theme_classic_ge()
+```
+
+B. vulgatus
+```{r}
+#p <- 
+tmp <- filter(sp.st.cor.dat, species=="Bacteroides-vulgatus", strain=="strain1") %>% 
+  filter(!is.na(Status), RunningStatus!="relapse") 
+cor <- group_by(tmp, Status) %>% 
+  summarise(cor=cor(clr.x, value.y, method="spearman"),
+            p.value=cor.test(clr.x, value.y, method="spearman")$p.value)
+p <- ggplot(tmp, aes(x=clr.x, y=value.y, color=Status, fill=Status)) + 
+  geom_smooth(method="lm") + 
+  geom_point(size=3) + 
+  #facet_wrap(~species + strain, scales="free_y", ncol=1)  + 
+  scale_y_log10() +
+  annotate("text", x = 0, y = 1, label = paste0("Spearman cor.=", round(cor[1,2],2), ", n.s"), size=6, 
+           col=rgb(0.9687500, 0.4609375, 0.4257812)) +
+  annotate("text", x = 0, y = 0.5, label = paste0("Spearman cor.=", round(cor[2,2],2), ", *"), size=6, 
+           col=rgb(0,.7460938, 0.7656250)) +
+  labs(x="Strain 1 abundance (CLR transformed)", y="B. vulgatus abundance") + 
+  theme_classic_ge()+ 
+  theme(legend.position = c(0.8,0.8))
+
+p1 <- ggMarginal(p, groupColour = TRUE, groupFill = TRUE, type="density") 
+
+tmp <- filter(sp.st.cor.dat, species=="Bacteroides-vulgatus", strain=="strain2") %>% 
+  filter(!is.na(Status), RunningStatus!="relapse") 
+cor <- group_by(tmp, Status) %>% 
+  summarise(cor=cor(clr.x, value.y, method="spearman"),
+            p.value=cor.test(clr.x, value.y, method="spearman")$p.value)
+p <-   ggplot(tmp, aes(x=clr.x, y=value.y, color=Status, fill=Status)) + 
+  geom_smooth(method="lm") + 
+  geom_point(size=3) + 
+  #facet_wrap(~species + strain, scales="free_y", ncol=1)  + 
+  scale_y_log10() +
+    annotate("text", x = 0, y = 1, label = paste0("Spearman cor.=", round(cor[1,2],2), ", n.s"), size=6, 
+           col=rgb(0.9687500, 0.4609375, 0.4257812)) +
+  annotate("text", x = 0, y = 0.5, label = paste0("Spearman cor.=", round(cor[2,2],2), ", n.s"), size=6, 
+           col=rgb(0,.7460938, 0.7656250)) +
+  labs(x="Strain 2 abundance (CLR transformed)", y="B. vulgatus abundance") + 
+  theme_classic_ge()+ 
+  theme(legend.position = c(0.8,0.8))
+
+p2 <- ggMarginal(p, groupColour = TRUE, groupFill = TRUE, type="density") 
+
+
+tmp <- filter(sp.st.cor.dat, species=="Bacteroides-vulgatus", strain=="strain3") %>% 
+  filter(!is.na(Status), RunningStatus!="relapse") 
+cor <- group_by(tmp, Status) %>% 
+  summarise(cor=cor(clr.x, value.y, method="spearman"),
+            p.value=cor.test(clr.x, value.y, method="spearman")$p.value)
+p <-   ggplot(tmp, aes(x=clr.x, y=value.y, color=Status, fill=Status)) + 
+  geom_smooth(method="lm") + 
+  geom_point(size=3) + 
+  #facet_wrap(~species + strain, scales="free_y", ncol=1)  + 
+  scale_y_log10() +
+    annotate("text", x = 0, y = 1, label = paste0("Spearman cor.=", round(cor[1,2],2), ", n.s"), size=6, 
+           col=rgb(0.9687500, 0.4609375, 0.4257812)) +
+  annotate("text", x = 0, y = 0.5, label = paste0("Spearman cor.=", round(cor[2,2],2), ", n.s"), size=6, 
+           col=rgb(0,.7460938, 0.7656250)) +
+  labs(x="Strain 3 abundance (CLR transformed)", y="B. vulgatus abundance") + 
+  theme_classic_ge()+ 
+  theme(legend.position = c(0.8,0.9))
+
+p3 <- ggMarginal(p, groupColour = TRUE, groupFill = TRUE, type="density") 
+
+
+tmp <- filter(sp.st.cor.dat, species=="Bacteroides-vulgatus", strain=="strain4") %>% 
+  filter(!is.na(Status), RunningStatus!="relapse")
+cor <- group_by(tmp, Status) %>% 
+  summarise(cor=cor(clr.x, value.y, method="spearman"),
+            p.value=cor.test(clr.x, value.y, method="spearman")$p.value)
+p <- ggplot(tmp, aes(x=clr.x, y=value.y, color=Status, fill=Status)) + 
+  geom_smooth(method="lm") + 
+  geom_point(size=3) + 
+  #facet_wrap(~species + strain, scales="free_y", ncol=1)  + 
+  scale_y_log10() +
+    annotate("text", x = 1.5, y = 1.5, label = paste0("Spearman cor.=", round(cor[1,2],2), ", n.s"), size=6, 
+           col=rgb(0.9687500, 0.4609375, 0.4257812)) +
+  annotate("text", x = 1.5, y = 0.5, label = paste0("Spearman cor.=", round(cor[2,2],2), ", n.s"), size=6, 
+           col=rgb(0,.7460938, 0.7656250)) +
+  labs(x="Strain 4 abundance (CLR transformed)", y="B. vulgatus abundance") + 
+  theme_classic_ge()+ 
+  theme(legend.position = c(0.2,0.9))
+
+p4 <- ggMarginal(p, groupColour = TRUE, groupFill = TRUE, type="density") 
+
+tmp <- filter(sp.st.cor.dat, species=="Bacteroides-vulgatus", strain=="strain5") %>% 
+  filter(!is.na(Status), RunningStatus!="relapse")
+cor <- group_by(tmp, Status) %>% 
+  summarise(cor=cor(clr.x, value.y, method="spearman"),
+            p.value=cor.test(clr.x, value.y, method="spearman")$p.value)
+p <- ggplot(tmp, aes(x=clr.x, y=value.y, color=Status, fill=Status)) + 
+  geom_smooth(method="lm") + 
+  geom_point(size=3) + 
+  #facet_wrap(~species + strain, scales="free_y", ncol=1)  + 
+  scale_y_log10() +
+    annotate("text", x = 1.5, y = 1, label = paste0("Spearman cor.=", round(cor[1,2],2), ", **"), size=6, 
+           col=rgb(0.9687500, 0.4609375, 0.4257812)) +
+  annotate("text", x = 1.5, y = 0.5, label = paste0("Spearman cor.=", round(cor[2,2],2), ", ***"), size=6, 
+           col=rgb(0,.7460938, 0.7656250)) +
+  labs(x="Strain 5 abundance (CLR transformed)", y="B. vulgatus abundance") + 
+  theme_classic_ge()+ 
+  theme(legend.position = c(0.2,0.9))
+
+p5 <- ggMarginal(p, groupColour = TRUE, groupFill = TRUE, type="density") 
+
+
+tmp <- filter(sp.st.cor.dat, species=="Bacteroides-vulgatus", strain=="strain6") %>% 
+  filter(!is.na(Status), RunningStatus!="relapse")
+cor <- group_by(tmp, Status) %>% 
+  summarise(cor=cor(clr.x, value.y, method="spearman"),
+            p.value=cor.test(clr.x, value.y, method="spearman")$p.value)
+p <-   ggplot(tmp,aes(x=clr.x, y=value.y, color=Status, fill=Status)) + 
+  geom_smooth(method="lm") + 
+  geom_point(size=3) + 
+  #facet_wrap(~species + strain, scales="free_y", ncol=1)  + 
+  scale_y_log10() +
+    annotate("text", x = 0, y = 1, label = paste0("Spearman cor.=", round(cor[1,2],2), ", n.s"), size=6, 
+           col=rgb(0.9687500, 0.4609375, 0.4257812)) +
+  annotate("text", x = 0, y = 0.5, label = paste0("Spearman cor.=", round(cor[2,2],2), ", n.s"), size=6, 
+           col=rgb(0,.7460938, 0.7656250)) +
+  labs(x="Strain 6 abundance (CLR transformed)", y="B. vulgatus abundance") + 
+  theme_classic_ge()+ 
+  theme(legend.position = c(0.8,0.8))
+
+p6 <- ggMarginal(p, groupColour = TRUE, groupFill = TRUE, type="density") 
+
+tmp <- filter(sp.st.cor.dat, species=="Bacteroides-vulgatus", strain=="strain7") %>% 
+  filter(!is.na(Status), RunningStatus!="relapse") 
+cor <- group_by(tmp, Status) %>% 
+  summarise(cor=cor(clr.x, value.y, method="spearman"),
+            p.value=cor.test(clr.x, value.y, method="spearman")$p.value)
+p <-   ggplot(tmp, aes(x=clr.x, y=value.y, color=Status, fill=Status)) + 
+  geom_smooth(method="lm") + 
+  geom_point(size=3) + 
+  #facet_wrap(~species + strain, scales="free_y", ncol=1)  + 
+  scale_y_log10() +
+    annotate("text", x = 0, y = 1, label = paste0("Spearman cor.=", round(cor[1,2],2), ", **"), size=6, 
+           col=rgb(0.9687500, 0.4609375, 0.4257812)) +
+  annotate("text", x = 0, y = 0.5, label = paste0("Spearman cor.=", round(cor[2,2],2), ", n.s"), size=6, 
+           col=rgb(0,.7460938, 0.7656250)) +
+  labs(x="Strain 7 abundance (CLR transformed)", y="B. vulgatus abundance") + 
+  theme_classic_ge()+ 
+  theme(legend.position = c(0.8,0.8))
+
+p7 <- ggMarginal(p, groupColour = TRUE, groupFill = TRUE, type="density")
+```
+
+
+```{r fig.height=5, fig.width=11}
+bv.gf <- read.table("strain_results/Bacteroides-vulgatus.genefamily_strain.csv", sep=",") %>% 
+  select(starts_with("strain")) %>% rownames_to_column("gf")
+
+core <- data.frame(var="core", count=sum(rowSums(bv.gf[,-1])==ncol(bv.gf[,-1])))
+assesory <- data.frame(var="assesory", count=sum(rowSums(bv.gf[,-1])<ncol(bv.gf[,-1]) & 
+                  rowSums(bv.gf[,-1])>1))
+specific <- 
+ data.frame(count=colSums(bv.gf[rowSums(bv.gf[,-1])==1, -1])) %>% 
+   rownames_to_column("var")
+
+rbind(core, assesory, specific) %>% 
+  ggplot(aes(x=var, y=count, label=count)) + 
+  geom_bar(stat="identity") +
+  geom_text(aes(x=var, y=count+400), size=8) + 
+  theme_classic_ge()  + 
+  labs(x=NULL)+
+  theme(axis.text.x= element_text(angle=45, vjust=1, hjust=1))
+```
+
+```{r fig.height=8, fig.width=2.8}
+library(pheatmap)
+bv <- read_csv("strain_results/Bacteroides-vulgatus.genefamily_strain.anno.csv") %>% 
+  #filter(rowSums(.[,2:8])==1) %>% 
+  select(-starts_with("GCF")) 
+
+## CAZy
+select(bv, cazy, starts_with("strain")) %>% 
+  filter(!is.na(cazy)) %>% 
+  group_by(cazy) %>% 
+  summarise_all(function(x) (sum(x)>0)*1) %>% 
+  column_to_rownames("cazy") %>%
+  filter(rowSums(.)!=7 & rowSums(.)!=0) %>% 
+  pheatmap()
+```
+
+```{r fig.height=5, fig.width=5}
+vfs <- readxl::read_excel("VFs.xls", skip = 1)
+
+bv.vf <- read_csv("strain_results/Bacteroides-vulgatus.genefamily_strain_vf.anno.csv") %>% 
+  select(-starts_with("GCF")) 
+
+vf.bv.dat <- select(bv.vf,vfdb_vf, starts_with("strain")) %>% 
+  filter(rowSums(.[,-1])!=0) %>% 
+  merge(select(vfs, Keyword, VFID), by.x="vfdb_vf", by.y="VFID") %>% 
+  separate_rows(Keyword, sep="; ") %>% 
+  select(-1) %>% 
+  group_by(Keyword) %>% 
+  summarise_all(function(x) sum(x)) %>% 
+  filter(!is.na(Keyword)) %>% 
+  data.frame(row.names = 1)
+
+
+data.frame((vf.bv.dat>0)*1) %>% 
+  filter(rowSums(.)!=7 & rowSums(.)!=0) %>% 
+pheatmap()
+```
+
+
+B. ovatus
+```{r}
+tmp <- filter(sp.st.cor.dat, species=="Bacteroides-ovatus", strain=="strain1") %>% 
+  filter(!is.na(Status), RunningStatus!="relapse") 
+cor <- group_by(tmp, Status) %>% 
+  summarise(cor=cor(clr.x, value.y, method="spearman"),
+            p.value=cor.test(clr.x, value.y, method="spearman")$p.value)
+p <- ggplot(tmp, aes(x=clr.x, y=value.y, color=Status, fill=Status)) + 
+  geom_smooth(method="lm") + 
+  geom_point(size=3) + 
+  #facet_wrap(~species + strain, scales="free_y", ncol=1)  + 
+  scale_y_log10() +
+  annotate("text", x = 0, y = 0.08, label = paste0("Spearman cor.=", round(cor[1,2],2), ", n.s"), size=6, 
+           col=rgb(0.9687500, 0.4609375, 0.4257812)) +
+  annotate("text", x = 0, y = 0.07, label = paste0("Spearman cor.=", round(cor[2,2],2), ", n.s"), size=6, 
+           col=rgb(0,.7460938, 0.7656250)) +
+  labs(x="Strain 1 abundance (CLR transformed)", y="B. ovatus abundance") + 
+  theme_classic_ge()+ 
+  theme(legend.position = c(0.5,0.9))
+
+p1 <- ggMarginal(p, groupColour = TRUE, groupFill = TRUE, type="density") 
+
+tmp <- filter(sp.st.cor.dat, species=="Bacteroides-ovatus", strain=="strain2") %>% 
+  filter(!is.na(Status), RunningStatus!="relapse") 
+cor <- group_by(tmp, Status) %>% 
+  summarise(cor=cor(clr.x, value.y, method="spearman"),
+            p.value=cor.test(clr.x, value.y, method="spearman")$p.value)
+p <- ggplot(tmp, aes(x=clr.x, y=value.y, color=Status, fill=Status)) + 
+  geom_smooth(method="lm") + 
+  geom_point(size=3) + 
+  #facet_wrap(~species + strain, scales="free_y", ncol=1)  + 
+  scale_y_log10() +
+  annotate("text", x = 1, y = 0.008, label = paste0("Spearman cor.=", round(cor[1,2],2), ", ***"), size=6, 
+           col=rgb(0.9687500, 0.4609375, 0.4257812)) +
+  annotate("text", x = 1, y = 0.006, label = paste0("Spearman cor.=", round(cor[2,2],2), ", **"), size=6, 
+           col=rgb(0,.7460938, 0.7656250)) +
+  labs(x="Strain 2 abundance (CLR transformed)", y="B. ovatus abundance") + 
+  theme_classic_ge()+ 
+  theme(legend.position = c(0.2,0.8))
+
+p2 <- ggMarginal(p, groupColour = TRUE, groupFill = TRUE, type="density") 
+
+
+tmp <- filter(sp.st.cor.dat, species=="Bacteroides-ovatus", strain=="strain3") %>% 
+  filter(!is.na(Status), RunningStatus!="relapse") 
+cor <- group_by(tmp, Status) %>% 
+  summarise(cor=cor(clr.x, value.y, method="spearman"),
+            p.value=cor.test(clr.x, value.y, method="spearman")$p.value)
+p <- ggplot(tmp, aes(x=clr.x, y=value.y, color=Status, fill=Status)) + 
+  geom_smooth(method="lm") + 
+  geom_point(size=3) + 
+  #facet_wrap(~species + strain, scales="free_y", ncol=1)  + 
+  scale_y_log10() +
+  annotate("text", x = -1, y = 0.01, label = paste0("Spearman cor.=", round(cor[1,2],2), ", n.s"), size=6, 
+           col=rgb(0.9687500, 0.4609375, 0.4257812)) +
+  annotate("text", x = -1, y = 0.008, label = paste0("Spearman cor.=", round(cor[2,2],2), ", n.s"), size=6, 
+           col=rgb(0,.7460938, 0.7656250)) +
+  labs(x="Strain 3 abundance (CLR transformed)", y="B. ovatus abundance") + 
+  theme_classic_ge()+ 
+  theme(legend.position = c(0.5,0.9))
+
+p3 <- ggMarginal(p, groupColour = TRUE, groupFill = TRUE, type="density") 
+
+
+tmp <- filter(sp.st.cor.dat, species=="Bacteroides-ovatus", strain=="strain4") %>% 
+  filter(!is.na(Status), RunningStatus!="relapse") 
+cor <- group_by(tmp, Status) %>% 
+  summarise(cor=cor(clr.x, value.y, method="spearman"),
+            p.value=cor.test(clr.x, value.y, method="spearman")$p.value)
+p <-   ggplot(tmp, aes(x=clr.x, y=value.y, color=Status, fill=Status)) + 
+  geom_smooth(method="lm") + 
+  geom_point(size=3) + 
+  #facet_wrap(~species + strain, scales="free_y", ncol=1)  + 
+  scale_y_log10() +
+  annotate("text", x = 0, y = 0.11, label = paste0("Spearman cor.=", round(cor[1,2],2), ", n.s"), size=6, 
+           col=rgb(0.9687500, 0.4609375, 0.4257812)) +
+  annotate("text", x = 0, y = 0.09, label = paste0("Spearman cor.=", round(cor[2,2],2), ", n.s"), size=6, 
+           col=rgb(0,.7460938, 0.7656250)) +
+  labs(x="Strain 4 abundance (CLR transformed)", y="B. ovatus abundance") + 
+  theme_classic_ge()+ 
+  theme(legend.position = c(0.8,0.8))
+
+p4 <- ggMarginal(p, groupColour = TRUE, groupFill = TRUE, type="density") 
+
+tmp <- filter(sp.st.cor.dat, species=="Bacteroides-ovatus", strain=="strain5") %>% 
+  filter(!is.na(Status), RunningStatus!="relapse") 
+cor <- group_by(tmp, Status) %>% 
+  summarise(cor=cor(clr.x, value.y, method="spearman"),
+            p.value=cor.test(clr.x, value.y, method="spearman")$p.value)
+p <- ggplot(tmp, aes(x=clr.x, y=value.y, color=Status, fill=Status)) + 
+  geom_smooth(method="lm") + 
+  geom_point(size=3) + 
+  #facet_wrap(~species + strain, scales="free_y", ncol=1)  + 
+  scale_y_log10() +
+  annotate("text", x = 2, y = 0.11, label = paste0("Spearman cor.=", round(cor[1,2],2), ", n.s"), size=6, 
+           col=rgb(0.9687500, 0.4609375, 0.4257812)) +
+  annotate("text", x = 2, y = 0.09, label = paste0("Spearman cor.=", round(cor[2,2],2), ", n.s"), size=6, 
+           col=rgb(0,.7460938, 0.7656250)) +
+  labs(x="Strain 5 abundance (CLR transformed)", y="B. ovatus abundance") + 
+  theme_classic_ge()+ 
+  theme(legend.position = c(0.3,0.9))
+
+p5 <- ggMarginal(p, groupColour = TRUE, groupFill = TRUE, type="density") 
+
+
+tmp <- filter(sp.st.cor.dat, species=="Bacteroides-ovatus", strain=="strain6") %>% 
+  filter(!is.na(Status), RunningStatus!="relapse") 
+cor <- group_by(tmp, Status) %>% 
+  summarise(cor=cor(clr.x, value.y, method="spearman"),
+            p.value=cor.test(clr.x, value.y, method="spearman")$p.value)
+p <- ggplot(tmp, aes(x=clr.x, y=value.y, color=Status, fill=Status)) + 
+  geom_smooth(method="lm") + 
+  geom_point(size=3) + 
+  #facet_wrap(~species + strain, scales="free_y", ncol=1)  + 
+  scale_y_log10() +
+  annotate("text", x = 0, y = 0.11, label = paste0("Spearman cor.=", round(cor[1,2],2), ", n.s"), size=6, 
+           col=rgb(0.9687500, 0.4609375, 0.4257812)) +
+  annotate("text", x = 0, y = 0.09, label = paste0("Spearman cor.=", round(cor[2,2],2), ", n.s"), size=6, 
+           col=rgb(0,.7460938, 0.7656250)) +
+  labs(x="Strain 6 abundance (CLR transformed)", y="B. ovatus abundance") + 
+  theme_classic_ge()+ 
+  theme(legend.position = c(0.8,0.8))
+
+p6 <- ggMarginal(p, groupColour = TRUE, groupFill = TRUE, type="density") 
+```
+
+
+```{r fig.height=4, fig.width=10}
+bo.gf <- read.table("strain_results/Bacteroides-ovatus.genefamily_strain.csv", sep=",") %>% 
+  select(starts_with("strain")) %>% rownames_to_column("gf")
+
+core <- data.frame(var="core", count=sum(rowSums(bo.gf[,-1])==ncol(bo.gf[,-1])))
+assesory <- data.frame(var="assesory", count=sum(rowSums(bo.gf[,-1])<ncol(bo.gf[,-1]) & 
+                  rowSums(bo.gf[,-1])>1))
+specific <- 
+ data.frame(count=colSums(bo.gf[rowSums(bo.gf[,-1])==1, -1])) %>% 
+   rownames_to_column("var")
+
+rbind(core, assesory, specific) %>% 
+  ggplot(aes(x=var, y=count, label=count)) + 
+  geom_bar(stat="identity") +
+  geom_text(aes(x=var, y=count+400), size=8) + 
+  theme_classic_ge()  + 
+  labs(x=NULL)+
+  theme(axis.text.x= element_text(angle=45, vjust=1, hjust=1))
+```
+
+
+
+```{r fig.height=9, fig.width=3}
+bo <- read_csv("strain_results/Bacteroides-ovatus.genefamily_strain.anno.csv") %>% 
+  select(-starts_with("GCF")) 
+
+## CAZy
+
+select(bo, cazy, starts_with("strain")) %>% 
+  filter(!is.na(cazy)) %>% 
+  group_by(cazy) %>% 
+  summarise_all(function(x) (sum(x)>0)*1) %>% 
+  column_to_rownames("cazy") %>%
+  filter(rowSums(.)!=ncol(.) & rowSums(.)!=0) %>% 
+  pheatmap()
+```
+
+
+```{r fig.height=5, fig.width=5}
+bo.vf <- read_csv("strain_results/Bacteroides-ovatus.genefamily_strain_vf.anno.csv") %>% 
+  select(-starts_with("GCF")) 
+
+vf.bo.dat <- select(bo.vf,vfdb_vf, starts_with("strain")) %>% 
+  filter(rowSums(.[,-1])!=0) %>% 
+  merge(select(vfs, Keyword, VFID), by.x="vfdb_vf", by.y="VFID") %>% 
+  separate_rows(Keyword, sep="; ") %>% 
+  select(-1) %>% 
+  group_by(Keyword) %>% 
+  summarise_all(function(x) sum(x)) %>% 
+  filter(!is.na(Keyword)) %>% 
+  data.frame(row.names = 1)
+
+
+data.frame((vf.bo.dat>0)*1) %>% 
+  filter(rowSums(.)!=ncol(.) & rowSums(.)!=0) %>% 
+pheatmap()
+```
