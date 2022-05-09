@@ -12,7 +12,7 @@ docker pull yuxiangtan/simstr
 User can get into the interactive mode by: 
 
 ```shell
-docker run  -u $(id -u):$(id -g) --rm -t -i -v /home:/home -v $Path_to_SimStr/:/script -w /home yxtan/simstr:v1 /bin/bash
+docker run  -u $(id -u):$(id -g) --rm -t -i -v /home:/home -v $Path_to_SimStr/:/script -w /home yxtan/simstr:latest /bin/bash
 ```
 
 In this case, all the Path_to_SimStr in the following guideline could be replaced by /script/. For exampe, within the docker: **Path_to_SimStr="/script/“**
@@ -21,7 +21,7 @@ In this case, all the Path_to_SimStr in the following guideline could be replace
 
 ## 1. Generate the list of candidate strains (with paired WGS data) of a specific species:
 
-For this step, -u option of docker run might lead to the fail of fastq-dump, you can use  "docker run --rm -t -i -v /home:/home -v $Path_to_SimStr/:/script -w /home yxtan/simstr:v1 /bin/bash" instead. However, all the files will be marked "root" as username. 
+For this step, -u option of docker run might lead to the fail of fastq-dump, you can use  "docker run --rm -t -i -v /home:/home -v $Path_to_SimStr/:/script -w /home yxtan/simstr:latest /bin/bash" instead. However, all the files will be marked "root" as username. 
 
 Usage: sh $Path_to_SimStr/SIM_str_ANI_PAN_mash.sh sra_result.csv SraRunInfo.csv strs.csv fileout_header $Path_to_SimStr range_type min_ANI
     
@@ -69,7 +69,7 @@ Intermediate output folders:
 
 **NOTE 2! If the panphlan failed with error message like "zlib.error: Error -3 while decompressing: invalid block type", it is caused by the fail of download by wget in the strain-ref folder. In this case, users need to replace them by correct files manually. Users can check the fail of files by check_gz_integrity.sh, and use the broken_ID.txt to extract the subset of download list (For example, grep -f broken_ID.txt Ecoli99_panphlan3_ref_dl_list.txt > broken_ref_dl_list.txt). Sometimes the broken file is caused by wget -c, so you can use wget to download again into the target folder (for example, strain-ref).**
 
-**NOTE 3! If the panphlan failed, need to delete all the panphlan related output and rerun the pipeline (generally, this is caused by the disconnection of download, or users could download first and run panphlan separately), or panphlan will crash again because of the existing files. **
+**NOTE 3! If the panphlan failed, need to delete all the panphlan related output and rerun the pipeline (generally, this is caused by the disconnection of download, or users could download first and run panphlan separately), or panphlan will crash again because of the existing files.  Run panphlan by the following command (you don't need to change any words, or the part2 will fail): panphlan_pangenome_generation.py -c target_species --i_fna strain-ref/ --i_gff strain-ref/ -o target_database/**
 
 **NOTE 4! SraRunInfo.csv and strs.csv must be the newest one, or the link might be expired and failed.**
 
