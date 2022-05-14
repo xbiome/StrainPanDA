@@ -1,0 +1,18 @@
+Bifidobacterium_longum-StrainEST	Bifidobacterium_longum-PStrain	Clostridium_difficile-StrainPanDA	Clostridium_difficile-StrainEST	Clostridium_difficile-PStrain	Escherichia_coli-StrainPanDA	Escherichia_coli-StrainEST	Escherichia_coli-PStrain	Enterococcus_faecalis-StrainPanDA	Enterococcus_faecalis-StrainEST	Enterococcus_faecalis-PStrain	Faecalibacterium_prausnitzii-StrainPanDA	Faecalibacterium_prausnitzii-StrainEST	Faecalibacterium_prausnitzii-PStrain	Prevotella_copri-StrainPanDA	Prevotella_copri-StrainEST	Prevotella_copri-PStrain
+Bifidobacterium_longum-StrainPanDA	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+Bifidobacterium_longum-StrainEST	NA	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+Bifidobacterium_longum-PStrain	NA	NA	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+Clostridium_difficile-StrainPanDA	NA	NA	NA	NaN	1	1	1	1	1	1	1	1	1	1	1	1	1
+Clostridium_difficile-StrainEST	NA	NA	NA	NA	1	1	1	1	1	1	1	1	1	1	1	1	1
+Clostridium_difficile-PStrain	NA	NA	NA	NA	NA	1	1	1	1	1	1	1	1	1	1	1	1
+Escherichia_coli-StrainPanDA	NA	NA	NA	NA	NA	NA	1	1	1	1	1	1	1	1	1	1	1
+Escherichia_coli-StrainEST	NA	NA	NA	NA	NA	NA	NA	1	1	1	1	1	1	1	1	1	1
+Escherichia_coli-PStrain	NA	NA	NA	NA	NA	NA	NA	NA	1	1	1	1	1	1	1	1	1
+Enterococcus_faecalis-StrainPanDA	NA	NA	NA	NA	NA	NA	NA	NA	NA	1	1	1	1	1	1	1	1
+Enterococcus_faecalis-StrainEST	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	1	1	1	1	1	1	1
+Enterococcus_faecalis-PStrain	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	1	1	1	1	1	1
+Faecalibacterium_prausnitzii-StrainPanDA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NaN	1	1	1	1
+Faecalibacterium_prausnitzii-StrainEST	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	1	1	1	1
+Faecalibacterium_prausnitzii-PStrain	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	1	1	1
+Prevotella_copri-StrainPanDA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NaN	1
+Prevotella_copri-StrainEST	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	1

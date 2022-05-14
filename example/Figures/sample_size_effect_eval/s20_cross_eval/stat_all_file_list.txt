@@ -1,0 +1,10 @@
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C1/XT/xstrain_out/s20/eval/Ecoli99_WGS_C1str_s20_XT_stat_detected.csv	1-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C2/XT/xstrain_out/s20/eval/Ecoli99_WGS_C2str_s20_XT_stat_detected.csv	2-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C3/XT/xstrain_out/s20/eval/Ecoli99_WGS_C3str_s20_XT_stat_detected.csv	3-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C4/XT/xstrain_out/s20/eval/Ecoli99_WGS_C4str_s20_XT_stat_detected.csv	4-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C5/XT/xstrain_out/s20/eval/Ecoli99_WGS_C5str_s20_XT_stat_detected.csv	5-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C6/XT/xstrain_out/s20/eval/Ecoli99_WGS_C6str_s20_XT_stat_detected.csv	6-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C7/XT/xstrain_out/s20/eval/Ecoli99_WGS_C7str_s20_XT_stat_detected.csv	7-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C8/XT/xstrain_out/s20/eval/Ecoli99_WGS_C8str_s20_XT_stat_detected.csv	8-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C9/XT/xstrain_out/s20/eval/Ecoli99_WGS_C9str_s20_XT_stat_detected.csv	9-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C10/XT/xstrain_out/s20/eval/Ecoli99_WGS_C10str_s20_XT_stat_detected.csv	10-XT

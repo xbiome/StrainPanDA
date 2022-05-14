@@ -1,0 +1,13 @@
+sample1_sample2	p_value_paired_T
+AErrorFree.StrainPanDA_AErrorFree.StrainEst	9.55870457961609e-05
+AErrorFree.StrainEst_AErrorFree.StrainPanDA	9.55870457961609e-05
+AErrorFree.StrainEst_AErrorFree.PStrain	0.00131087835753567
+AErrorFree.PStrain_AErrorFree.StrainEst	0.00131087835753567
+ARTError.StrainPanDA_ARTError.StrainEst	0.000429997677972162
+ARTError.StrainEst_ARTError.StrainPanDA	0.000429997677972162
+ARTError.StrainEst_ARTError.PStrain	0.000247530224765174
+ARTError.PStrain_ARTError.StrainEst	0.000247530224765174
+WGSError.StrainPanDA_WGSError.StrainEst	6.22792208477033e-06
+WGSError.StrainEst_WGSError.StrainPanDA	6.22792208477033e-06
+WGSError.StrainEst_WGSError.PStrain	8.03438842886699e-05
+WGSError.PStrain_WGSError.StrainEst	8.03438842886699e-05

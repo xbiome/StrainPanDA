@@ -1,0 +1,56 @@
+Row.names	strain1	strain2	strain3	annotation	subclass	class
+K00656	0.75	0.75	0.5	E2.3.1.54, pflD; formate C-acetyltransferase	formate C-acetyltransferase	Fucosidase_cluster
+K02035	0.727272727272727	0.0909090909090909	0.0909090909090909	peptide/nickel transport system substrate-binding protein | (GenBank) extracellular solute-binding protein, family 5	Oligopeptide-binding protein oppA	Sialidase_cluster
+K02429	0.666666666666667	0.333333333333333	0.333333333333333	fucP;MFS transporter, L-fucose permease	L-fucose permease	Fucosidase_cluster
+K00048	0.6	0.6	0.2	fucO; lactaldehyde reductase	lactaldehyde reductase	Fucosidase_cluster
+K15533	0.6	0.2	0.4	1,3-beta-galactosyl-N-acetylhexosamine phosphorylase [EC:2.4.1.211] | (GenBank) conserved hypothetical protein	Solute-binding protein of ABC transporter system for sugars	GNB-LNB_cluster
+K12574	0.5	0.5	0.5	ribonuclease J [EC:3.1.-.-] | (GenBank) beta-lactamase domain protein	Beta-lactamase	43 kbp HMO cluster
+K02033	0.444444444444444	0.111111111111111	0.111111111111111	peptide/nickel transport system permease protein | (GenBank) binding-protein-dependent transport systems inner membrane component	Oligopeptide transport system permease protein 	Sialidase_cluster
+K01714	0.428571428571429	0.142857142857143	0.142857142857143	4-hydroxy-tetrahydrodipicolinate synthase [EC:4.3.3.7] | (GenBank) dihydrodipicolinate synthetase	N-Acetylneuraminate lyase	43 kbp HMO cluster
+K12308	0.4	0.2	0.2	beta-galactosidase [EC:3.2.1.23] | (GenBank) Beta-galactosidase	LNT beta-1,3-galactosidase	LNT related gene
+K02031	0.375	0.166666666666667	0.166666666666667	peptide/nickel transport system ATP-binding protein 	fusion between oligopeptide transport permease oppC and ATP-binding protein oppD	Sialidase_cluster
+K02784	0.333333333333333	0.333333333333333	0.333333333333333	phosphocarrier protein HPr | (GenBank) Phosphotransferase system, phosphocarrier protein HPr	Phosphocarrier protein HPr	GluNAc-GalNAc_related_gene
+K17319	0.333333333333333	0.333333333333333	0.333333333333333	putative aldouronate transport system permease protein | (GenBank) binding-protein-dependent transport systems inner membranecomponent	Sugar ABC transporter permease	43 kbp HMO cluster
+K02529	0.3	0.1	0.2	LacI family transcriptional regulator | (GenBank) regulatory protein, LacI	LacI-type transcriptional regulator	Sialidase_cluster
+K02026	0.291666666666667	0.25	0.125	multiple sugar transport system permease protein | (GenBank) binding-protein-dependent transport systems inner membrane component	Binding-protein-dependent transport system Inner membrane protein	43 kbp HMO cluster
+K02027	0.264150943396226	0.188679245283019	0.226415094339623	multiple sugar transport system substrate-binding protein | (GenBank) extracellular solute-binding protein, family 1	Family 1 extracellular solute-binding protein	43 kbp HMO cluster
+K08483	0.25	0.5	0.25	phosphoenolpyruvate-protein phosphotransferase (PTS system enzyme I) [EC:2.7.3.9] | (GenBank) phosphoenolpyruvate-protein phosphotransferase	Phosphoenolpyruvate-protein phosphotransferase	GluNAc-GalNAc_related_gene
+K02034	0.235294117647059	0.176470588235294	0.176470588235294	peptide/nickel transport system permease protein	fusion between oligopeptide transport permease oppC and ATP-binding protein oppD	Sialidase_cluster
+K16209	0.2	0.466666666666667	0.0666666666666667	lactose/raffinose/galactose permease | (GenBank) sugar (Glycoside-Pentoside-Hexuronide) transporter	Galactoside symporter	43 kbp HMO cluster
+K13059	0.2	0.2	0.2	N-acetylhexosamine 1-kinase [EC:2.7.1.162] | (GenBank) aminoglycoside phosphotransferase	Permease protein of ABC transporter system for sugars	GNB-LNB_cluster
+K02025	0.161764705882353	0.117647058823529	0.0588235294117647	multiple sugar transport system permease protein | (GenBank) binding-protein-dependent transport systems inner membrane component	Binding-protein-dependent transport system Inner membrane protein	43 kbp HMO cluster
+K07497	0.010752688172043	0.021505376344086	0.010752688172043	putative transposase | (GenBank) Integrase, catalytic region	Integrase	43 kbp HMO cluster
+K02564	0.8	0	0.2	glucosamine-6-phosphate deaminase [EC:3.5.99.6] | (GenBank) glucosamine-6-phosphate isomerase	Glucosamine-6-phosphate isomerase	GluNAc-GalNAc_related_gene
+K02032	0.5	0	0.166666666666667	peptide/nickel transport system ATP-binding protein | (GenBank) ABC transporter related	inner-membrane translocator	Sialidase_cluster
+K01191	0.238095238095238	0	0.0952380952380952	alpha-mannosidase [EC:3.2.1.24] | (GenBank) glycoside hydrolase, family 38	Alpha-mannosidase	alpha_mannose_related_gene
+K17320	0	0.333333333333333	0.333333333333333	putative aldouronate transport system permease protein | (GenBank) binding-protein-dependent transport systems inner membranecomponent	Sugar ABC transporter permease	43 kbp HMO cluster
+K17624	0	0.333333333333333	0.333333333333333	endo-alpha-N-acetylgalactosaminidase [EC:3.2.1.97] | (GenBank) aprE; Subtilisin-like serine protease	Endo-alpha-N-acetylgalactosaminidase	GluNAc-GalNAc_related_gene
+K01443	0	0.333333333333333	0.111111111111111	N-acetylglucosamine-6-phosphate deacetylase [EC:3.5.1.25] | (GenBank) N-acetylglucosamine-6-phosphate deacetylase	N-Acetylglucosamine-6-phosphate deacetylase	GluNAc-GalNAc_related_gene
+K15342	0	0.25	0.25	cas1e; type I-E CRISPR-associated endonuclease Cas1	type I-E	CRISPR_related_gene
+K09951	0	0.142857142857143	0.142857142857143	cas2; type I-E CRISPR-associated endoribonuclease Cas2	type I-E	CRISPR_related_gene
+K02777	1	0	0	sugar PTS system EIIA component [EC:2.7.1.-] | (GenBank) PTS system, glucose subfamily, IIA subunit	PTS system, glucose-specific IIABC component	GluNAc-GalNAc_related_gene
+K02804	1	0	0	N-acetylglucosamine PTS system EIICBA or EIICB component [EC:2.7.1.193] | (GenBank) PTS system, N-acetylglucosamine-specificIIBC subunit	PTS system, N-acetylglucosamine-specific IIBC component	GluNAc-GalNAc_related_gene
+K03190	1	0	0	ureD, ureH; urease accessory protein	Urease accessory protein	urease_related_gene
+K07046	1	0	0	L-fuconolactonase	L-fuconolactonase	Fucosidase_cluster
+K07241	1	0	0	nickel/cobalt transporter (NiCoT) family protein	high-affinity nickel-transporter	urease_related_gene
+K11960	1	0	0	urtB; urea transport system permease protein	urea inner-membrane translocator	urease_related_gene
+K11961	1	0	0	urtC; urea transport system permease protein	urea inner-membrane translocator	urease_related_gene
+K15923	1	0	0	alpha-L-fucosidase 2 [EC:3.2.1.51] | (GenBank) conserved hypothetical protein	Alpha-galactosidase	43 kbp HMO cluster
+K22397	1	0	0	2-dehydro-3-deoxy-D-pentonate aldolase [EC:4.1.2.28] | (GenBank) dihydrodipicolinate synthetase	Dihydrodipicolinate synthase	43 kbp HMO cluster
+K19119	0.666666666666667	0	0	Cas5; type I-C CRISPR-associated protein Cas5	type I-C	CRISPR_related_gene
+K01206	0.6	0	0	alpha-L-fucosidase [EC:3.2.1.51] | (GenBank) Alpha-L-fucosidase	Alpha-L-fucosidase	Fucosidase_cluster
+K01428	0.5	0	0	ureC; urease subunit alpha	Urease accessory protein	urease_related_gene
+K01430	0.5	0	0	ureA; urease subunit gamma	Urease accessory protein	urease_related_gene
+K03188	0.5	0	0	ureF; urease accessory protein	Urease accessory protein	urease_related_gene
+K03189	0.5	0	0	ureG; urease accessory protein	Urease accessory protein	urease_related_gene
+K18334	0.5	0	0	L-fuconate dehydratase [EC:4.2.1.68] | (GenBank) Mandelate racemase/muconate lactonizing enzyme, N-terminal domain protein	Mandelate racemase/muconate lactonizing domain-containing protein	Fucosidase_cluster
+K19117	0.5	0	0	cas8c; type I-C CRISPR-associated protein Cas8c/Csd1	type I-C	CRISPR_related_gene
+K19118	0.5	0	0	cas7c; type I-C CRISPR-associated protein Cas7/Csd2	type I-C	CRISPR_related_gene
+K01186	0.333333333333333	0	0	sialidase-1 [EC:3.2.1.18] | (GenBank) glycosyl hydrolase, BNR repeat-containing protein	Sialidase A	Sialidase_cluster
+K01190	0.333333333333333	0	0	beta-galactosidase [EC:3.2.1.23] | (GenBank) glycoside hydrolase family 2, TIM barrel	Beta-galactosidase	43 kbp HMO cluster
+K01788	0.333333333333333	0	0	N-acylglucosamine-6-phosphate 2-epimerase [EC:5.1.3.9] | (GenBank) N-acylglucosamine-6-phosphate 2-epimerase	N-Acetylmannosamine-6-phosphate 2-epimerase,NanE	Sialidase_cluster
+K03187	0.25	0	0	ureE; urease accessory protein	Urease accessory protein	urease_related_gene
+K07012	0.25	0	0	Type I-E CRISPR-associated protein Cas3	type I-E	CRISPR_related_gene
+K00845	0.142857142857143	0	0	glucokinase [EC:2.7.1.2] | (GenBank) ROK family protein	ROK family transcriptional regulator	Sialidase_cluster
+K17318	0.0714285714285714	0	0	putative aldouronate transport system substrate-binding protein | (GenBank) extracellular solute-binding protein, family 1	Family 1 extracellular solute-binding protein	43 kbp HMO cluster
+K00965	0	0	0.142857142857143	UDPglucose--hexose-1-phosphate uridylyltransferase [EC:2.7.7.12] | (GenBank) UDP-glucose--hexose-1-phosphate uridylyltransferase	Lacto-N-biose phorylase	GNB-LNB_cluster

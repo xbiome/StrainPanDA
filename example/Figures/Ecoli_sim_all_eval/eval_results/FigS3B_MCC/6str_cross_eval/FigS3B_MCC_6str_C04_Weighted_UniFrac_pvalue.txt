@@ -1,0 +1,10 @@
+02x_pWGS-StrainEst	05x_pWGS-StrainPanDA	05x_pWGS-StrainEst	1x_pWGS-StrainPanDA	1x_pWGS-StrainEst	2x_pWGS-StrainPanDA	2x_pWGS-StrainEst	5x_pWGS-StrainPanDA	5x_pWGS-StrainEst
+02x_pWGS-StrainPanDA	1	1	1	1	1	1	1	1	1
+02x_pWGS-StrainEst	NA	1	NaN	1	1	1	1	1	1
+05x_pWGS-StrainPanDA	NA	NA	1	1	1	1	1	1	1
+05x_pWGS-StrainEst	NA	NA	NA	1	1	1	1	1	1
+1x_pWGS-StrainPanDA	NA	NA	NA	NA	1	1	1	1	1
+1x_pWGS-StrainEst	NA	NA	NA	NA	NA	1	1	1	1
+2x_pWGS-StrainPanDA	NA	NA	NA	NA	NA	NA	1	1	1
+2x_pWGS-StrainEst	NA	NA	NA	NA	NA	NA	NA	1	1
+5x_pWGS-StrainPanDA	NA	NA	NA	NA	NA	NA	NA	NA	1

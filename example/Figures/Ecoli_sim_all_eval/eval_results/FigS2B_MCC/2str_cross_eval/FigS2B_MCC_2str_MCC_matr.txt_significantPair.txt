@@ -1,0 +1,7 @@
+sample1_sample2	p_value_paired_T
+AErrorFree.StrainPanDA_AErrorFree.StrainEst	0.000516842939198975
+AErrorFree.StrainEst_AErrorFree.StrainPanDA	0.000516842939198975
+ARTError.StrainPanDA_ARTError.StrainEst	0.000516842939198975
+ARTError.StrainEst_ARTError.StrainPanDA	0.000516842939198975
+WGSError.StrainPanDA_WGSError.StrainEst	7.1024306769095e-06
+WGSError.StrainEst_WGSError.StrainPanDA	7.1024306769095e-06

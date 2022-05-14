@@ -1,0 +1,355 @@
+rm: cannot remove ‘eval_results/FigS3A_sJSD/significant_pT_merge.txt’: No such file or directory
+mkdir: cannot create directory ‘eval_results/FigS3A_sJSD/2str_cross_eval’: File exists
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 50 or more warnings (use warnings() to see the first 50)
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Rank, variable as id variables
+Loading required package: lattice
+Loading required package: plyr
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+There were 20 warnings (use warnings() to see them)
+Warning message:
+In qt(conf.interval/2 + 0.5, datac$N - 1) : NaNs produced
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+mkdir: cannot create directory ‘eval_results/FigS3A_sJSD/4str_cross_eval’: File exists
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 24 warnings (use warnings() to see them)
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Rank, variable as id variables
+Loading required package: lattice
+Loading required package: plyr
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+There were 20 warnings (use warnings() to see them)
+Warning message:
+In qt(conf.interval/2 + 0.5, datac$N - 1) : NaNs produced
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+mkdir: cannot create directory ‘eval_results/FigS3A_sJSD/6str_cross_eval’: File exists
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 42 warnings (use warnings() to see them)
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Rank, variable as id variables
+Loading required package: lattice
+Loading required package: plyr
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+There were 20 warnings (use warnings() to see them)
+Warning message:
+In qt(conf.interval/2 + 0.5, datac$N - 1) : NaNs produced
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+mkdir: cannot create directory ‘eval_results/FigS3A_sJSD/8str_cross_eval’: File exists
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 23 warnings (use warnings() to see them)
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Rank, variable as id variables
+Loading required package: lattice
+Loading required package: plyr
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+There were 20 warnings (use warnings() to see them)
+Warning message:
+In qt(conf.interval/2 + 0.5, datac$N - 1) : NaNs produced
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Using Row.names, V2, nstrs as id variables
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Using Row.names, V2, nstrs as id variables
+Saving 7 x 7 in image

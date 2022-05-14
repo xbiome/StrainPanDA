@@ -1,0 +1,10 @@
+s5_cross_eval//XT_s5_strain_AUC_matr.txt	s5
+s10_cross_eval//XT_s10_strain_AUC_matr.txt	s10
+s15_cross_eval//XT_s15_strain_AUC_matr.txt	s15
+s20_cross_eval//XT_s20_strain_AUC_matr.txt	s20
+s40_cross_eval//XT_s40_strain_AUC_matr.txt	s40
+s5_cross_eval//XT_s5_strain_AUC_matr.txt	s5
+s10_cross_eval//XT_s10_strain_AUC_matr.txt	s10
+s15_cross_eval//XT_s15_strain_AUC_matr.txt	s15
+s20_cross_eval//XT_s20_strain_AUC_matr.txt	s20
+s40_cross_eval//XT_s40_strain_AUC_matr.txt	s40

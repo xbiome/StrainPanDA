@@ -1,0 +1,5 @@
+s5_cross_eval/sJSD_s5_sJSD_matr.txt	s5
+s10_cross_eval/sJSD_s10_sJSD_matr.txt	s10
+s15_cross_eval/sJSD_s15_sJSD_matr.txt	s15
+s20_cross_eval/sJSD_s20_sJSD_matr.txt	s20
+s40_cross_eval/sJSD_s40_sJSD_matr.txt	s40

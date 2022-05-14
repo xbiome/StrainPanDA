@@ -1,0 +1,468 @@
+rm: cannot remove 'eval_results/FigS4CR_MCC/significant_pT_merge.txt': No such file or directory
+mkdir: cannot create directory ‘eval_results/FigS4CR_MCC/2str_cross_eval’: File exists
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 50 or more warnings (use warnings() to see the first 50)
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 47 warnings (use warnings() to see them)
+There were 32 warnings (use warnings() to see them)
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 49 warnings (use warnings() to see them)
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 32 warnings (use warnings() to see them)
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Error in library(Rmisc) : there is no package called ‘Rmisc’
+Execution halted
+mkdir: cannot create directory ‘eval_results/FigS4CR_MCC/4str_cross_eval’: File exists
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 50 or more warnings (use warnings() to see the first 50)
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 50 or more warnings (use warnings() to see the first 50)
+Warning messages:
+1: In wilcox.test.default(x = 0.05, y = 0.05) :
+  cannot compute exact p-value with ties
+2: In wilcox.test.default(x = 0.05, y = 0.05) :
+  cannot compute exact p-value with ties
+3: In wilcox.test.default(x = 0.05, y = 0.05) :
+  cannot compute exact p-value with ties
+4: In wilcox.test.default(x = 0.1, y = 0.1) :
+  cannot compute exact p-value with ties
+5: In wilcox.test.default(x = 0.1, y = 0.1) :
+  cannot compute exact p-value with ties
+6: In wilcox.test.default(x = 0.1, y = 0.1) :
+  cannot compute exact p-value with ties
+7: In wilcox.test.default(x = 0.1, y = 0.1) :
+  cannot compute exact p-value with ties
+8: In wilcox.test.default(x = 0.1, y = 0.1) :
+  cannot compute exact p-value with ties
+9: In wilcox.test.default(x = 0.1, y = 0.1) :
+  cannot compute exact p-value with ties
+There were 50 or more warnings (use warnings() to see the first 50)
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Error in library(Rmisc) : there is no package called ‘Rmisc’
+Execution halted
+mkdir: cannot create directory ‘eval_results/FigS4CR_MCC/6str_cross_eval’: File exists
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 50 or more warnings (use warnings() to see the first 50)
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 50 or more warnings (use warnings() to see the first 50)
+Warning messages:
+1: In wilcox.test.default(x = 0.35, y = 0.35) :
+  cannot compute exact p-value with ties
+2: In wilcox.test.default(x = 0.3, y = 0.3) :
+  cannot compute exact p-value with ties
+3: In wilcox.test.default(x = 0.3, y = 0.3) :
+  cannot compute exact p-value with ties
+4: In wilcox.test.default(x = 0.3, y = 0.3) :
+  cannot compute exact p-value with ties
+5: In wilcox.test.default(x = 0.3, y = 0.3) :
+  cannot compute exact p-value with ties
+6: In wilcox.test.default(x = 0.25, y = 0.25) :
+  cannot compute exact p-value with ties
+7: In wilcox.test.default(x = 0.45, y = 0.45) :
+  cannot compute exact p-value with ties
+There were 50 or more warnings (use warnings() to see the first 50)
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Error in library(Rmisc) : there is no package called ‘Rmisc’
+Execution halted
+mkdir: cannot create directory ‘eval_results/FigS4CR_MCC/8str_cross_eval’: File exists
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 50 or more warnings (use warnings() to see the first 50)
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 50 or more warnings (use warnings() to see the first 50)
+Warning messages:
+1: In wilcox.test.default(x = 0.45, y = 0.45) :
+  cannot compute exact p-value with ties
+2: In wilcox.test.default(x = 0.45, y = 0.45) :
+  cannot compute exact p-value with ties
+3: In wilcox.test.default(x = 0.45, y = 0.45) :
+  cannot compute exact p-value with ties
+4: In wilcox.test.default(x = 0.45, y = 0.45) :
+  cannot compute exact p-value with ties
+5: In wilcox.test.default(x = 0.55, y = 0.55) :
+  cannot compute exact p-value with ties
+There were 50 or more warnings (use warnings() to see the first 50)
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Error in library(Rmisc) : there is no package called ‘Rmisc’
+Execution halted
+Using Row.names, V2, nstrs as id variables
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Using Row.names, V2, nstrs as id variables
+Saving 7 x 7 in image

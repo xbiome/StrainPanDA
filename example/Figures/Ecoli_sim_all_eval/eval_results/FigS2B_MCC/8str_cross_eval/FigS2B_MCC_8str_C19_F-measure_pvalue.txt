@@ -1,0 +1,6 @@
+AErrorFree-StrainEst	ARTError-StrainPanDA	ARTError-StrainEst	WGSError-StrainPanDA	WGSError-StrainEst
+AErrorFree-StrainPanDA	1	NaN	1	1	1
+AErrorFree-StrainEst	NA	1	NaN	1	NaN
+ARTError-StrainPanDA	NA	NA	1	1	1
+ARTError-StrainEst	NA	NA	NA	1	NaN
+WGSError-StrainPanDA	NA	NA	NA	NA	1

@@ -1,0 +1,724 @@
+mkdir: cannot create directory ‘eval_results/FigS3B_MCC/2str_cross_eval’: File exists
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning message:
+Removed 11 rows containing non-finite values (stat_boxplot). 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning message:
+Removed 11 rows containing non-finite values (stat_boxplot). 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: Removed 11 rows containing non-finite values (stat_ydensity). 
+2: In max(data$density) : no non-missing arguments to max; returning -Inf
+3: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+4: Removed 11 rows containing non-finite values (stat_boxplot). 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: Removed 11 rows containing non-finite values (stat_ydensity). 
+2: In max(data$density) : no non-missing arguments to max; returning -Inf
+3: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+4: Removed 11 rows containing non-finite values (stat_boxplot). 
+There were 50 or more warnings (use warnings() to see the first 50)
+Error in wilcox.test.formula(am ~ bm, data = tem_vec) : 
+  grouping factor must have exactly 2 levels
+Calls: pvalue_meta -> wilcox.test -> wilcox.test.formula
+In addition: There were 14 warnings (use warnings() to see them)
+Execution halted
+mkdir: cannot create directory ‘eval_results/FigS3B_MCC/4str_cross_eval’: File exists
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning message:
+Removed 15 rows containing non-finite values (stat_boxplot). 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning message:
+Removed 15 rows containing non-finite values (stat_boxplot). 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: Removed 15 rows containing non-finite values (stat_ydensity). 
+2: In max(data$density) : no non-missing arguments to max; returning -Inf
+3: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+4: Removed 15 rows containing non-finite values (stat_boxplot). 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: Removed 15 rows containing non-finite values (stat_ydensity). 
+2: In max(data$density) : no non-missing arguments to max; returning -Inf
+3: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+4: Removed 15 rows containing non-finite values (stat_boxplot). 
+There were 50 or more warnings (use warnings() to see the first 50)
+Error in wilcox.test.formula(am ~ bm, data = tem_vec) : 
+  grouping factor must have exactly 2 levels
+Calls: pvalue_meta -> wilcox.test -> wilcox.test.formula
+Execution halted
+mkdir: cannot create directory ‘eval_results/FigS3B_MCC/6str_cross_eval’: File exists
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 50 or more warnings (use warnings() to see the first 50)
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 20 warnings (use warnings() to see them)
+There were 21 warnings (use warnings() to see them)
+There were 50 or more warnings (use warnings() to see the first 50)
+There were 20 warnings (use warnings() to see them)
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 20 warnings (use warnings() to see them)
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Loading required package: lattice
+Loading required package: plyr
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+There were 20 warnings (use warnings() to see them)
+Warning message:
+In qt(conf.interval/2 + 0.5, datac$N - 1) : NaNs produced
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+There were 20 warnings (use warnings() to see them)
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Row.names, V2, Rank as id variables
+Using Rank, variable as id variables
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+There were 20 warnings (use warnings() to see them)
+Warning message:
+In qt(conf.interval/2 + 0.5, datac$N - 1) : NaNs produced
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+mkdir: cannot create directory ‘eval_results/FigS3B_MCC/8str_cross_eval’: File exists
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning message:
+Removed 13 rows containing non-finite values (stat_boxplot). 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning message:
+Removed 13 rows containing non-finite values (stat_boxplot). 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: Removed 13 rows containing non-finite values (stat_ydensity). 
+2: In max(data$density) : no non-missing arguments to max; returning -Inf
+3: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+4: Removed 13 rows containing non-finite values (stat_boxplot). 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: In max(data$density) : no non-missing arguments to max; returning -Inf
+2: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+Using Row.names, V2 as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: Removed 13 rows containing non-finite values (stat_ydensity). 
+2: In max(data$density) : no non-missing arguments to max; returning -Inf
+3: Computation failed in `stat_ydensity()`:
+replacement has 1 row, data has 0 
+4: Removed 13 rows containing non-finite values (stat_boxplot). 
+There were 50 or more warnings (use warnings() to see the first 50)
+Error in wilcox.test.formula(am ~ bm, data = tem_vec) : 
+  grouping factor must have exactly 2 levels
+Calls: pvalue_meta -> wilcox.test -> wilcox.test.formula
+Execution halted
+Using Row.names, V2, nstrs as id variables
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Saving 7 x 7 in image
+Using Row.names, V2, nstrs as id variables
+Saving 7 x 7 in image
+Warning messages:
+1: Removed 39 rows containing non-finite values (stat_boxplot). 
+2: Removed 39 rows containing missing values (geom_point). 
+3: Removed 39 rows containing non-finite values (stat_boxplot). 
+4: Removed 39 rows containing missing values (geom_point). 
+5: Removed 39 rows containing non-finite values (stat_boxplot). 
+6: Removed 39 rows containing missing values (geom_point). 
+7: Removed 39 rows containing non-finite values (stat_ydensity). 
+8: Removed 39 rows containing non-finite values (stat_boxplot). 

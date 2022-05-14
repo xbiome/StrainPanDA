@@ -1,0 +1,12 @@
+BG0-StrainEst	BG0-PStrain	BG1-StrainPanDA	BG1-StrainEst	BG1-PStrain	BG2-StrainPanDA	BG2-StrainEst	BG2-PStrain	BG3-StrainPanDA	BG3-StrainEst	BG3-PStrain
+BG0-StrainPanDA	1	1	1	1	1	NaN	1	1	1	1	1
+BG0-StrainEst	NA	1	1	1	1	1	1	1	1	1	1
+BG0-PStrain	NA	NA	1	1	NaN	1	1	NaN	1	1	1
+BG1-StrainPanDA	NA	NA	NA	1	1	1	1	1	1	1	1
+BG1-StrainEst	NA	NA	NA	NA	1	1	1	1	1	1	1
+BG1-PStrain	NA	NA	NA	NA	NA	1	1	NaN	1	1	1
+BG2-StrainPanDA	NA	NA	NA	NA	NA	NA	1	1	1	1	1
+BG2-StrainEst	NA	NA	NA	NA	NA	NA	NA	1	1	1	1
+BG2-PStrain	NA	NA	NA	NA	NA	NA	NA	NA	1	1	1
+BG3-StrainPanDA	NA	NA	NA	NA	NA	NA	NA	NA	NA	1	1
+BG3-StrainEst	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	1

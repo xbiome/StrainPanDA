@@ -1,0 +1,6 @@
+eval_results/Fig2E_AUPRC/input_files_6species/Bifidobacterium-longum_allgene_geneprofile_AUC.csv	B.longum-Pure
+eval_results/Fig2E_AUPRC/input_files_6species/Clostridium-difficile_allgene_geneprofile_AUC.csv	C.difficile-Pure
+eval_results/Fig2E_AUPRC/input_files_6species/Enterococcus-faecalis_allgene_geneprofile_AUC.csv	E.faecalis-Pure
+eval_results/Fig2E_AUPRC/input_files_6species/Escherichia-coli_allgene_geneprofile_AUC.csv	E.coli-Pure
+eval_results/Fig2E_AUPRC/input_files_6species/Faecalibacterium-prausnitzii_allgene_geneprofile_AUC.csv	F.prausnitzii-Pure
+eval_results/Fig2E_AUPRC/input_files_6species/Prevotella-copri_allgene_geneprofile_AUC.csv	P.copri-Pure

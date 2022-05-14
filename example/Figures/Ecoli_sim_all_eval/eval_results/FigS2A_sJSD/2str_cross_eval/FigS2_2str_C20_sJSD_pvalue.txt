@@ -1,0 +1,9 @@
+AErrorFree-StrainEst	AErrorFree-PStrain	ARTError-StrainPanDA	ARTError-StrainEst	ARTError-PStrain	WGSError-StrainPanDA	WGSError-StrainEst	WGSError-PStrain
+AErrorFree-StrainPanDA	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN
+AErrorFree-StrainEst	NA	NaN	NaN	NaN	NaN	NaN	NaN	NaN
+AErrorFree-PStrain	NA	NA	NaN	NaN	NaN	NaN	NaN	NaN
+ARTError-StrainPanDA	NA	NA	NA	NaN	NaN	NaN	NaN	NaN
+ARTError-StrainEst	NA	NA	NA	NA	NaN	NaN	NaN	NaN
+ARTError-PStrain	NA	NA	NA	NA	NA	NaN	NaN	NaN
+WGSError-StrainPanDA	NA	NA	NA	NA	NA	NA	NaN	NaN
+WGSError-StrainEst	NA	NA	NA	NA	NA	NA	NA	NaN

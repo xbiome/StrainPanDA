@@ -1,0 +1,56 @@
+2str
+sample1_sample2	p_value_paired_T
+AErrorFree.StrainPanDA_AErrorFree.StrainEst	8.14379017361337e-07
+AErrorFree.StrainPanDA_AErrorFree.PStrain	1.46168304561103e-07
+AErrorFree.StrainEst_AErrorFree.StrainPanDA	8.14379017361337e-07
+AErrorFree.PStrain_AErrorFree.StrainPanDA	1.46168304561103e-07
+ARTError.StrainPanDA_ARTError.StrainEst	7.38038798942947e-07
+ARTError.StrainPanDA_ARTError.PStrain	1.57796006903626e-05
+ARTError.StrainEst_ARTError.StrainPanDA	7.38038798942947e-07
+ARTError.PStrain_ARTError.StrainPanDA	1.57796006903626e-05
+WGSError.StrainPanDA_WGSError.StrainEst	7.4177391490724e-07
+WGSError.StrainPanDA_WGSError.PStrain	1.55752555432198e-07
+WGSError.StrainEst_WGSError.StrainPanDA	7.4177391490724e-07
+WGSError.PStrain_WGSError.StrainPanDA	1.55752555432198e-07
+4str
+sample1_sample2	p_value_paired_T
+AErrorFree.StrainPanDA_AErrorFree.StrainEst	9.55870457961609e-05
+AErrorFree.StrainEst_AErrorFree.StrainPanDA	9.55870457961609e-05
+AErrorFree.StrainEst_AErrorFree.PStrain	0.00131087835753567
+AErrorFree.PStrain_AErrorFree.StrainEst	0.00131087835753567
+ARTError.StrainPanDA_ARTError.StrainEst	0.000429997677972162
+ARTError.StrainEst_ARTError.StrainPanDA	0.000429997677972162
+ARTError.StrainEst_ARTError.PStrain	0.000247530224765174
+ARTError.PStrain_ARTError.StrainEst	0.000247530224765174
+WGSError.StrainPanDA_WGSError.StrainEst	6.22792208477033e-06
+WGSError.StrainEst_WGSError.StrainPanDA	6.22792208477033e-06
+WGSError.StrainEst_WGSError.PStrain	8.03438842886699e-05
+WGSError.PStrain_WGSError.StrainEst	8.03438842886699e-05
+6str
+sample1_sample2	p_value_paired_T
+AErrorFree.StrainEst_AErrorFree.PStrain	4.35048532176229e-05
+AErrorFree.PStrain_AErrorFree.StrainEst	4.35048532176229e-05
+ARTError.StrainPanDA_ARTError.StrainEst	0.0464824022696068
+ARTError.StrainEst_ARTError.StrainPanDA	0.0464824022696068
+ARTError.StrainEst_ARTError.PStrain	1.12582234543619e-05
+ARTError.PStrain_ARTError.StrainEst	1.12582234543619e-05
+WGSError.StrainPanDA_WGSError.StrainEst	4.60599791417034e-05
+WGSError.StrainEst_WGSError.StrainPanDA	4.60599791417034e-05
+WGSError.StrainEst_WGSError.PStrain	7.72200782514801e-06
+WGSError.PStrain_WGSError.StrainEst	7.72200782514801e-06
+8str
+sample1_sample2	p_value_paired_T
+AErrorFree.StrainPanDA_AErrorFree.StrainEst	3.4612419119846e-10
+AErrorFree.StrainEst_AErrorFree.StrainPanDA	3.4612419119846e-10
+AErrorFree.StrainEst_AErrorFree.PStrain	1.17330123679525e-11
+AErrorFree.PStrain_AErrorFree.StrainEst	1.17330123679525e-11
+ARTError.StrainPanDA_ARTError.StrainEst	1.1512303781622e-09
+ARTError.StrainEst_ARTError.StrainPanDA	1.1512303781622e-09
+ARTError.StrainEst_ARTError.PStrain	3.69969641348971e-11
+ARTError.PStrain_ARTError.StrainEst	3.69969641348971e-11
+WGSError.StrainPanDA_WGSError.StrainEst	7.3103351423451e-09
+WGSError.StrainPanDA_WGSError.PStrain	0.00973583669393917
+WGSError.StrainEst_WGSError.StrainPanDA	7.3103351423451e-09
+WGSError.StrainEst_WGSError.PStrain	7.70872460192968e-11
+WGSError.PStrain_WGSError.StrainPanDA	0.00973583669393917
+WGSError.PStrain_WGSError.StrainEst	7.70872460192968e-11

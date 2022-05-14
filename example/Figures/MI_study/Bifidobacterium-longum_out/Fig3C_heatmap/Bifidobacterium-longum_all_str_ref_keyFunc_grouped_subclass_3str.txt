@@ -1,0 +1,42 @@
+Row.names	strain1	strain2	strain3	class
+formate C-acetyltransferase	0.75	0.75	0.5	Fucosidase_cluster
+Oligopeptide-binding protein oppA	0.727272727272727	0.0909090909090909	0.0909090909090909	Sialidase_cluster
+L-fucose permease	0.666666666666667	0.333333333333333	0.333333333333333	Fucosidase_cluster
+lactaldehyde reductase	0.6	0.6	0.2	Fucosidase_cluster
+Solute-binding protein of ABC transporter system for sugars	0.6	0.2	0.4	GNB-LNB_cluster
+Beta-lactamase	0.5	0.5	0.5	43 kbp HMO cluster
+Oligopeptide transport system permease protein 	0.444444444444444	0.111111111111111	0.111111111111111	Sialidase_cluster
+N-Acetylneuraminate lyase	0.428571428571429	0.142857142857143	0.142857142857143	43 kbp HMO cluster
+LNT beta-1,3-galactosidase	0.4	0.2	0.2	LNT related gene
+Phosphocarrier protein HPr	0.333333333333333	0.333333333333333	0.333333333333333	GluNAc-GalNAc_related_gene
+fusion between oligopeptide transport permease oppC and ATP-binding protein oppD	0.317073170731707	0.170731707317073	0.170731707317073	Sialidase_cluster
+LacI-type transcriptional regulator	0.3	0.1	0.2	Sialidase_cluster
+Phosphoenolpyruvate-protein phosphotransferase	0.25	0.5	0.25	GluNAc-GalNAc_related_gene
+Family 1 extracellular solute-binding protein	0.223880597014925	0.149253731343284	0.17910447761194	43 kbp HMO cluster
+Galactoside symporter	0.2	0.466666666666667	0.0666666666666667	43 kbp HMO cluster
+Permease protein of ABC transporter system for sugars	0.2	0.2	0.2	GNB-LNB_cluster
+Binding-protein-dependent transport system Inner membrane protein	0.195652173913043	0.152173913043478	0.0760869565217391	43 kbp HMO cluster
+Sugar ABC transporter permease	0.166666666666667	0.333333333333333	0.333333333333333	43 kbp HMO cluster
+type I-E	0.0476190476190476	0.0952380952380952	0.0952380952380952	CRISPR_related_gene
+Integrase	0.010752688172043	0.021505376344086	0.010752688172043	43 kbp HMO cluster
+Glucosamine-6-phosphate isomerase	0.8	0	0.2	GluNAc-GalNAc_related_gene
+inner-membrane translocator	0.5	0	0.166666666666667	Sialidase_cluster
+Alpha-mannosidase	0.238095238095238	0	0.0952380952380952	alpha_mannose_related_gene
+Endo-alpha-N-acetylgalactosaminidase	0	0.333333333333333	0.333333333333333	GluNAc-GalNAc_related_gene
+N-Acetylglucosamine-6-phosphate deacetylase	0	0.333333333333333	0.111111111111111	GluNAc-GalNAc_related_gene
+Alpha-galactosidase	1	0	0	43 kbp HMO cluster
+Dihydrodipicolinate synthase	1	0	0	43 kbp HMO cluster
+high-affinity nickel-transporter	1	0	0	urease_related_gene
+L-fuconolactonase	1	0	0	Fucosidase_cluster
+PTS system, glucose-specific IIABC component	1	0	0	GluNAc-GalNAc_related_gene
+PTS system, N-acetylglucosamine-specific IIBC component	1	0	0	GluNAc-GalNAc_related_gene
+urea inner-membrane translocator	1	0	0	urease_related_gene
+Alpha-L-fucosidase	0.6	0	0	Fucosidase_cluster
+type I-C	0.545454545454545	0	0	CRISPR_related_gene
+Mandelate racemase/muconate lactonizing domain-containing protein	0.5	0	0	Fucosidase_cluster
+Urease accessory protein	0.461538461538462	0	0	urease_related_gene
+Beta-galactosidase	0.333333333333333	0	0	43 kbp HMO cluster
+N-Acetylmannosamine-6-phosphate 2-epimerase,NanE	0.333333333333333	0	0	Sialidase_cluster
+Sialidase A	0.333333333333333	0	0	Sialidase_cluster
+ROK family transcriptional regulator	0.142857142857143	0	0	Sialidase_cluster
+Lacto-N-biose phorylase	0	0	0.142857142857143	GNB-LNB_cluster

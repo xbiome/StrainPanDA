@@ -1,0 +1,10 @@
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C1/XT/xstrain_out/s5/strain_SIM_allgene_geneprofile_AUC.csv	1-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C2/XT/xstrain_out/s5/strain_SIM_allgene_geneprofile_AUC.csv	2-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C3/XT/xstrain_out/s5/strain_SIM_allgene_geneprofile_AUC.csv	3-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C4/XT/xstrain_out/s5/strain_SIM_allgene_geneprofile_AUC.csv	4-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C5/XT/xstrain_out/s5/strain_SIM_allgene_geneprofile_AUC.csv	5-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C6/XT/xstrain_out/s5/strain_SIM_allgene_geneprofile_AUC.csv	6-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C7/XT/xstrain_out/s5/strain_SIM_allgene_geneprofile_AUC.csv	7-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C8/XT/xstrain_out/s5/strain_SIM_allgene_geneprofile_AUC.csv	8-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C9/XT/xstrain_out/s5/strain_SIM_allgene_geneprofile_AUC.csv	9-XT
+/data/Xianjinyuan/tanyuxiang/SIM_data/sample_grad/WGS_C10/XT/xstrain_out/s5/strain_SIM_allgene_geneprofile_AUC.csv	10-XT

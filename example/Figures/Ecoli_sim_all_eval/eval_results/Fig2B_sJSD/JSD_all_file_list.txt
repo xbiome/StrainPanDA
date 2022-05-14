@@ -1,0 +1,4 @@
+2str_cross_eval/Fig2B_sJSD_2str_sJSD_matr.txt	2str
+4str_cross_eval/Fig2B_sJSD_4str_sJSD_matr.txt	4str
+6str_cross_eval/Fig2B_sJSD_6str_sJSD_matr.txt	6str
+8str_cross_eval/Fig2B_sJSD_8str_sJSD_matr.txt	8str

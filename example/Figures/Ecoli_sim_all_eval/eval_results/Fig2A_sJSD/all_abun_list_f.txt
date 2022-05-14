@@ -1,0 +1,4 @@
+2str_cross_eval/Fig2A_sJSD_2str_sAB_melt.txt	2str
+4str_cross_eval/Fig2A_sJSD_4str_sAB_melt.txt	4str
+6str_cross_eval/Fig2A_sJSD_6str_sAB_melt.txt	6str
+8str_cross_eval/Fig2A_sJSD_8str_sAB_melt.txt	8str
