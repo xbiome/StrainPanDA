@@ -239,7 +239,7 @@ predict_filter = function(md_in){
     return(md_tmp)
 }
 
-#这个function，根据denovo_ref_ID确定是否有重复，其中names是对应md_in的行名，内容是可能出现重复的值。因此，使用时，对重复值，要找到其对应的行名，然后再进行合并。如果没有重复，或者全都是重复，就另外简单处理
+#use denovo_ref_ID as the key to check the rownames of md_in. For duplications, sum them up.
 sum_dup_row = function(md_in,denovo_ref_ID){
     dup_rows <- table(denovo_ref_ID)
     if (max(dup_rows)==1){

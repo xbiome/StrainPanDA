@@ -84,7 +84,7 @@ if __name__ == '__main__':
     dgrp_path = os.path.abspath(args.dp)
     OutN = os.path.abspath(args.OutN)
     multiprocessor=args.threads
-    #需要检查输入的参数是否正确，主要是路径是否存在    
+    
     if not os.path.isfile(csv_table):
         print('Input csv table is not exist in Strain_list_merger.py; Exit now.')
         exit(0)

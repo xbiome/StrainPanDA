@@ -19,7 +19,7 @@
 
 #created 2021-0604
 #modified from SIM_evaluate_across_methods.R, use only the sort abundance and JSD.
-#注：meta里面的分组名称不能 用数值，因为会被当成新的一组结果来识别，而不是注释。
+##NOTE! The group name in metadata should not be numeric (such as 1,2,3,4), but should be character (such as A1,A2,A3,A4 ). If not, that column will be considered as data rather than annotation.
 
 
 #usage example: Rscript /home/tanyuxiang/StrainSIM/SIM_evaluate_across_methods_sJSD.R sJSD_all_list_f=sJSD_all_list_f metadata_f=metadata_f sAb_all_list_f=sAb_all_list_f out_name=WGS_Xtrain_EST
@@ -75,11 +75,8 @@ boxplot_meta= function(data_in,out_name){
     library(reshape2)
     library(ggplot2)
     data_ml <- melt(data_in)
-    #p <- ggplot(data_ml,aes(V2,value, color=V2,fill=variable)) +
     p <- ggplot(data_ml,aes(V2,value, color=variable)) +
     geom_boxplot(alpha=0.4,outlier.shape= "diamond", outlier.colour= "black") + #outliers are the one over 1.58 IQR/sqrt
-    #geom_boxplot(alpha=0.4) + geom_point(alpha=0.4) +
-    #facet_grid( ~ V2) +
     xlab("") +
     ylab(out_name) +
     theme_bw()+theme(panel.grid=element_blank(),panel.border=element_blank(),axis.line=element_line(size=1,colour="black"))+ #remove bg and grid
@@ -92,12 +89,9 @@ violinplot_meta= function(data_in,out_name){
     library(ggplot2)
     data_ml <- melt(data_in)
     p <- ggplot(data_ml,aes(V2,value, color=V2,fill=variable)) +
-    geom_violin(trim=TRUE,color="white") + #绘制小提琴图, “color=”设置小提琴图的轮廓线的颜色(以下设为背景为白色，其实表示不要轮廓线)
-    #"trim"如果为TRUE(默认值),则将小提琴的尾部修剪到数据范围。如果为FALSE,不修剪尾部。
-    geom_boxplot(width=0.2,position=position_dodge(0.9))+ #绘制箱线图
-    theme_bw()+ #背景变为白色
-    #geom_boxplot(alpha=0.4,outlier.shape= "diamond", outlier.colour= "black") + geom_point(alpha=0.4) + #outliers are the one over 1.58 IQR/sqrt
-    #geom_boxplot(alpha=0.4) + geom_point(alpha=0.4) +
+    geom_violin(trim=TRUE,color="white") + 
+    geom_boxplot(width=0.2,position=position_dodge(0.9))+ 
+    theme_bw()+ 
     xlab("") +
     ylab(out_name) +
     theme_set(theme_bw()) + #white background
