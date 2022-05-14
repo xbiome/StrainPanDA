@@ -1,8 +1,10 @@
-# Examples in the StrainPanDA manuscript
+# R objects of examples in the StrainPanDA manuscript
 
 ## rds files of synthetic datasets were submitted to Zenodo
 
-The Zenodo link is: .
+The Zenodo link is: [Zenodo](https://zenodo.org/deposit/6547923).
+
+
 
 ## The list of rds files
 
@@ -24,11 +26,24 @@ ${type} strands for the simulation type:
 
 ​	1x_FMT 5x_FMT 10x_FMT 25x_FMT 100x_FMT are WGSBG dataset having 1, 5, 10, 25 and 100 fold of FMT backgrounds with the pWGS data at 1x sequencing depth
 
-​	1x_ERR 5x_ERR 10x_ERR 25x_ERR 100x_ERR are WGSBG dataset having 1, 5, 10, 25 and 100 fold of MI backgrounds with the pWGS data at 1x sequencing depth
+​	1x_MI 5x_MI 10x_MI 25x_MI 100x_MI are WGSBG dataset having 1, 5, 10, 25 and 100 fold of MI backgrounds with the pWGS data at 1x sequencing depth
 
 ​	
 
 ### The rds file of O104
 
+panphlan_O104_Escherichia-coli-202009.rds
+
 ### The rds file of real dataset
 
+Mother infant dataset: ${species_name}_MI_data.rds
+
+FMT dataset: ${species_name}_FMT_data.rds
+
+
+
+## How to read a rds file in R?
+
+rds_data <- readRDS(rds_name)
+
+Then you can use str(rds_data) to see its structure
