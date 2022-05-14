@@ -93,7 +93,5 @@ for(i in names(c_s)){
 
 write.table(SIM_matrix_out, file=(paste(name_out,"_str_prof.csv",sep="")),sep=",", quote=F, row.names= TRUE, col.names= TRUE, fileEncoding="UTF-8" )
 
-#然后再写一个比较两个这种matrix的脚本（BC距离），如果方法输出比模拟输出多，额外的行也一样算进去距离里。
-
 
 
