@@ -6,35 +6,65 @@
 
 ## Supporting evaluation files:
 
-### All the evaluation files, codes and results from synthetic data of *E. coli* strains were deposited in the Ecoli_sim_all_eval folder;  evaluations  from synthetic data of 6 gut bacterial species were deposited in the Sync6_all_eval folder
+Simulated datasets:
 
-eval_results folder contained results for different figures in seperated folders. simulation_matrix folder contained simulation matrix used to generate basic simulation.
+ - [Ecoli_sim_all_eval](Ecoli_sim_all_eval): evaluation files, codes and results from synthetic data of *E. coli* strains
+ - [Sync6_all_eval](Sync6_all_eval): evaluations from synthetic data of 6 gut bacterial species
 
-strainpanda_eval folder contained primary evaluation result of StrainPanDA outputs. 
+Under each folder:
 
-​	A generation example: time Rscript ../../../SimStr/SIM_evaluate_unifrac_denovo.R bench_tb=simulation_matrix/benchmark_comp_2str_all_str_prof.csv method_anno_tb=../Ecoli_sim_all_csv/strainpanda_csv/panphlan_2str_1x_pWGS_Escherichia-coli-202009.xstrain_str_anno_prof.csv denovo_ref=StrainPanDA_ref_str_list.txt tree_nwk=Ecoli99_parsnp.tree name_out=strainpanda_eval/strainpanda_2str_1x_pWGS_eval/Ecoli99_WGS_2str_1x_pWGS_StrainPanDA
+ - `eval_results`: results for different figures in seperated folders
+ - `simulation_matrix`: simulation matrix used to generate basic simulation
+ - `strainpanda_eval`: primary evaluation result of StrainPanDA outputs
+ - `strainest_eval`: primary evaluation result of StrainEst outputs
+ - `pstrain_eval`: primary evaluation result of PStrain outputs
 
-strainest_eval folder contained primary evaluation result of StrainEst outputs.
+Example to generate strainpanda evaluation
 
-​	A generation example: time Rscript ../../../SimStr/SIM_evaluate_unifrac_denovo.R bench_tb=simulation_matrix/benchmark_comp_2str_all_str_prof.csv method_anno_tb=../Ecoli_sim_all_csv/strainest_tsv/strainest_2str_1x_pWGS.tsv denovo_ref=StrainEst_ref_str_list.txt tree_nwk=Ecoli99_parsnp.tree name_out=strainest_eval/strainest_2str_1x_pWGS_eval/Ecoli99_WGS_2str_1x_pWGS_EST
+```sh
+time Rscript ../../../SimStr/SIM_evaluate_unifrac_denovo.R \
+  bench_tb=simulation_matrix/benchmark_comp_2str_all_str_prof.csv \
+  method_anno_tb=../Ecoli_sim_all_csv/strainpanda_csv/panphlan_2str_1x_pWGS_Escherichia-coli-202009.xstrain_str_anno_prof.csv \
+  denovo_ref=StrainPanDA_ref_str_list.txt tree_nwk=Ecoli99_parsnp.tree \
+  name_out=strainpanda_eval/strainpanda_2str_1x_pWGS_eval/Ecoli99_WGS_2str_1x_pWGS_StrainPanDA
+```
 
-pstrain_eval folder contained primary evaluation result of PStrain outputs.
+Example to generate strainest evaluation
 
-​	A generation example: time Rscript ../../../SimStr/SIM_evaluate_unifrac_denovo.R bench_tb=simulation_matrix/benchmark_comp_2str_all_str_prof.csv method_anno_tb=../Ecoli_sim_all_csv/pstrain_csv/pstrain_2str_1x_pWGS.csv denovo_ref=StrainEst_ref_str_list.txt tree_nwk=Ecoli99_parsnp.tree name_out=pstrain_eval/pstrain_2str_1x_pWGS_eval/Ecoli99_WGS_2str_1x_pWGS_PS str_match=FALSE
+```sh
+time Rscript ../../../SimStr/SIM_evaluate_unifrac_denovo.R \
+  bench_tb=simulation_matrix/benchmark_comp_2str_all_str_prof.csv \
+  method_anno_tb=../Ecoli_sim_all_csv/strainest_tsv/strainest_2str_1x_pWGS.tsv \
+  denovo_ref=StrainEst_ref_str_list.txt \
+  tree_nwk=Ecoli99_parsnp.tree \
+  name_out=strainest_eval/strainest_2str_1x_pWGS_eval/Ecoli99_WGS_2str_1x_pWGS_EST
+```
 
+Example to generate pstrain evaluation
 
-
+```sh
+time Rscript ../../../SimStr/SIM_evaluate_unifrac_denovo.R \
+  bench_tb=simulation_matrix/benchmark_comp_2str_all_str_prof.csv \
+  method_anno_tb=../Ecoli_sim_all_csv/pstrain_csv/pstrain_2str_1x_pWGS.csv denovo_ref=StrainEst_ref_str_list.txt \
+  tree_nwk=Ecoli99_parsnp.tree \
+  name_out=pstrain_eval/pstrain_2str_1x_pWGS_eval/Ecoli99_WGS_2str_1x_pWGS_PS \
+  str_match=FALSE
+```
 
 
 ## Main figures：
 
 ### Figure 2:
 
-Fig2A: in Ecoli_sim_all_eval, use the following command: sh run_Fig2A.sh ../../../SimStr/ 2>run_Fig2A.log
+Fig2A: go to working directory [Ecoli_sim_all_eval](Ecoli_sim_all_eval), run the following command: 
 
-​	Results in Ecoli_sim_all_eval/eval_results/Fig2A_sJSD
+```sh 
+sh run_Fig2A.sh ../../../SimStr/ 2>run_Fig2A.log
+```
 
-​	The main output is: All_groups_abun_stackplot_by_method_ordered.pdf
+ - [Results](Ecoli_sim_all_eval/eval_results/Fig2A_sJSD)
+
+ - [Main output](All_groups_abun_stackplot_by_method_ordered.pdf)
 
 Fig2B: in Ecoli_sim_all_eval, use the following command: sh run_Fig2B.sh ../../../SimStr/ 2>run_Fig2B.log
 
