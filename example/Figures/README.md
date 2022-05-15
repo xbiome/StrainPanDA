@@ -139,137 +139,104 @@ Supplementary Figure 2B:
 
 ### Supplementary Figure 3:
 
-Supplementary Figure 3A: in Ecoli_sim_all_eval, use the following command: sh run_FigS3A.sh ../../../SimStr/ 2>run_FigS3A.log
+Supplementary Figure 3A: 
+ - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
+ - Command: `sh run_FigS3A.sh ../../../SimStr/ 2>run_FigS3A.log`
+ - Results: [eval_results/FigS3A_sJSD](Ecoli_sim_all_eval/eval_results/FigS3A_sJSD)
+ - Main output: [All_groups_sJSD_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS3A_sJSD/All_groups_sJSD_boxplot.pdf), [All_groups_sJSD_y01_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS3A_sJSD/All_groups_sJSD_y01_boxplot.pdf), [All_groups_sJSD_yauto_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS3A_sJSD/All_groups_sJSD_yauto_boxplot.pdf)
+ - Statistical tests: [significant_pT_merge.txt](Ecoli_sim_all_eval/eval_results/FigS3A_sJSD/significant_pT_merge.txt)
 
-​	Results in eval_results/FigS3A_JSD
+Supplementary Figure 3B: 
 
-​	The main output is: All_groups_sJSD_boxplot.pdf; All_groups_sJSD_y01_boxplot.pdf and All_groups_sJSD_yauto_boxplot.pdf showed different way to set the y-axis range.
-
-​	The statistical significant values are listed in significant_pT_merge.txt 
-
-Supplementary Figure 3B: in Ecoli_sim_all_eval, use the following command: sh run_FigS3B.sh ../../../SimStr/ 2>run_FigS3B.log
-
-​	Results are in eval_results/FigS3B_MCC
-
-​	The main output is: All_groups_MCC_boxplot.pdf; All_groups_MCC_y01_boxplot.pdf and All_groups_MCC_yauto_boxplot.pdf showed different way to set the y-axis range.
-
-​	The statistical significant values are listed in significant_pT_merge.txt 
+ - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
+ - Command: `sh run_FigS3B.sh ../../../SimStr/ 2>run_FigS3B.log`
+ - Results: [eval_results/FigS3B_MCC](Ecoli_sim_all_eval/eval_results/FigS3B_MCC)
+ - Main output: [All_groups_MCC_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS3B_MCC/All_groups_MCC_boxplot.pdf), [All_groups_MCC_y01_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS3B_MCC/All_groups_MCC_y01_boxplot.pdf), [All_groups_MCC_yauto_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS3B_MCC/All_groups_MCC_yauto_boxplot.pdf)
+ - Statistical tests: [significant_pT_merge.txt](Ecoli_sim_all_eval/eval_results/FigS3B_MCC/significant_pT_merge.txt)
 
 ### Supplementary Figure 4: 	
 
-Left panels: in Ecoli_sim_all_eval, use the following command:sh run_FigS4AL.sh ../../../SimStr/ 2>run_FigS4AL.log ; sh run_FigS4BL.sh ../../../SimStr/ 2>run_FigS4BL.log ; sh run_FigS4CL.sh ../../../SimStr/ 2>run_FigS4CL.log 
-
-​	Results in eval_results/FigS4AL_JSD , FigS4BL_JSD and FigS4CL_JSD
-
-​	The main output is: All_groups_sJSD_boxplot.pdf; All_groups_sJSD_y01_boxplot.pdf and All_groups_sJSD_yauto_boxplot.pdf showed different way to set the y-axis range.
-
-​	The statistical significant values are listed in significant_pT_merge.txt 
-
-Right panels: in Ecoli_sim_all_eval, use the following command:sh run_FigS4AR.sh ../../../SimStr/ 2>run_FigS4AR.log ; sh run_FigS4BR.sh ../../../SimStr/ 2>run_FigS4BR.log ; sh run_FigS4CR.sh ../../../SimStr/ 2>run_FigS4CR.log 
-
-​	Results  are in eval_results/FigS4AR_MCC , FigS4BR_MCC , FigS4CR_MCC
-
-​	The main output is: All_groups_MCC_boxplot.pdf; All_groups_MCC_y01_boxplot.pdf and All_groups_MCC_yauto_boxplot.pdf showed different way to set the y-axis range.
-
-​	The statistical significant values are listed in significant_pT_merge.txt 
+ - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
+ - Command: 
+   - left panel: `sh run_FigS4AL.sh ../../../SimStr/ 2>run_FigS4AL.log ; sh run_FigS4BL.sh ../../../SimStr/ 2>run_FigS4BL.log ; sh run_FigS4CL.sh ../../../SimStr/ 2>run_FigS4CL.log`
+   - right panel: `sh run_FigS4AR.sh ../../../SimStr/ 2>run_FigS4AR.log ; sh run_FigS4BR.sh ../../../SimStr/ 2>run_FigS4BR.log ; sh run_FigS4CR.sh ../../../SimStr/ 2>run_FigS4CR.log`
+ -  Results: 
+   -  left panel: [eval_results/FigS4AL_sJSD](Ecoli_sim_all_eval/eval_results/FigS4AL_sJSD), [eval_results/FigS4BL_sJSD](Ecoli_sim_all_eval/eval_results/FigS4BL_sJSD), [eval_results/FigS4CL_sJSD](Ecoli_sim_all_eval/eval_results/FigS4CL_sJSD)
+   -  right panel: [eval_results/FigS4AR_MCC](Ecoli_sim_all_eval/eval_results/FigS4AR_MCC), [eval_results/FigS4BR_MCC](Ecoli_sim_all_eval/eval_results/FigS4BR_MCC), [eval_results/FigS4CR_MCC](Ecoli_sim_all_eval/eval_results/FigS4CR_MCC)
+ - Main output: 
+   - left panel: `All_groups_sJSD_boxplot.pdf`, `All_groups_sJSD_y01_boxplot.pdf`, `All_groups_sJSD_yauto_boxplot.pdf` in the corresponding folder
+   - right panel: `All_groups_MCC_boxplot.pdf`, `All_groups_MCC_y01_boxplot.pdf`, `All_groups_MCC_yauto_boxplot.pdf` in the corresponding folder
+ - Statistical tests: `significant_pT_merge.txt` in the corresponding folder
 
 ### Supplementary Figure 5:
 
-In Ecoli_sim_all_eval, see run_Fig2D_FigS5_FigS6.html for detail.
-
-​	Results are in eval_results/FigS5_boxplot
-
-​	All other dependes for 2, 6 and 8 strains were provided in the folder as well. panphlan_single_errfree_reference_gene_presence_absence.tsv is universal for all 8 strains.
+ - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
+ - Command: refer to [run_Fig2D_FigS5_FigS6.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/Ecoli_sim_all_eval/run_Fig2D_FigS5_FigS6.html)
+ - Results: [eval_results/FigS5_boxplot](Ecoli_sim_all_eval/eval_results/FigS5_boxplot)
 
 ### Supplementary Figure 6: 
 
-In Ecoli_sim_all_eval, see run_Fig2D_FigS5_FigS6.html for detail.
-
-​	Result is in eval_results/FigS6_PRplot/
+ - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
+ - Command: refer to [run_Fig2D_FigS5_FigS6.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/Ecoli_sim_all_eval/run_Fig2D_FigS5_FigS6.html)
+ - Results: [eval_results/FigS6_PRplot/](Ecoli_sim_all_eval/eval_results/FigS6_PRplot/)
 
 ### Supplementary Figure 7:
 
-In Ecoli_sim_all_eval, see FigS7_O104_genes_evaluate_StrainPanDA.html for detail.
-
-​	Result is in eval_results/FigS7_heatmap/
-
-​	The main output is: StrainPanDA_O104_functional_gene_pangenome_heatmap.pdf
+ - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
+ - Command: refer to [FigS7_O104_genes_evaluate_StrainPanDA.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/FigS7_O104_genes_evaluate_StrainPanDA.html)
+ - Results: [eval_results/FigS7_heatmap/](Ecoli_sim_all_eval/eval_results/FigS7_heatmap/)
+ - Main output: [StrainPanDA_O104_functional_gene_pangenome_heatmap.pdf](Ecoli_sim_all_eval/eval_results/FigS7_heatmap/StrainPanDA_O104_functional_gene_pangenome_heatmap.pdf)
 
 ### Supplementary Figure 8:
 
-FigS8 AB: In Ecoli_sim_all_eval, see FigS8_strainpanda_vs_panphlan_geneprofile.html for details
-	Results and the folder of inputs are in eval_results/FigS8AB_panphlan/,
-
-​	The main outputs are FigS8_strain_nb_SIM_vs_panphlan_dom_heatmap.pdf and XT_Pan_dom_paired_JD_boxplot.pdf	
-
-FigS8 CD: In Ecoli_sim_all_eval, see FigS8_strainpanda_vs_panphlan3_geneprofile.html for details
-
-​	Results and the folder of inputs are in eval_results/FigS8CD_panphlan3/
-
-​	The main outputs are FigS8C_strain_to_pan3_nb_SIM_vs_pan3dom_heatmap.pdf and XT_Pan3_dom_paired_JD_boxplot.pdf
+ - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
+ - Command: 
+   - FigS8 AB: refer to [FigS8_strainpanda_vs_panphlan_geneprofile.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/Ecoli_sim_all_eval/FigS8_strainpanda_vs_panphlan_geneprofile.html)
+   - FigS8 CD: refer to [FigS8_strainpanda_vs_panphlan3_geneprofile.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/Ecoli_sim_all_eval/FigS8_strainpanda_vs_panphlan3_geneprofile.html)
+ - Results:
+   - FigS8 AB: [eval_results/FigS8AB_panphlan/](Ecoli_sim_all_eval/eval_results/FigS8AB_panphlan/)
+   - FigS8 CD: [eval_results/FigS8CD_panphlan3/](Ecoli_sim_all_eval/eval_results/FigS8CD_panphlan3/)
+ - Main outputs:
+   - [FigS8_strain_nb_SIM_vs_panphlan_dom_heatmap.pdf](Ecoli_sim_all_eval/eval_results/FigS8AB_panphlan/FigS8_strain_nb_SIM_vs_panphlan_dom_heatmap.pdf) and [XT_Pan_dom_paired_JD_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS8AB_panphlan/XT_Pan_dom_paired_JD_boxplot.pdf)
+   - [FigS8C_strain_to_pan3_nb_SIM_vs_pan3dom_heatmap.pdf](Ecoli_sim_all_eval/eval_results/FigS8CD_panphlan3/FigS8C_strain_to_pan3_nb_SIM_vs_pan3dom_heatmap.pdf) and [XT_Pan3_dom_paired_JD_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS8CD_panphlan3/XT_Pan3_dom_paired_JD_boxplot.pdf)
 
 ### Supplementary Figure 9:
 
-In MI_study folder, see run_FigS9.html for details, 
-
-​	Results are in Bifidobacterium-longum_out/FigS9
+ - Working directory: [MI_study](MI_study)
+ - Command: refer to [run_FigS9.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/MI_study/run_FigS9.html)
+ - Results: [Bifidobacterium-longum_out/FigS9](MI_study/Bifidobacterium-longum_out/FigS9)
 
 ### Supplementary Figure 10:
 
-In MI_study folder, see Fig3AB_S10_S11_mother_infant.html for details, in the generate Fig3B and FigS10 section
-
-​	Results are in Bifidobacterium-longum_out/strain_pair_dist_breastStop
-
-​	BreastStop_4M_strain1_BFFvsOthers_boxplot.pdf, BreastStop_4M_strain2_BFFvsOthers_boxplot.pdf, BreastStop_12M_strain1_BBFvsBBM_boxplot.pdf and BreastStop_12M_strain2_BBFvsBBM_boxplot.pdf were used in FigS10.
+ - Working directory: [MI_study](MI_study)
+ - Command: refer to [Fig3AB_S10_S11_mother_infant.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/MI_study/Fig3AB_S10_S11_mother_infant.html)
+ - Results: [Bifidobacterium-longum_out/strain_pair_dist_breastStop](MI_study/Bifidobacterium-longum_out/strain_pair_dist_breastStop)
+ - Main outputs: [BreastStop_4M_strain1_BFFvsOthers_boxplot.pdf](MI_study/Bifidobacterium-longum_out/strain_pair_dist_breastStop/BreastStop_4M_strain1_BFFvsOthers_boxplot.pdf), [BreastStop_4M_strain2_BFFvsOthers_boxplot.pdf](MI_study/Bifidobacterium-longum_out/strain_pair_dist_breastStop/BreastStop_4M_strain2_BFFvsOthers_boxplot.pdf), [BreastStop_12M_strain1_BBFvsBBM_boxplot.pdf](MI_study/Bifidobacterium-longum_out/strain_pair_dist_breastStop/BreastStop_12M_strain1_BBFvsBBM_boxplot.pdf) and [BreastStop_12M_strain2_BBFvsBBM_boxplot.pdf](MI_study/Bifidobacterium-longum_out/strain_pair_dist_breastStop/BreastStop_12M_strain2_BBFvsBBM_boxplot.pdf)
 
 ### Supplementary Figure 11:
 
-In MI_study folder, see Fig3AB_S10_S11_mother_infant.html for details, in the generate FigS11 section
+ - Working directory: [MI_study](MI_study)
+ - Command: refer to [Fig3AB_S10_S11_mother_infant.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/MI_study/Fig3AB_S10_S11_mother_infant.html)
+ - Results: [Bifidobacterium-longum_out/str_relative_abun_breastStop](MI_study/Bifidobacterium-longum_out/str_relative_abun_breastStop)
 
-​	Results are in Bifidobacterium-longum_out/str_relative_abun_breastStop
+### Supplementary Figure 12-14:
 
-​	Only the results of subspecies1 (strain1) were used in the FigS11
+ - Working directory: [MI_study](MI_study)
+ - Command: refer to [run_Fig3C_S12_S13_S14_heatmap.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/MI_study/run_Fig3C_S12_S13_S14_heatmap.html)
+ - Results: 
+   - [FigS12_heatmap](MI_study/Bifidobacterium-longum_out/FigS12_heatmap)
+   - [FigS13_heatmap](MI_study/Bifidobacterium-longum_out/FigS13_heatmap)
+   - [FigS14_heatmap](MI_study/Bifidobacterium-longum_out/FigS14_heatmap)
 
-### Supplementary Figure 12:
+### Supplementary Figure 15-17:
 
-In MI_study folder, see run_Fig3C_S12_S13_S14_heatmap.html for details, in the generate FigS12 section
-
-​	Results are in Bifidobacterium-longum_out/FigS12_heatmap
-
-### Supplementary Figure 13:
-
-In MI_study folder, see run_Fig3C_S12_S13_S14_heatmap.html for details, in the generate FigS13 section
-
-​	Results are in Bifidobacterium-longum_out/FigS13_heatmap
-
-### Supplementary Figure 14:
-
-In MI_study folder, see run_Fig3C_S12_S13_S14_heatmap.html for details, in the generate FigS14 section
-
-​	Results are in Bifidobacterium-longum_out/FigS14_heatmap
-
-### Supplementary Figure 15:
-
-In kong_et_al_IBD_FMT folder, see analysis.html for details,
-
-​	Inputs from StrainPanDA are in strain_results folder
-
-### Supplementary Figure 16:
-
-In kong_et_al_IBD_FMT folder, see analysis.html for details,
-
-​	Inputs from StrainPanDA are in strain_results folder
-
-### Supplementary Figure 17:
-
-In kong_et_al_IBD_FMT folder, see analysis.html for details,
-
-​	Inputs from StrainPanDA are in strain_results folder
+ - Working directory: [kong_et_al_IBD_FMT](kong_et_al_IBD_FMT)
+ - Command: refer to [analysis.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/kong_et_al_IBD_FMT/analysis.html)
 
 ### Supplementary Figure 18:
-
-In sample_size_effect_eval folder, see run_FigS18_sample_size.html for details.
+ - Working directory: [sample_size_effect_eval](sample_size_effect_eval)
+ - Command: refer to [run_FigS18_sample_size.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/sample_size_effect_eval/run_FigS18_sample_size.html)
 
 ### Supplementary Figure 19:
-
-In running_time_eval folder, see run_FigS19_running_time.html for details.
+ - Working directory: [running_time_eval](running_time_eval)
+ - Command: refer to [run_FigS19_running_time.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/running_time_eval/run_FigS19_running_time.html)
