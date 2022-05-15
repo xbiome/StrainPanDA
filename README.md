@@ -1,6 +1,6 @@
-# StrainPanDA -- A strain analysis pipeline based on pangenome
+# StrainPanDA - A strain analysis pipeline based on pangenome
 
-StrainPanDA is a tool that deconvolute pangenome coverage into strain composition and strain gene profile.
+StrainPanDA is a tool that deconvolutes pangenome coverage into strain composition and strain gene profile. We provide a fully automated pipeline implemented with [nextflow](https://www.nextflow.io/docs/latest/index.html).
 
 ## Installation
 
@@ -100,6 +100,14 @@ Usage: bin/run_strainpandar.r [-[-help|h]] [-[-counts|c] <character>] [-[-refere
 
 
 ## Outputs
+
+Main outputs of the pipeline:
+
+ - Pangenome database mapping outputs
+   - Merged count matrix `{species-version}.counts.csv`: each row is one gene family, each column is one sample, values are read counts.
+ - Strain decomposition outputs
+   - Gene family-strain matrix (**P**) `{species-version}.strainpanda.genefamily_strain.csv`: each row is one gene family, each column is one strain, values (binary) are presence (1) or absence (0) of the gene family.
+   - Strain-sample matrix (**S**) `{species-version}.strainpanda.strain_sample.csv`: each row is one strain, each column is one sample, values are the relative abundances of the strain (in fraction).
 
 Ouput files from the above run:
 
