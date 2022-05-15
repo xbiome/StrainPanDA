@@ -123,21 +123,19 @@ FigC:
 
 ### Supplementary Figure 2
 
-Supplementary Figure 2A: in Ecoli_sim_all_eval, use the following command: sh run_FigS2A.sh ../../../SimStr/ 2>run_FigS2A.log
+Supplementary Figure 2A: 
+ - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
+ - Command: `sh run_FigS2A.sh ../../../SimStr/ 2>run_FigS2A.log`
+ - Results: [eval_results/FigS2A_sJSD](Ecoli_sim_all_eval/eval_results/FigS2A_sJSD)
+ - Main output: [All_groups_sJSD_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS2A_sJSD/All_groups_sJSD_boxplot.pdf), [All_groups_sJSD_y01_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS2A_sJSD/All_groups_sJSD_y01_boxplot.pdf), [All_groups_sJSD_y01_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS2A_sJSD/All_groups_sJSD_y01_boxplot.pdf)
+ - Statistical tests: [significant_pT_merge.txt](Ecoli_sim_all_eval/eval_results/FigS2A_sJSD/significant_pT_merge.txt)
 
-​	Results are in eval_results/FigS2A_JSD
-
-​	The main output is: All_groups_sJSD_boxplot.pdf; All_groups_sJSD_y01_boxplot.pdf and All_groups_sJSD_yauto_boxplot.pdf showed different way to set the y-axis range.
-
-​	The statistical significant values are listed in significant_pT_merge.txt 
-
-Supplementary Figure 2B: in Ecoli_sim_all_eval, use the following command: sh run_FigS2B.sh ../../../SimStr/ 2>run_FigS2B.log
-
-​	Results are in eval_results/FigS2B_MCC
-
-​	The main output is: All_groups_MCC_boxplot.pdf; All_groups_MCC_y01_boxplot.pdf and All_groups_MCC_yauto_boxplot.pdf showed different way to set the y-axis range.
-
-​	The statistical significant values are listed in significant_pT_merge.txt 
+Supplementary Figure 2B: 
+ - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
+ - Command: `sh run_FigS2B.sh ../../../SimStr/ 2>run_FigS2B.log`
+ - Results: [eval_results/FigS2B_MCC](Ecoli_sim_all_eval/eval_results/FigS2B_MCC)
+ - Main output: [All_groups_MCC_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS2B_MCC/All_groups_MCC_boxplot.pdf), [All_groups_MCC_y01_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS2B_MCC/All_groups_MCC_y01_boxplot.pdf), [All_groups_MCC_yauto_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS2B_MCC/All_groups_MCC_yauto_boxplot.pdf)
+ - Statistical tests: [significant_pT_merge.txt](Ecoli_sim_all_eval/eval_results/FigS2B_MCC/significant_pT_merge.txt)
 
 ### Supplementary Figure 3:
 
