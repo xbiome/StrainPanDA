@@ -56,17 +56,19 @@ time Rscript ../../../SimStr/SIM_evaluate_unifrac_denovo.R \
 
 ### Figure 2:
 
-Fig2A: go to working directory [Ecoli_sim_all_eval](Ecoli_sim_all_eval), run the following command: 
+Fig2A: 
+ - working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
+ - Command: `sh run_Fig2A.sh ../../../SimStr/ 2>run_Fig2A.log`
+ - Results: [Fig2A_sJSD](Ecoli_sim_all_eval/eval_results/Fig2A_sJSD)
+ - Main output: [All_groups_abun_stackplot_by_method_ordered.pdf](Ecoli_sim_all_eval/eval_results/Fig2A_sJSD/All_groups_abun_stackplot_by_method_ordered.pdf)
 
-```sh 
-sh run_Fig2A.sh ../../../SimStr/ 2>run_Fig2A.log
-```
+Fig2B:
+ - working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
+ - Command: `sh run_Fig2B.sh ../../../SimStr/ 2>run_Fig2B.log`
+ - Results: [Fig2B_sJSD](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD)
+ - Main output: [All_groups_sJSD_boxplot.pdf](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD/All_groups_sJSD_boxplot.pdf), [All_groups_sJSD_y01_boxplot.pdf](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD/All_groups_sJSD_y01_boxplot.pdf) and [All_groups_sJSD_yauto_boxplot.pdf](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD/All_groups_sJSD_yauto_boxplot.pdf)
 
- - [Results](Ecoli_sim_all_eval/eval_results/Fig2A_sJSD)
-
- - [Main output](All_groups_abun_stackplot_by_method_ordered.pdf)
-
-Fig2B: in Ecoli_sim_all_eval, use the following command: sh run_Fig2B.sh ../../../SimStr/ 2>run_Fig2B.log
+Fig2B: go to working di Ecoli_sim_all_eval, use the following command: sh run_Fig2B.sh ../../../SimStr/ 2>run_Fig2B.log
 
 ​	Results in Ecoli_sim_all_eval/eval_results/Fig2B_sJSD
 
