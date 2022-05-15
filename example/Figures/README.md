@@ -57,42 +57,38 @@ time Rscript ../../../SimStr/SIM_evaluate_unifrac_denovo.R \
 ### Figure 2:
 
 Fig2A: 
- - working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
+ - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
  - Command: `sh run_Fig2A.sh ../../../SimStr/ 2>run_Fig2A.log`
- - Results: [Fig2A_sJSD](Ecoli_sim_all_eval/eval_results/Fig2A_sJSD)
+ - Results: [eval_results/Fig2A_sJSD](Ecoli_sim_all_eval/eval_results/Fig2A_sJSD)
  - Main output: [All_groups_abun_stackplot_by_method_ordered.pdf](Ecoli_sim_all_eval/eval_results/Fig2A_sJSD/All_groups_abun_stackplot_by_method_ordered.pdf)
 
 Fig2B:
- - working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
+ - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
  - Command: `sh run_Fig2B.sh ../../../SimStr/ 2>run_Fig2B.log`
- - Results: [Fig2B_sJSD](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD)
+ - Results: [eval_results/Fig2B_sJSD](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD)
  - Main output: [All_groups_sJSD_boxplot.pdf](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD/All_groups_sJSD_boxplot.pdf), [All_groups_sJSD_y01_boxplot.pdf](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD/All_groups_sJSD_y01_boxplot.pdf) and [All_groups_sJSD_yauto_boxplot.pdf](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD/All_groups_sJSD_yauto_boxplot.pdf)
 
-Fig2C: in Sync6_all_eval, use the following command: sh run_Fig2C.sh ../../../SimStr/ 2>run_Fig2C.log
+Fig2C:
+ - Working directory: [Sync6_all_eval](Sync6_all_eval)
+ - Command: `sh run_Fig2C.sh ../../../SimStr/ 2>run_Fig2C.log`
+ - Results: [eval_results/Fig2C_sJSD](Sync6_all_eval/eval_results/Fig2C_sJSD)
+ - Main output: [All_groups_sJSD_boxplot.pdf](Sync6_all_eval/eval_results/Fig2C_sJSD/All_groups_sJSD_boxplot.pdf), [All_groups_sJSD_y01_boxplot.pdf](Sync6_all_eval/eval_results/Fig2C_sJSD/All_groups_sJSD_y01_boxplot.pdf) and [All_groups_sJSD_yauto_boxplot.pdf](Sync6_all_eval/eval_results/Fig2C_sJSD/All_groups_sJSD_yauto_boxplot.pdf)
+ - Statistical tests: [Fig2C_sJSD_4str_sJSD_matr.txt_significantPair.txt](Sync6_all_eval/eval_results/Fig2C_sJSD/Fig2C_sJSD_4str_sJSD_matr.txt_significantPair.txt)
 
-​	Results in Sync6_all_eval/eval_results/Fig2C_sJSD
+Fig2D: 
+ - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
+ - Command: refer to [run_Fig2D_FigS5_FigS6.html](https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/Ecoli_sim_all_eval/run_Fig2D_FigS5_FigS6.html)
+ - Results: [eval_results/Fig2D_heatmap](Ecoli_sim_all_eval/eval_results/Fig2D_heatmap)
+ - Main output: [Fig2D_strain_nb_SIM_allgene_pangenome_heatmap.pdf](Ecoli_sim_all_eval/eval_results/Fig2D_heatmap/Fig2D_strain_nb_SIM_allgene_pangenome_heatmap.pdf)
 
-​	The main output is: All_groups_sJSD_boxplot.pdf; All_groups_sJSD_y01_boxplot.pdf and All_groups_sJSD_yauto_boxplot.pdf showed different way to set the y-axis range.
-
-​	The statistical significant values are listed in Fig2C_sJSD_4str_sJSD_matr.txt_significantPair.txt
-
-Fig2D: in Ecoli_sim_all_eval, see run_Fig2D_FigS5_FigS6.html for detail.
-
-​	Results in Ecoli_sim_all_eval/eval_results/Fig2D_heatmap
-
-​	The main output is: Fig2D_strain_nb_SIM_allgene_pangenome_heatmap.pdf
-
-Fig2E: in Sync6_all_eval, see run_Fig2E.html for detail.
-
-​	Results are in Sync6_all_eval/eval_results/Fig2E_AUPRC
-
-​	The main output is: Fig2E_AUC_wRC_y01_boxplot.pdf and pvalues in Fig2E_AUC_wRC_stat_p.csv
-
-​	Input files are in eval_results/Fig2E_AUPRC/input_files_6species.
-
-​	Supporting files to generate input files are in eval_results/Fig2E_AUPRC/supporting_files_6species, see run_Fig2E_support_generate.html for a generation example of Bifidobacterium-longum.
-
-
+Fig2E: 
+ - Working directory: [Sync6_all_eval](Sync6_all_eval)
+ - Command: refer to [run_Fig2E.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/Sync6_all_eval/run_Fig2E.html)
+ - Results:[eval_results/Fig2E_AUPRC](Sync6_all_eval/eval_results/Fig2E_AUPRC)
+ - Main output: [Fig2E_AUC_wRC_y01_boxplot.pdf](Sync6_all_eval/eval_results/Fig2E_AUPRC/Fig2E_AUC_wRC_y01_boxplot.pdf)
+ - Statistical tests: [Fig2E_AUC_wRC_stat_p.csv](Sync6_all_eval/eval_results/Fig2E_AUPRC/Fig2E_AUC_wRC_stat_p.csv)
+ - Inputs: [eval_results/Fig2E_AUPRC/input_files_6species](Sync6_all_eval/eval_results/Fig2E_AUPRC/input_files_6species)
+ - Supporting files to generate input files: [eval_results/Fig2E_AUPRC/supporting_files_6species](Sync6_all_eval/eval_results/Fig2E_AUPRC/supporting_files_6species), see [run_Fig2E_support_generate.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/Sync6_all_eval/run_Fig2E_support_generate.html) for an example of Bifidobacterium-longum.
 
 ### Figure 3:
 
