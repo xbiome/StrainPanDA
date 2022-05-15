@@ -92,29 +92,32 @@ Fig2E:
 
 ### Figure 3:
 
-FigA: In MI_study folder, see Fig3AB_S10_S11_mother_infantt.html for details, in the generate Fig3A section
+FigA: 
+ - Working directory: [MI_study](MI_study)
+ - Command: refer to [Fig3AB_S10_S11_mother_infantt.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/MI_study/Fig3AB_S10_S11_mother_infant.html)
+ - Results: [Bifidobacterium-longum_out/simplex_plot](MI_study/Bifidobacterium-longum_out/simplex_plot)
+   - The `*_only.pdf` were used in Fig3A (M: mother, B: newborn, 4M: 4 month, 12M: 12 months)
 
-​	Results are in Bifidobacterium-longum_out/simplex_plot
+FigA: 
+ - Working directory: [MI_study](MI_study)
+ - Command: refer to [Fig3AB_S10_S11_mother_infantt.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/MI_study/Fig3AB_S10_S11_mother_infant.html)
+ - Results: [MI_study/Bifidobacterium-longum_out/simplex_plot](MI_study/Bifidobacterium-longum_out/simplex_plot)
+   - The `*_only.pdf` were used in Fig3A (M: mother, B: newborn, 4M: 4 month, 12M: 12 months)
 
-​	The *_only.pdf were used in Fig3A, M means mother, B means newborn, 4M means 4 month and 12M means 12 months
+FigB: 
+ - Working directory: [MI_study](MI_study)
+ - Command: refer to [Fig3AB_S10_S11_mother_infantt.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/MI_study/Fig3AB_S10_S11_mother_infant.html)
+ - Results: [MI_study/Bifidobacterium-longum_out/strain_pair_dist_breastStop](Bifidobacterium-longum_out/strain_pair_dist_breastStop)
+   - `BreastStop_both_strain1_StopvsCont_yfull_boxplot.pdf`, `BreastStop_both_strain2_StopvsCont_yfull_boxplot.pdf`, `BreastStop_both_strain3_StopvsCont_yfull_boxplot.pdf` were used in Fig3B.
 
-FigB: In MI_study folder, see Fig3AB_S10_S11_mother_infant.html for details, in the generate Fig3B and FigS10 section
-
-​	Results are in Bifidobacterium-longum_out/strain_pair_dist_breastStop
-
-​	BreastStop_both_strain1_StopvsCont_yfull_boxplot.pdf, BreastStop_both_strain2_StopvsCont_yfull_boxplot.pdf, BreastStop_both_strain3_StopvsCont_yfull_boxplot.pdf were used in Fig3B.
-
-FigC:In MI_study folder, see run_Fig3C_S12_S13_S14_heatmap.html for details, in the generate Fig3C section
-
-​	Results are in Bifidobacterium-longum_out/Fig3C_heatmap
+FigC:
+ - Working directory: [MI_study](MI_study)
+ - Command: refer to [Fig3AB_S10_S11_mother_infantt.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/MI_study/run_Fig3C_S12_S13_S14_heatmap.html)
+ - Results: [MI_study/Bifidobacterium-longum_out/Fig3C_heatmap](Bifidobacterium-longum_out/Fig3C_heatmap)
 
 ### Figure 4：
-
-In kong_et_al_IBD_FMT folder, see analysis.html for details,
-
-​	Inputs from StrainPanDA are in strain_results folder
-
-
+ - Working directory: [kong_et_al_IBD_FMT](kong_et_al_IBD_FMT)
+ - Command: refer to [analysis.Rmd](https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/kong_et_al_IBD_FMT/analysis.Rmd)
 
 ## Supplementary Figures：
 
