@@ -68,14 +68,6 @@ Fig2B:
  - Results: [Fig2B_sJSD](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD)
  - Main output: [All_groups_sJSD_boxplot.pdf](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD/All_groups_sJSD_boxplot.pdf), [All_groups_sJSD_y01_boxplot.pdf](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD/All_groups_sJSD_y01_boxplot.pdf) and [All_groups_sJSD_yauto_boxplot.pdf](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD/All_groups_sJSD_yauto_boxplot.pdf)
 
-Fig2B: go to working di Ecoli_sim_all_eval, use the following command: sh run_Fig2B.sh ../../../SimStr/ 2>run_Fig2B.log
-
-​	Results in Ecoli_sim_all_eval/eval_results/Fig2B_sJSD
-
-​	The main output is: All_groups_sJSD_boxplot.pdf; All_groups_sJSD_y01_boxplot.pdf and All_groups_sJSD_yauto_boxplot.pdf showed different way to set the y-axis range.
-
-​	The statistical significant values are listed in significant_pT_merge.txt 
-
 Fig2C: in Sync6_all_eval, use the following command: sh run_Fig2C.sh ../../../SimStr/ 2>run_Fig2C.log
 
 ​	Results in Sync6_all_eval/eval_results/Fig2C_sJSD
