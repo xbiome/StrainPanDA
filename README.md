@@ -36,7 +36,7 @@ docker build -t strainpanda-strainpandar:dev . -f docker/Dockerfile_strainpandar
 
 ### Pre-built pangenome databases
 
-TODO: url for downloading
+Database can be found from [Zenodo](doi:10.5281/zenodo.5525944).
 
 ## Run analysis
 
