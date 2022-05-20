@@ -2,7 +2,7 @@
 
 ## rds files of synthetic datasets were submitted to Zenodo
 
-The Zenodo link is: [Zenodo](https://zenodo.org/deposit/6547923).
+The Zenodo link is: [[StrainPanDA R-objects for examples in the manuscript | Zenodo](https://zenodo.org/record/6547923), with DOI:10.5281/zenodo.6547923.
 
 
 
@@ -38,7 +38,7 @@ panphlan_O104_Escherichia-coli-202009.rds
 
 Mother infant dataset: ${species_name}_MI_data.rds
 
-FMT dataset: ${species_name}_FMT_data.rds
+FMT dataset: ${species_name}_FMT_PRJNA625520.rds and  ${species_name}_FMT_PRJEB23524.rds
 
 
 
