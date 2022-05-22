@@ -44,7 +44,7 @@ preprocess <- function(count.matrix, pangenome.file, min.cov=10, frac.gene=0.9, 
   sample.keep <- colSums(mat>0) >= min.gf * frac.gene  &
     colSums(count.matrix) > 10e6
   message(sprintf("Sample(s) filtered for the species: %s\n", names(which(!sample.keep))))
-  mat <- mat[,sample.keep]
+  mat <- mat[,sample.keep, drop=FALSE]
   mat <- mat[rowSums(mat)>0, ] ## remove genes with 0 reads for now
 
   tmp <- distinct(anno, V1, V3) %>%
