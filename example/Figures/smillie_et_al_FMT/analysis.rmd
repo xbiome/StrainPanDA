@@ -1,0 +1,86 @@
+---
+title: "Analysis of Smillie et al"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(ggessentials)
+```
+
+
+```{r}
+res <- readRDS("strain_results/Faecalibacterium-prausnitzii.rds")
+S <- res$S
+P <- res$P
+```
+
+```{r}
+profile <- S
+meta.all <- read_tsv("metadata.txt")
+missing <- setdiff(meta.all$sample, colnames(profile))
+tmp <- matrix(0, nrow(profile), length(missing))
+colnames(tmp) <- missing
+profile <- cbind(profile, tmp)
+rownames(profile) <- paste0("strain", 1:nrow(S))
+```
+
+```{r}
+anno <- 
+  mutate(meta.all, success=as.character(success)) %>%
+  mutate(donor=ifelse(type=="donor", subject, donor)) %>% 
+  mutate(subject=ifelse(type=="donor", "donor", subject)) %>%
+  select(sample, success, time, symptom_resolved, donor, subject, Antibiotics, sample_date) %>%
+  mutate(sample_date=as.Date(sample_date, "%m/%d/%y")) %>% 
+  column_to_rownames("sample")
+```
+
+```{r fig.height=11, fig.width=50}
+fp.species <- read.table("fprausnitzii.metaphlan2.tsv", head=T, row.names=1)
+
+barplot.dat <- 
+  merge(anno, t(profile), by=0) %>% 
+  pivot_longer(cols = strain1:strain6) %>% 
+  mutate(grp=ifelse(subject=="donor", donor, subject)) 
+barplot.dat <- merge(barplot.dat, fp.species, by.x=1, by.y=0, all.x = TRUE) %>% 
+  select(-(Faecalibacterium_prausnitzii_unclassified:fp__GCF_000166035))
+
+donors <- filter(barplot.dat, subject=="donor") %>% distinct(donor) %>% pull(donor)
+ barplot.dat <- barplot.dat%>% 
+   mutate(subject=ifelse(subject=="donor", donor, subject)) #%>% 
+ind <- unique(barplot.dat$subject)
+barplot.dat$subject <- factor(barplot.dat$subject, 
+                              levels=c(donors, ind[!ind %in% donors]), ordered = T)
+
+aux <- function(x){
+  tmp <- filter(barplot.dat, donor==x) 
+  #p <- 
+    ggplot(tmp, aes(x=reorder(as.factor(Row.names), sample_date), y =value, fill=name)) + 
+    geom_bar(stat="identity") + 
+      scale_fill_ge() +
+    labs(y="Relative abundance", x=NULL) +
+    guides(fill=guide_legend(nrow=1), col=guide_legend(nrow=1)) + 
+    facet_grid(~subject, space="free", scale="free")  + 
+    coord_cartesian(ylim = c(0,1)) + 
+    ggessentials::theme_classic_ge() +
+    theme(axis.text.x = element_text(angle=45, hjust=1, vjust=1), legend.title = element_blank(), legend.text = element_text(size=40))  + 
+   geom_line(data=tmp, aes(x=reorder(as.factor(Row.names), sample_date), 
+                              y=Faecalibacterium_prausnitzii/100*5, group=1), inherit.aes = F, size=2) + 
+    scale_y_continuous(sec.axis = sec_axis(~.*100/5, name = "F. prausnitzii [%]"))
+}
+
+ps <- lapply(donors, aux)
+
+library(cowplot)
+plot_grid(get_legend(ps[[3]]), 
+          plot_grid(ps[[1]]+theme(legend.position = "none"), NULL, 
+                    ps[[2]]+theme(legend.position = "none"), NULL, 
+                    ps[[4]]+theme(legend.position = "none"), NULL,
+                              nrow=1, rel_widths = c(1.,0.1, 0.9, 0.1, 1.6,1.5)), 
+          ps[[3]]+theme(legend.position = "none"), ncol=1) 
+```
+
