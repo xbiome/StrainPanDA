@@ -228,7 +228,12 @@ Supplementary Figure 3B:
    - [FigS13_heatmap](MI_study/Bifidobacterium-longum_out/FigS13_heatmap)
    - [FigS14_heatmap](MI_study/Bifidobacterium-longum_out/FigS14_heatmap)
 
-### Supplementary Figure 15-17:
+### Supplementary Figure 15:
+
+ - Working directory: [smillie_et_al_FMT](smillie_et_al_FMT)
+ - Command: refer to [analysis.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/smillie_et_al_FMT/analysis.html)
+ - 
+### Supplementary Figure 16-17:
 
  - Working directory: [kong_et_al_IBD_FMT](kong_et_al_IBD_FMT)
  - Command: refer to [analysis.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/kong_et_al_IBD_FMT/analysis.html)
