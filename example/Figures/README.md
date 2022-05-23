@@ -232,7 +232,7 @@ Supplementary Figure 3B:
 
  - Working directory: [smillie_et_al_FMT](smillie_et_al_FMT)
  - Command: refer to [analysis.html](https://htmlpreview.github.io/?https://github.com/xbiome/StrainPanDA/blob/main/example/Figures/smillie_et_al_FMT/analysis.html)
- - 
+
 ### Supplementary Figure 16-17:
 
  - Working directory: [kong_et_al_IBD_FMT](kong_et_al_IBD_FMT)
