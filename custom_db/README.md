@@ -29,7 +29,9 @@ Bifidobacterium-longum-202009 is the name of the pangenome database, it must be 
 
 ### Outputs:
 
-Only the $fileout folder (Bifidobacterium-longum-202009 in the example) is the pangenome. All other files are intermediate files that should be removed before next pangenome generation in the same folder.
+Only the $fileout folder (Bifidobacterium-longum-202009 in the example) is the pangenome. Its format is same as PanPhlAn (see [Pangenome generation (old) · SegataLab/panphlan Wiki (github.com)](https://github.com/SegataLab/panphlan/wiki/Pangenome-generation-(old)))
+
+All other files are intermediate files that should be removed before next pangenome generation in the same folder.
 
 **NOTE 1! Each generation must run in separated folder, otherwise the references data will disturb each other.** 
 
