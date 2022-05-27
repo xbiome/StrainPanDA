@@ -1,16 +1,20 @@
-#   Copyright {2015} Yuxiang Tan
+# Copyright {2021} Yuxiang Tan
+# This file is part of SimStr. 
 #
-#   Licensed under the Apache License, Version 2.0 (the "License");
-#   you may not use this file except in compliance with the License.
-#   You may obtain a copy of the License at
+# SimStr is a pipeline to generate simulation datasets for evaluation on strain analysis from metagenomic data.
 #
-#       http://www.apache.org/licenses/LICENSE-2.0
+# SimStr is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
 #
-#   Unless required by applicable law or agreed to in writing, software
-#   distributed under the License is distributed on an "AS IS" BASIS,
-#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#   See the License for the specific language governing permissions and
-#   limitations under the License.
+# SimStr is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with SimStr.  If not, see <https://www.gnu.org/licenses/>.
 
 #This script is to compare pair t-test among groups, and return the full matrix and significant values smaller than 0.05
 #Inputs: the final value matrix from groups, such as Fig2A_sJSD-s1_XT_EST_4str_sJSD_matr.txt
