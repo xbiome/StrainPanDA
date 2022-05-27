@@ -14,14 +14,17 @@ curl -s https://get.nextflow.io | bash
 
 2. install PanPhlAn (for mapping short reads to pan-genome databases)
 
-https://github.com/SegataLab/panphlan/wiki#download-the-panphlan-software
+https://github.com/SegataLab/panphlan/wiki/Home-1_3
+
 
 3. install [R](https://www.r-project.org/) and [strainpandar](src/strainpandar): decomposing pangenome into strains
 
-Install required packages `dplyr`, `foreach`, `MASS`, `NMF`
+Install required packages `dplyr`, `foreach`, `MASS`, `NMF`, `pracma`, `vegan`
 
 ```sh
-tar -czf strainpandar.tar.gz src/strainpandar
+git clone https://github.com/xbiome/StrainPanDA.git
+cd StrainPanDA/src
+tar -czf strainpandar.tar.gz strainpandar
 R CMD INSTALL strainpandar.tar.gz
 ```
 
