@@ -33,13 +33,11 @@ Only the $fileout folder (Bifidobacterium-longum-202009 in the example) is the p
 
 All other files are intermediate files that should be removed before next pangenome generation in the same folder.
 
-**NOTE 1! Each generation must run in separated folder, otherwise the references data will disturb each other.** 
-
-**NOTE 2! If the panphlan failed with error message like "zlib.error: Error -3 while decompressing: invalid block type", it is caused by the fail of download by wget in the strain-pan folder. In this case, users need to replace them by correct files manually. Users can check the fail of files by check_gz_integrity.sh, and use the broken_ID.txt to extract the subset of download list (For example, grep -f strain-pan/broken_ID.txt $fileout"_ref_dl_list.txt_sel.txt" > broken_ref_dl_list.txt). Sometimes the broken file is caused by wget -c, so you can use wget to download again into the strain-pan folder.**
-
-**NOTE 3! If the panphlan failed, need to delete all the panphlan related output and rerun the pipeline (generally, this is caused by the disconnection of download, or users could download first and run panphlan separately), or panphlan will crash again because of the existing files.  Lastly, run panphlan by the following command: panphlan_pangenome_generation.py -c $fileout --i_fna strain-pan/ --i_gff strain-pan/ -o $fileout** In the example, file_out is "Bifidobacterium-longum-202009"
-
-**NOTE 4! The .csv file from step should be the newest one, or the download link of some strains might be expired and failed.**
+> **Note**
+> 1. Each generation must run in separated folder, otherwise the references data will disturb each other.
+> 2. If the panphlan failed with error message like "zlib.error: Error -3 while decompressing: invalid block type", it is caused by the fail of download by wget in the strain-pan folder. In this case, users need to replace them by correct files manually. Users can check the fail of files by `check_gz_integrity.sh`, and use the `broken_ID.txt` to extract the subset of download list (For example, `grep -f strain-pan/broken_ID.txt $fileout"_ref_dl_list.txt_sel.txt" > broken_ref_dl_list.txt`). Sometimes the broken file is caused by `wget -c`, so you can use wget to download again into the strain-pan folder.
+> 3. If the panphlan failed, need to delete all the panphlan related output and rerun the pipeline (generally, this is caused by the disconnection of download, or users could download first and run panphlan separately), or panphlan will crash again because of the existing files.  Lastly, run panphlan by the following command: `panphlan_pangenome_generation.py -c $fileout --i_fna strain-pan/ --i_gff strain-pan/ -o $fileout`. In the example, file_out is `Bifidobacterium-longum-202009`
+> 4. The `.csv` file from step should be the newest one, or the download link of some strains might be expired and failed
 
 ## Annotate the pangenome
 
@@ -95,3 +93,21 @@ $path_to_VFDB can be any user defined path.
 #### Output
 
 The final output is in the vfdb_out/final_out folder. One file per pangenome. In each file, the first column is the gene family ID, the second column is the VFDB ID.
+
+### EggNOG mapper annotation
+
+Functions including KEGG KO mapping(s) can be annotated with the [EggNOG mapper](http://eggnog-mapper.embl.de/).
+
+```
+for i in ${pangenome_db_path}/*/*.ffn; do bs=`basename $i`;emapper.py -i $i --itype CDS --cpu 16 -o ${bs%%.ffn};done
+for i in  ${pangenome_db_path}/* ; do bs=`basename $i` ;  cp panphlan_${bs}_centroids.emapper.annotations $i/${bs}_emapper_anno.tsv;done
+```
+
+#### Output
+
+The final output will be copied to the specific species pangenome folder. The columns of the annotation file are given in the header of the `{species_version}_emapper_anno.tsv` file. For example:
+
+```
+#query	seed_ortholog	evalue	score	eggNOG_OGs	max_annot_lvl	COG_category	Description	Preferred_name	GOs	EC	KEGG_ko	KEGG_Pathway	KEGG_Module	KEGG_Reaction	KEGG_rclass	BRITE	KEGG_TC	CAZy	BiGG_Reaction	PFAMs
+```
+
