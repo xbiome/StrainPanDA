@@ -43,15 +43,11 @@ Database can be found from Zenodo (doi:10.5281/zenodo.5525944): [StrainPanDA Pre
 
 In each tar.gz file:
 
-​	The pangenome of the species is annotated by the _annotations.csv file; 
-
-​	The pangenome sequences are in the _centroids.ffn file;
-
-​	The bowtie2 indexes are bt2 files;
-
-​	The vfdb annotation is the _vfdb_anno.csv file, with the first column as the gene family ID and the second column as the VFDB ID.
-
-​	The CAZy annotation is the _CAZy_anno.csv file, with the first column as the gene family ID and the second column as the CAZy catalog ID.
+ - The pangenome sequences are in the `${species_version}_centroids.ffn` file;
+ - The bowtie2 indexes are the `bt2` files;
+ - The pangenome of the species is annotated by the `${species_version}_emapper_anno.tsv` file, with the colunms specified in the header.
+ - The vfdb annotation is the `${species_version}_vfdb_anno.csv` file, with the first column as the gene family ID and the second column as the VFDB ID.
+ - The CAZy annotation is the `${species_version}_CAZy_anno.csv` file, with the first column as the gene family ID and the second column as the CAZy catalog ID.
 
 ### User-specific database generation
 
