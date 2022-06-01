@@ -11,3 +11,4 @@ strainpanda_out
 reads
 awsbatch.config
 src/strainpanda/analysis*
+strainpandar.tar.gz
