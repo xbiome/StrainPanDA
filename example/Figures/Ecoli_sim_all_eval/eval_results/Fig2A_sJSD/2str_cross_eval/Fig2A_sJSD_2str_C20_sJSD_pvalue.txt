@@ -1,3 +1,0 @@
-StrainEst	PStrain
-StrainPanDA	NaN	NaN
-StrainEst	NA	NaN
