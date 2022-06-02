@@ -153,8 +153,6 @@ strainpanda_out/
 
 ## Examples
 
-All the examples used in the manuscript can be viewed 
-
-[here]: https://github.com/xbiome/StrainPanDA-data/tree/main/example#readme
+All the examples used in the manuscript can be viewed [here](https://github.com/xbiome/StrainPanDA-data/tree/main/example#readme)
 
 .
