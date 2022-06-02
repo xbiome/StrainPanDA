@@ -148,3 +148,13 @@ strainpanda_out/
     ├── strainpanda_timeline.html
     └── strainpanda_trace.txt
 ```
+
+
+
+## Examples
+
+All the examples used in the manuscript can be viewed 
+
+[here]: https://github.com/xbiome/StrainPanDA-data/tree/main/example#readme
+
+.
