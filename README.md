@@ -37,17 +37,28 @@ docker build -t strainpanda-mapping:dev . -f docker/Dockerfile_mapping
 docker build -t strainpanda-strainpandar:dev . -f docker/Dockerfile_strainpandar
 ```
 
+## DataBase Preparation
 ### Pre-built pangenome databases
 
 Database can be found from Zenodo (doi:10.5281/zenodo.6592017): [StrainPanDA Pre-built pangenome database | Zenodo](https://zenodo.org/record/6592017)
 
 In each tar.gz file:
 
+ - The pangenome file to be used is the `${species_version}_pangenome.csv` file, and the pangenome.csv is the recongizer by StrainPanDA;
  - The pangenome sequences are in the `${species_version}_centroids.ffn` file;
  - The bowtie2 indexes are the `bt2` files;
  - The pangenome of the species is annotated by the `${species_version}_emapper_anno.tsv` file, with the colunms specified in the header.
  - The vfdb annotation is the `${species_version}_vfdb_anno.csv` file, with the first column as the gene family ID and the second column as the VFDB ID.
  - The CAZy annotation is the `${species_version}_CAZy_anno.csv` file, with the first column as the gene family ID and the second column as the CAZy catalog ID.
+
+<br>
+Each tar.gz file must be unzipped before using:
+
+```
+#within the path of tar.gz files
+tar -zxvf Acinetobacter-johnsonii-202009.tar.gz #unzip only the database of Acinetobacter-johnsonii
+tar -zxvf *.tar.gz #unzip all the database within the folder
+```
 
 ### User-specific database generation
 
