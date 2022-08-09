@@ -48,8 +48,8 @@ In each tar.gz file:
  - The pangenome sequences are in the `${species_version}_centroids.ffn` file;
  - The bowtie2 indexes are the `bt2` files;
  - The pangenome of the species is annotated by the `${species_version}_emapper_anno.tsv` file, with the colunms specified in the header.
- - The vfdb annotation is the `${species_version}_vfdb_anno.csv` file, with the first column as the gene family ID and the second column as the VFDB ID.
- - The CAZy annotation is the `${species_version}_CAZy_anno.csv` file, with the first column as the gene family ID and the second column as the CAZy catalog ID.
+ - The vfdb (Apr 9th 2021) annotation is the `${species_version}_vfdb_anno.csv` file, with the first column as the gene family ID and the second column as the VFDB ID.
+ - The CAZy (Jul 31st 2019) annotation is the `${species_version}_CAZy_anno.csv` file, with the first column as the gene family ID and the second column as the CAZy catalog ID.
 
 <br>
 Each tar.gz file must be unzipped before using:
