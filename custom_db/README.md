@@ -23,9 +23,11 @@ Bifidobacterium-longum-20200915.csv is the strain file of *B. longum* from Step1
 
 Bifidobacterium-longum-202009 is the name of the pangenome database, it must be in the following format: genus-species-yearmonth(in number) ;
 
-99 is the max of pairwise ANI allowed among representative genomes.
+99 is the max of pairwise ANI allowed among representative genomes, genomes with ANI bigger than this value will be clustered. Change this value might affect StrainPanDA's performance.
 
 /script/ is the path of SimStr and should be setup by the docker run already.
+
+If docker is not available, user can use singularity in a similar way instead of docker.
 
 ### Outputs:
 
@@ -35,9 +37,9 @@ All other files are intermediate files that should be removed before next pangen
 
 > **Note**
 > 1. Each generation must run in separated folder, otherwise the references data will disturb each other.
-> 2. If the panphlan failed with error message like "zlib.error: Error -3 while decompressing: invalid block type", it is caused by the fail of download by wget in the strain-pan folder. In this case, users need to replace them by correct files manually. Users can check the fail of files by `check_gz_integrity.sh`, and use the `broken_ID.txt` to extract the subset of download list (For example, `grep -f strain-pan/broken_ID.txt $fileout"_ref_dl_list.txt_sel.txt" > broken_ref_dl_list.txt`). Sometimes the broken file is caused by `wget -c`, so you can use wget to download again into the strain-pan folder.
+> 2. If the panphlan failed with error message like "zlib.error: Error -3 while decompressing: invalid block type", it is caused by the fail of download by wget in the strain-pan folder. In this case, users need to replace them by correct files manually. Users can check the fail of files by `check_gz_integrity.sh`, and use the `broken_ID.txt` to extract the subset of download list (For example, `cd strain-pan;grep -f broken_ID.txt $fileout"_ref_dl_list.txt_sel.txt" > broken_ref_dl_list.txt; wget -c -i broken_ref_dl_list.txt`). Sometimes the broken file is caused by `wget -c`, so you can use wget to download again into the strain-pan folder: `cd strain-pan;grep -f broken_ID.txt $fileout"_ref_dl_list.txt_sel.txt" > broken_ref_dl_list.txt; wget -i broken_ref_dl_list.txt`.
 > 3. If the panphlan failed, need to delete all the panphlan related output and rerun the pipeline (generally, this is caused by the disconnection of download, or users could download first and run panphlan separately), or panphlan will crash again because of the existing files.  Lastly, run panphlan by the following command: `panphlan_pangenome_generation.py -c $fileout --i_fna strain-pan/ --i_gff strain-pan/ -o $fileout`. In the example, file_out is `Bifidobacterium-longum-202009`
-> 4. The `.csv` file from step should be the newest one, or the download link of some strains might be expired and failed
+> 4. The `.csv` file from step1 should be the newest one, or the download link of some strains might be expired and failed
 
 ## Annotate the pangenome
 
