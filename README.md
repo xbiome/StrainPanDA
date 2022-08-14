@@ -32,6 +32,7 @@ We provide two docker files to build the two images required by the nextflow pip
 
 ```
 git clone https://github.com/xbiome/StrainPanDA.git
+cd StrainPanDA/
 docker build -t strainpanda-mapping:dev . -f docker/Dockerfile_mapping ## Image for step 2
 docker build -t strainpanda-strainpandar:dev . -f docker/Dockerfile_strainpandar ## Image for step 3
 ```
