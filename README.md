@@ -31,6 +31,7 @@ R CMD INSTALL strainpandar.tar.gz
 We provide two docker files to build the two images required by the nextflow pipeline (Step 2 and Step 3).
 
 ```
+git clone https://github.com/xbiome/StrainPanDA.git
 docker build -t strainpanda-mapping:dev . -f docker/Dockerfile_mapping ## Image for step 2
 docker build -t strainpanda-strainpandar:dev . -f docker/Dockerfile_strainpandar ## Image for step 3
 ```
