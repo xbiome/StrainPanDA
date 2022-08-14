@@ -28,13 +28,11 @@ tar -czf strainpandar.tar.gz strainpandar
 R CMD INSTALL strainpandar.tar.gz
 ```
 
-### Using the strainpanda container (recommended)
-
-We provide two docker files to build the two images required by the nextflow pipeline.
+We provide two docker files to build the two images required by the nextflow pipeline (Step 2 and Step 3).
 
 ```
-docker build -t strainpanda-mapping:dev . -f docker/Dockerfile_mapping
-docker build -t strainpanda-strainpandar:dev . -f docker/Dockerfile_strainpandar
+docker build -t strainpanda-mapping:dev . -f docker/Dockerfile_mapping ## Image for step 2
+docker build -t strainpanda-strainpandar:dev . -f docker/Dockerfile_strainpandar ## Image for step 3
 ```
 
 ## DataBase Preparation
