@@ -94,7 +94,7 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR581/008/SRR5813298/SRR5813298_2.fastq
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR581/009/SRR5813299/SRR5813299_1.fastq.gz
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR581/009/SRR5813299/SRR5813299_2.fastq.gz
 ```
-Note: the input files could be .fq, .fastq or .fq.gz, .fastq.gz, however, the only the newly generate fastq files in phred33 scoring system could be run by panphlan.
+Note: the input files could be .fq, .fastq or .fq.gz, .fastq.gz. However, only the newly generated fastq files in phred33 scoring system could be run by panphlan.
 
 Create a species list
 
