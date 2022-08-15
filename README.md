@@ -4,20 +4,40 @@ StrainPanDA is a tool that deconvolutes pangenome coverage into strain compositi
 
 ## Installation
 
-### Local installation
-
 1. install nextflow
 
 ```sh
 curl -s https://get.nextflow.io | bash
 ```
 
-2. install PanPhlAn (for mapping short reads to pan-genome databases)
+2. We provide two dockers required by the nextflow pipeline (Step 2 and Step 3). Recommended!
+
+Step2:PanPhlAn (for mapping short reads to pan-genome databases)
+
+```
+docker pull yuxiangtan/strainpanda-mapping:dev
+docker tag yuxiangtan/strainpanda-mapping:dev strainpanda-mapping:dev
+```
+Step3. Decomposing pangenome into strains in R
+```
+docker pull yuxiangtan/strainpanda-strainpandar:dev
+docker tag yuxiangtan/strainpanda-strainpandar:dev strainpanda-strainpandar:dev
+```
+
+3. check the dockers (First, the dockers should be pulled completely)
+```
+docker run -u $(id -u):$(id -g) strainpanda-mapping:dev panphlan_profile.py -h
+docker run -u $(id -u):$(id -g) strainpanda-strainpandar:dev R --no-save
+```
+
+
+### Local installation, only use it if docker is not available
+Step2. install PanPhlAn (for mapping short reads to pan-genome databases)
 
 https://github.com/SegataLab/panphlan/wiki/Home-1_3
 
 
-3. install [R](https://www.r-project.org/) and [strainpandar](src/strainpandar): decomposing pangenome into strains
+Step3. install [R](https://www.r-project.org/) and [strainpandar](src/strainpandar): decomposing pangenome into strains
 
 Install required packages `dplyr`, `foreach`, `MASS`, `NMF`, `pracma`, `vegan`
 
@@ -28,14 +48,7 @@ tar -czf strainpandar.tar.gz strainpandar
 R CMD INSTALL strainpandar.tar.gz
 ```
 
-We provide two docker files to build the two images required by the nextflow pipeline (Step 2 and Step 3).
 
-```
-git clone https://github.com/xbiome/StrainPanDA.git
-cd StrainPanDA/
-docker build -t strainpanda-mapping:dev . -f docker/Dockerfile_mapping ## Image for step 2
-docker build -t strainpanda-strainpandar:dev . -f docker/Dockerfile_strainpandar ## Image for step 3
-```
 
 ## DataBase Preparation
 ### Pre-built pangenome databases
@@ -91,8 +104,10 @@ echo "Faecalibacterium prausnitzii" > species_list.txt
 #### With docker
 
 ```sh
-PATH_TO_REPO/main.nf -profile docker --ref_path PATH_TO_REFERENCE --path reads/ --ref_list species_list.txt
+/home/bin/StrainPanDA/main.nf -profile docker --ref_path /home/database/StrainPanDA --path reads/ --ref_list species_list.txt
 ```
+Here, /home/bin/StrainPanDA is the PATH_TO_REPO; /home/database/StrainPanDA is the PATH_TO_REFERENCE; reads/ is the PATH_TO_RAW_FASTQ
+
 
 #### Local
 
