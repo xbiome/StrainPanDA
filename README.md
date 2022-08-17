@@ -12,14 +12,16 @@ curl -s https://get.nextflow.io | bash
 
 2. We provide two dockers required by the nextflow pipeline (Step 2 and Step 3). Recommended!
 
-Step2:PanPhlAn (for mapping short reads to pan-genome databases)
+Step2:install PanPhlAn (for mapping short reads to pan-genome databases)
 
 ```
 docker pull yuxiangtan/strainpanda-mapping:dev
 docker tag yuxiangtan/strainpanda-mapping:dev strainpanda-mapping:dev
 ```
-Step3. Decomposing pangenome into strains in R
+Step3. isntall StrainPanDA for decomposing pangenome into strains in R
 ```
+cd $PATH_FOR_PANDA # the path to put StrainPanDA
+git clone https://github.com/xbiome/StrainPanDA.git
 docker pull yuxiangtan/strainpanda-strainpandar:dev
 docker tag yuxiangtan/strainpanda-strainpandar:dev strainpanda-strainpandar:dev
 ```
