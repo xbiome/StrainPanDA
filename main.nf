@@ -151,6 +151,7 @@ process runStrainPanDAR {
     output:
     set prefix, file("${prefix}.strainpanda.*pdf"), file("${prefix}.strainpanda.*rds"), file("${prefix}.strainpanda.*csv") into ch_strainpandar
     file("${prefix}.*ko.txt") into ch_ko
+    file("*.{pdf,rds,csv,txt}") into ch_all
 
     """
     run_strainpandar.r -c $counts -r $pangenome -o ${prefix}.strainpanda -t $task.cpus -m $params.max_strain_rank -n $params.strain_rank
