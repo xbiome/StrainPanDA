@@ -147,7 +147,7 @@ nextflow <PATH_TO_PANDA>/StrainPanDA/main.nf \
  --ref_list species_list.txt 
 ```
 
-### **仅运行**** strainpandar ( ****供调试用**** )**
+### **仅运行strainpandar(供调试用)**
 
 假设你已经运行StrainPanDA，并获得了计数矩阵{species-version}.counts.csv（见[示例](https://github.com/xbiome/StrainPanDA/blob/main/data/Faecalibacterium-prausnitzii-202009.counts.csv)）。如果你需要调试参数以获得更优的矩阵分解的结果，又不想重复泛基因组比对的步骤，我们提供一个独立的RScript脚本以执行strainpandar部分。
 
