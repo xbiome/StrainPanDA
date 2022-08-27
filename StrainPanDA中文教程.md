@@ -21,14 +21,14 @@ StrainPanDA主要针对宏基因组纵向数据，能同时实现共存菌株的
 ```
 curl -s https://get.nextflow.io | bash
 mv nextflow <YOUR_PATH> # 请确保<YOUR_PATH>在$PATH中。
-which nextflow # 显示<YOUR_PATH>, 如果没有显示，则需要重新检查mv操作 |
+which nextflow # 显示<YOUR_PATH>, 如果没有显示，则需要重新检查mv操作 
 ```
 
 ### 2. 获取StrainPanDA代码
 
 ```
 cd <PATH_TO_PANDA> # <PATH_TO_PANDA>用于放置StrainPanDA代码的路径
-git clone https://github.com/xbiome/StrainPanDA.git |
+git clone https://github.com/xbiome/StrainPanDA.git 
 ```
 
 ### 3. 安装StrainPanDA组件
@@ -41,21 +41,21 @@ git clone https://github.com/xbiome/StrainPanDA.git |
 
 ```
 docker pull yuxiangtan/strainpanda-mapping:dev
-docker tag yuxiangtan/strainpanda-mapping:dev strainpanda-mapping:dev |
+docker tag yuxiangtan/strainpanda-mapping:dev strainpanda-mapping:dev 
 ```
 
 第二步：获取strainpandar (将比对的结果分解为菌株-样本矩阵和基因家族-菌株矩阵)
 
 ```
 docker pull yuxiangtan/strainpanda-strainpandar:dev
-docker tag yuxiangtan/strainpanda-strainpandar:dev strainpanda-strainpandar:dev |
+docker tag yuxiangtan/strainpanda-strainpandar:dev strainpanda-strainpandar:dev 
 ```
 
 第三步：docker容器可用性测试：（确保两个docker镜像已经被完整拉取下来）
 
 ```
 docker run -u $(id -u):$(id -g) strainpanda-mapping:dev panphlan_profile.py -h
-docker run -u $(id -u):$(id -g) strainpanda-strainpandar:dev R --no-save |
+docker run -u $(id -u):$(id -g) strainpanda-strainpandar:dev R --no-save 
 ```
 
 **备选本地安装方式** （建议仅在无法使用docker时使用）
@@ -72,8 +72,8 @@ docker run -u $(id -u):$(id -g) strainpanda-strainpandar:dev R --no-save |
 
 ```
 cd <PATH_TO_PANDA>/StrainPanDA/src
- tar -czf strainpandar.tar.gz strainpandar
- R CMD INSTALL strainpandar.tar.gz |
+tar -czf strainpandar.tar.gz strainpandar
+R CMD INSTALL strainpandar.tar.gz 
 ```
 
 ## **数据库准备**
@@ -83,7 +83,7 @@ cd <PATH_TO_PANDA>/StrainPanDA/src
 ```
 ref202009
  ├── Acinetobacter-johnsonii-202009
- └── Escherichia-coli-202009 |
+ └── Escherichia-coli-202009 
 ```
 
 目前已经建好的泛基因组数据库可以使用wget 等下载工具从Zenodo (doi:10.5281/zenodo.6592017)下载：[StrainPanDA Pre-built pangenome database | Zenodo](https://zenodo.org/record/6592017)
@@ -96,7 +96,7 @@ Zenodo里面每一个tar.gz文件代表一个菌种，其格式为：菌种名-�
 cd <PATH_TO_REFERENCE>
 wget https://zenodo.org/record/6592017/files/Escherichia-coli-202009.tar.gz
 tar -zxvf Escherichia-coli-202009.tar.gz #解压Escherichia-coli-202009的数据库
-# tar -zxvf *.tar.gz #解压所有的菌种 |
+# tar -zxvf *.tar.gz #解压所有的菌种 
 ```
 
 每个菌种子文件夹里主要有下面几部分：
@@ -126,7 +126,7 @@ tar -zxvf Escherichia-coli-202009.tar.gz #解压Escherichia-coli-202009的数据
 创建菌种列表（列表菌种必须对应数据库下面的菌种子目录，可以输入多行，每行一个菌种名，则StrainPanDA会依次分析每个菌种）
 
 ```
-echo "Escherichia coli" > species_list.txt |
+echo "Escherichia coli" > species_list.txt 
 ```
 
 #### **使用 docker**
@@ -144,7 +144,7 @@ nextflow <PATH_TO_PANDA>/StrainPanDA/main.nf -profile docker \
 nextflow <PATH_TO_PANDA>/StrainPanDA/main.nf \
  --ref_path <PATH_TO_REFERENCE> \
  --path <PATH_TO_FASTQ> \
- --ref_list species_list.txt |
+ --ref_list species_list.txt 
 ```
 
 ### **仅运行**** strainpandar ( ****供调试用**** )**
@@ -160,7 +160,7 @@ nextflow <PATH_TO_PANDA>/StrainPanDA/main.nf \
  Rscript /script/run_strainpandar.r \
  -c /data/Escherichia-coli-202009.counts.csv \
  -r /ref/Escherichia-coli-202009 \
- -o work -t 8 -m 8 -n 0 |
+ -o work -t 8 -m 8 -n 0 
 ```
 
 #### **基于本地安装** ：
@@ -169,7 +169,7 @@ nextflow <PATH_TO_PANDA>/StrainPanDA/main.nf \
 Rscript <PATH_TO_PANDA>/StrainPanDA/bin/run_strainpandar.r \
  -c data/Escherichia-coli-202009.counts.csv \
  -r <PATH_TO_REFERENCE>/Escherichia-coli-202009 \
- -o work -t 8 -m 8 -n 0 |
+ -o work -t 8 -m 8 -n 0 
 ```
 
 脚本的参数可以从帮助信息中获得
@@ -184,7 +184,7 @@ Rscript bin/run_strainpandar.r -h
  -o|--output Output prefix [default: ./strainpandar]
  -t|--threads Number of threads to run in parallele [default: 1]
  -m|--max_rank Max number of strains expected [default: 8]
- -n|--rank Number of strains expected. If 0, try to select from 1 to `max_rank`. If not 0, overwrite `max_rank`. [default: 0] |
+ -n|--rank Number of strains expected. If 0, try to select from 1 to `max_rank`. If not 0, overwrite `max_rank`. [default: 0] 
 ```
 
 **输出介绍**
@@ -233,16 +233,16 @@ strainpanda_out
  ├── strainpanda_DAG.svg
  ├── strainpanda_report.html
  ├── strainpanda_timeline.html
- └── strainpanda_trace.txt |
+ └── strainpanda_trace.txt 
 ```
 
 1. 泛基因组的覆盖分布矩阵：{species-version}.counts.csv：每一行是一个基因家族，每一列是一个样品，数值是片段数。该文件由流程中的PanPhlAn产生，同时也是run_strainpandar.r的-c参数的输入。
 
 2. 菌株解构后的矩阵：
 
-2.1. 菌株基因成分谱（基因家族-菌株矩阵_ **P** _）：{species-version}.strainpanda.genefamily_strain.csv：每一行是一个基因家族，每一列是一个菌株，数值是二进制（0代表没有，1代表该菌株有该家族）。
+2.1. 菌株基因成分谱（基因家族-菌株矩阵 **P** ）：{species-version}.strainpanda.genefamily_strain.csv：每一行是一个基因家族，每一列是一个菌株，数值是二进制（0代表没有，1代表该菌株有该家族）。
 
-2.2 菌株组成矩阵（菌株-样品矩阵 _ **S** _）：{species-version}.strainpanda.strain_sample.csv：每一行是一个菌株，每一列是一个样品，数值是菌株在样品里的相对丰度。
+2.2 菌株组成矩阵（菌株-样品矩阵 **S** ）：{species-version}.strainpanda.strain_sample.csv：每一行是一个菌株，每一列是一个样品，数值是菌株在样品里的相对丰度。
 
 
 **示例**

@@ -4,58 +4,86 @@ StrainPanDA is a tool that deconvolutes pangenome coverage into strain compositi
 
 ## Installation
 
-1. install nextflow
+### 1. install [Nextflow](https://www.nextflow.io/), and add it into $PATH
 
-```sh
+```
 curl -s https://get.nextflow.io | bash
+mv nextflow <YOUR_PATH> # make sure <YOUR_PATH> is within $PATH。
+which nextflow # should show<YOUR_PATH>, if not，please check the mv step
 ```
 
-2. We provide two dockers required by the nextflow pipeline (Step 2 and Step 3). Recommended!
+### 2. get StrainPanDA codes
 
-Step2:install PanPhlAn (for mapping short reads to pan-genome databases)
+```
+cd <PATH_TO_PANDA> # <PATH_TO_PANDA> is the path to put StrainPanDA codes
+git clone https://github.com/xbiome/StrainPanDA.git 
+```
+
+### 3. install StrainPanDA dependences
+
+**Use** [**docker**](https://docs.docker.com/engine/install/ubuntu/) **for installation** （Recommended）：
+
+
+Step1：install PanPhlAn (for mapping short reads to pan-genome databases)
 
 ```
 docker pull yuxiangtan/strainpanda-mapping:dev
 docker tag yuxiangtan/strainpanda-mapping:dev strainpanda-mapping:dev
 ```
-Step3. isntall StrainPanDA for decomposing pangenome into strains in R
+Step2: isntall strainpandar (for decomposing pangenome into strain-sample and strain-GeneFamily matrices in R)
+
 ```
-cd $PATH_FOR_PANDA # the path to put StrainPanDA
-git clone https://github.com/xbiome/StrainPanDA.git
 docker pull yuxiangtan/strainpanda-strainpandar:dev
 docker tag yuxiangtan/strainpanda-strainpandar:dev strainpanda-strainpandar:dev
 ```
 
-3. check the dockers (First, the dockers should be pulled completely)
+Step3. check the dockers (Firstly, the dockers should be pulled completely)
 ```
 docker run -u $(id -u):$(id -g) strainpanda-mapping:dev panphlan_profile.py -h
 docker run -u $(id -u):$(id -g) strainpanda-strainpandar:dev R --no-save
 ```
 
+**Local installation** （only use it if docker is not available）
 
-### Local installation, only use it if docker is not available
-Step2. install PanPhlAn (for mapping short reads to pan-genome databases)
+Step1：install PanPhlAn using the following link (for mapping short reads to pan-genome databases)
 
-https://github.com/SegataLab/panphlan/wiki/Home-1_3
+[https://github.com/SegataLab/panphlan/wiki/Home-1_3](https://github.com/SegataLab/panphlan/wiki/Home-1_3)
 
-
-Step3. install [R](https://www.r-project.org/) and [strainpandar](src/strainpandar): decomposing pangenome into strains
+Step2. install [R](https://www.r-project.org/) and [strainpandar](https://github.com/xbiome/StrainPanDA/blob/main/src/strainpandar): decomposing pangenome into strains
 
 Install required packages `dplyr`, `foreach`, `MASS`, `NMF`, `pracma`, `vegan`
 
 ```sh
-git clone https://github.com/xbiome/StrainPanDA.git
-cd StrainPanDA/src
+cd <PATH_TO_PANDA>/StrainPanDA/src
 tar -czf strainpandar.tar.gz strainpandar
 R CMD INSTALL strainpandar.tar.gz
 ```
 
 
 
-## DataBase Preparation
-### Pre-built pangenome databases
+## **DataBase Preparation**
+The file system of StrainPanDA Database should follow: folder (<PATH_TO_REFERENCE>) must end with the version number (e.g. 202009), such as ref202009.
 
-Database can be found from Zenodo (doi:10.5281/zenodo.6592017): [StrainPanDA Pre-built pangenome database | Zenodo](https://zenodo.org/record/6592017)
+Each species (e.g. Escherichia-coli-202009) corresponding to a sub-folder, as the following example:
+
+```
+ref202009
+ ├── Acinetobacter-johnsonii-202009
+ └── Escherichia-coli-202009 
+```
+
+Prebuild Database of pangenomes can be downloaded by tools such as wget from Zenodo (doi:10.5281/zenodo.6592017)：[StrainPanDA Pre-built pangenome database | Zenodo](https://zenodo.org/record/6592017)
+
+In Zenodo, each tar.gz file represents a species，in the following format: species_name-version_number.tar.gz (e.g. in Escherichia-coli-202009.tar.gz, Escherichia-coli is the species_name and 202009 is the version_number)
+
+Before running StrainPanDA，make sure the tar.gz of the target species is already unzipped within the database folder（<PATH_TO_REFERENCE>）:
+
+```
+cd <PATH_TO_REFERENCE>
+wget https://zenodo.org/record/6592017/files/Escherichia-coli-202009.tar.gz
+tar -zxvf Escherichia-coli-202009.tar.gz #unzip Escherichia-coli-202009
+# tar -zxvf *.tar.gz #unzip all species 
+```
 
 In each tar.gz file:
 
@@ -66,71 +94,71 @@ In each tar.gz file:
  - The vfdb (Apr 9th 2021) annotation is the `${species_version}_vfdb_anno.csv` file, with the first column as the gene family ID and the second column as the VFDB ID.
  - The CAZy (Jul 31st 2019) annotation is the `${species_version}_CAZy_anno.csv` file, with the first column as the gene family ID and the second column as the CAZy catalog ID.
 
-<br>
-Each tar.gz file must be unzipped before using:
-
-```
-#within the path of tar.gz files
-tar -zxvf Acinetobacter-johnsonii-202009.tar.gz #unzip only the database of Acinetobacter-johnsonii
-tar -zxvf *.tar.gz #unzip all the database within the folder
-```
-
-### User-specific database generation
-
-User-specific database with annotation could be generated by [the following way](https://github.com/xbiome/StrainPanDA/tree/main/custom_db#readme). 
+For new species or rebuilding of existing species, user-specific database with annotation could be generated by [the following way](https://github.com/xbiome/StrainPanDA/tree/main/custom_db#readme). 
 
 ## Run analysis
 
 ### Run full analysis
-Download test data to a folder e.g. `reads`
 
-```sh
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR581/005/SRR5813295/SRR5813295_1.fastq.gz
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR581/005/SRR5813295/SRR5813295_2.fastq.gz
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR581/006/SRR5813296/SRR5813296_1.fastq.gz
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR581/006/SRR5813296/SRR5813296_2.fastq.gz
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR581/007/SRR5813297/SRR5813297_1.fastq.gz
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR581/007/SRR5813297/SRR5813297_2.fastq.gz
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR581/008/SRR5813298/SRR5813298_1.fastq.gz
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR581/008/SRR5813298/SRR5813298_2.fastq.gz
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR581/009/SRR5813299/SRR5813299_1.fastq.gz
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR581/009/SRR5813299/SRR5813299_2.fastq.gz
+Download the test data into folder（<PATH_TO_FASTQ>). Test data is in [Zenodo](https://zenodo.org/deposit/6997716), which a simulation dataset with 20 samples from E. coli genome.
+
+Note: the input files could be .fq, .fastq or .fq.gz, .fastq.gz. However, only the newly generated fastq files in phred33 scoring system could be run by panphlan, while some old datasets were in phred64 system which is not accepted by PanPhlAN.
+
+Create a species list (the name of species much corresponding to the name of subfolders in the pangenome database folder. The list could have multiply lines and one species per line. StrainPanDA will analyze these species one by one.)
+
 ```
-Note: the input files could be .fq, .fastq or .fq.gz, .fastq.gz. However, only the newly generated fastq files in phred33 scoring system could be run by panphlan.
-
-Create a species list
-
-```sh
-echo "Faecalibacterium prausnitzii" > species_list.txt
+echo "Escherichia coli" > species_list.txt 
 ```
 
-#### With docker
 
-```sh
-/home/bin/StrainPanDA/main.nf -profile docker --ref_path /home/database/StrainPanDA --path reads/ --ref_list species_list.txt
+
+#### **Run with docker**
+
 ```
-Here, /home/bin/StrainPanDA is the PATH_TO_REPO; /home/database/StrainPanDA is the PATH_TO_REFERENCE; reads/ is the PATH_TO_RAW_FASTQ
-
-
-#### Local
-
-```sh
-PATH_TO_REPO/main.nf --ref_path PATH_TO_REFERENCE --path reads/ --ref_list species_list.txt
+nextflow <PATH_TO_PANDA>/StrainPanDA/main.nf -profile docker \
+ --ref_path <PATH_TO_REFERENCE> \
+ --path <PATH_TO_FASTQ> \
+ --ref_list species_list.txt 
 ```
 
-### Run strainpandar
+#### **Run with local installation**
 
-Assuming you have a count matrix generated, we provide a [Rscript wrapper](bin/run_strainpandar.r) to run strainpandar. A sample count matrix can be found [here](data/Faecalibacterium-prausnitzii-202009.counts.csv).
-
-
-```sh
-Rscript bin/run_strainpandar.r -c data/Faecalibacterium-prausnitzii-202009.counts.csv -r data/refs/Faecalibacterium-prausnitzii-202009 -o work -t 8 -m 8 -n 0
+```
+nextflow <PATH_TO_PANDA>/StrainPanDA/main.nf \
+ --ref_path <PATH_TO_REFERENCE> \
+ --path <PATH_TO_FASTQ> \
+ --ref_list species_list.txt 
 ```
 
-The parameters of the wrapper can be found from the help message:
+### **Run only strainpandar (for rerunning StrainPanDA with modified parameters)**
+
+Assuming StrainPanDA was run and the count matrix ({species-version}.counts.csv) is already generated, see [example](https://github.com/xbiome/StrainPanDA/blob/main/data/Faecalibacterium-prausnitzii-202009.counts.csv). If you want to modify parameters to get better decomposition result, without rerunning the PanPhlAN alignment step, you can run strainpandar independently by RScript.
+
+#### **Run with docker**：
+
+```
+#get into a docker container
+ docker run --rm -t -i -u $(id -u):$(id -g) -v <PATH_TO_PANDA>/StrainPanDA/bin/:/script -v <PATH_TO_csv>:/data -v <PATH_TO_REFERENCE>:/ref -v $PWD:/work -w /work strainpanda-strainpandar:dev /bin/bash
+ #run Rscript within the docker
+ Rscript /script/run_strainpandar.r \
+ -c /data/Escherichia-coli-202009.counts.csv \
+ -r /ref/Escherichia-coli-202009 \
+ -o work -t 8 -m 8 -n 0 
+```
+
+#### **Run with local installation** ：
+
+```
+Rscript <PATH_TO_PANDA>/StrainPanDA/bin/run_strainpandar.r \
+ -c data/Escherichia-coli-202009.counts.csv \
+ -r <PATH_TO_REFERENCE>/Escherichia-coli-202009 \
+ -o work -t 8 -m 8 -n 0 
+```
+
+You can get basic parameters from the help information
 
 ```sh
-> Rscript bin/run_strainpandar.r -h
+Rscript bin/run_strainpandar.r -h
 A wrapper script to perform strain decomposition using strainpandar package.
 Usage: bin/run_strainpandar.r [-[-help|h]] [-[-counts|c] <character>] [-[-reference|r] <character>] [-[-output|o] [<character>]] [-[-threads|t] [<integer>]] [-[-max_rank|m] [<integer>]] [-[-rank|n] [<integer>]]
     -h|--help         Show this help message
@@ -143,7 +171,54 @@ Usage: bin/run_strainpandar.r [-[-help|h]] [-[-counts|c] <character>] [-[-refere
 ```
 
 
-## Outputs
+## **Outputs**
+
+Output folder has two main subfolders: strainpanda_out and work. The work folder is the working directory of nextflow, which contains log and status of runs. If you are not going to use the resume function of nextflow, you can neglect it or remove if directly (rm -rf work)
+
+The result of StrainPanDA is in the strainpanda_out foler:
+
+```
+strainpanda_out
+ ├── Escherichia-coli-202009.counts.csv
+ ├── Escherichia-coli-202009_mapping
+ │   ├── C01_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C02_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C03_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C04_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C05_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C06_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C07_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C08_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C09_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C10_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C11_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C12_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C13_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C14_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C15_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C16_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C17_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C18_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   ├── C19_errfree_r0_Escherichia-coli-202009.csv.bz2
+ │   └── C20_errfree_r0_Escherichia-coli-202009.csv.bz2
+ ├── Escherichia-coli-202009_strainpandar_out
+ │   ├── Escherichia-coli-202009.strainpanda.anno_strain_sample.pdf
+ │   ├── Escherichia-coli-202009.strainpanda.genefamily_strain.csv
+ │   ├── Escherichia-coli-202009.strainpanda.genefamily_strain.pdf
+ │   ├── Escherichia-coli-202009.strainpanda.rds
+ │   ├── Escherichia-coli-202009.strainpanda.strain_sample.csv
+ │   ├── Escherichia-coli-202009.strainpanda.strain_sample.pdf
+ │   ├── Escherichia-coli-202009.strainpanda_all_dis.csv
+ │   ├── Escherichia-coli-202009.strainpanda_all_neighbor.csv
+ │   ├── Escherichia-coli-202009.strainpanda_str_anno_prof.csv
+ │   ├── Escherichia-coli-202009.strainpanda_str_merged_prof.csv
+ │   └── Escherichia-coli-202009.strainpanda_str_neighbor.csv
+ └── pipeline_info
+ ├── strainpanda_DAG.svg
+ ├── strainpanda_report.html
+ ├── strainpanda_timeline.html
+ └── strainpanda_trace.txt 
+```
 
 Main outputs of the pipeline:
 
@@ -153,35 +228,14 @@ Main outputs of the pipeline:
    - Gene family-strain matrix (**P**) `{species-version}.strainpanda.genefamily_strain.csv`: each row is one gene family, each column is one strain, values (binary) are presence (1) or absence (0) of the gene family.
    - Strain-sample matrix (**S**) `{species-version}.strainpanda.strain_sample.csv`: each row is one strain, each column is one sample, values are the relative abundances of the strain (in fraction).
 
-Ouput files from the above run:
-
-```sh
-strainpanda_out/
-├── Faecalibacterium-prausnitzii-202009.counts.csv  ## Merged count matrix (gene family by sample)
-├── Faecalibacterium-prausnitzii-202009_mapping     ## Sample specific count files
-│   ├── SRR5813295_Faecalibacterium-prausnitzii-202009.csv.bz2
-│   ├── SRR5813296_Faecalibacterium-prausnitzii-202009.csv.bz2
-│   ├── SRR5813297_Faecalibacterium-prausnitzii-202009.csv.bz2
-│   ├── SRR5813298_Faecalibacterium-prausnitzii-202009.csv.bz2
-│   └── SRR5813299_Faecalibacterium-prausnitzii-202009.csv.bz2
-├── Faecalibacterium-prausnitzii-202009_strainpandar_out ## strainpandar outputs
-│   ├── Faecalibacterium-prausnitzii-202009.strainpanda.anno_strain_sample.pdf ## annotation to the closest reference
-│   ├── Faecalibacterium-prausnitzii-202009.strainpanda.genefamily_strain.csv ## gene family-strain matrix
-│   ├── Faecalibacterium-prausnitzii-202009.strainpanda.genefamily_strain.pdf ## heatmap visualization
-│   ├── Faecalibacterium-prausnitzii-202009.strainpanda.rds ## R object contains strainpandar results
-│   ├── Faecalibacterium-prausnitzii-202009.strainpanda.strain_sample.csv ## strain-sample matrix
-│   └── Faecalibacterium-prausnitzii-202009.strainpanda.strain_sample.pdf ## barplot visualization
-└── pipeline_info  ## pipeline run statistics
-    ├── strainpanda_DAG.svg
-    ├── strainpanda_report.html
-    ├── strainpanda_timeline.html
-    └── strainpanda_trace.txt
-```
-
-
 
 ## Examples
 
 All the examples used in the manuscript can be viewed [here](https://github.com/xbiome/StrainPanDA-data/tree/main/example#readme)
 
-.
+
+**citation**
+
+Hu, Han, Yuxiang Tan,Chenhao Li, Junyu Chen, Yan Kou, Zhenjiang Zech Xu, Yang‐Yu Liu, Yan Tan, and Lei Dai. 2022. "StrainPanDA: Linked reconstruction of strain composition and gene content profiles via pangenome‐based decomposition of metagenomic data." iMeta. e41. https://doi.org/10.1002/imt2.41
+
+[中文教程](https://github.com/xbiome/StrainPanDA/blob/main/StrainPanDA%E4%B8%AD%E6%96%87%E6%95%99%E7%A8%8B.md)
