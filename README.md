@@ -2,6 +2,8 @@
 
 StrainPanDA is a tool that deconvolutes pangenome coverage into strain composition and strain gene profile. We provide a fully automated pipeline implemented with [nextflow](https://www.nextflow.io/docs/latest/index.html).
 
+[中文教程链接](https://github.com/xbiome/StrainPanDA/blob/main/StrainPanDA%E4%B8%AD%E6%96%87%E6%95%99%E7%A8%8B.md)
+
 ## Installation
 
 ### 1. install [Nextflow](https://www.nextflow.io/), and add it into $PATH
@@ -11,6 +13,8 @@ curl -s https://get.nextflow.io | bash
 mv nextflow <YOUR_PATH> # make sure <YOUR_PATH> is within $PATH。
 which nextflow # should show<YOUR_PATH>, if not，please check the mv step
 ```
+
+Note: if you meet Java version problem in nextflow installation, please find [Nextflow](https://www.nextflow.io/) guideline for details.
 
 ### 2. get StrainPanDA codes
 
@@ -238,4 +242,3 @@ All the examples used in the manuscript can be viewed [here](https://github.com/
 
 Hu, Han, Yuxiang Tan,Chenhao Li, Junyu Chen, Yan Kou, Zhenjiang Zech Xu, Yang‐Yu Liu, Yan Tan, and Lei Dai. 2022. "StrainPanDA: Linked reconstruction of strain composition and gene content profiles via pangenome‐based decomposition of metagenomic data." iMeta. e41. https://doi.org/10.1002/imt2.41
 
-[中文教程](https://github.com/xbiome/StrainPanDA/blob/main/StrainPanDA%E4%B8%AD%E6%96%87%E6%95%99%E7%A8%8B.md)

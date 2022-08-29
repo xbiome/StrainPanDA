@@ -24,6 +24,8 @@ mv nextflow <YOUR_PATH> # 请确保<YOUR_PATH>在$PATH中。
 which nextflow # 显示<YOUR_PATH>, 如果没有显示，则需要重新检查mv操作 
 ```
 
+注：如果遇到Java版本的问题，请具体看[Nextflow](https://www.nextflow.io/)的官方安装指南。
+
 ### 2. 获取StrainPanDA代码
 
 ```
