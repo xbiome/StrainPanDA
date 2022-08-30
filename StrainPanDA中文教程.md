@@ -251,6 +251,11 @@ strainpanda_out
 
 文章中使用的示例可以在[这里](https://github.com/xbiome/StrainPanDA-data/tree/main/example#readme)访问。
 
+<br>
+
+[常见问题](常见问题.md)
+
+
 **引文**
 
 Hu, Han, Yuxiang Tan,Chenhao Li, Junyu Chen, Yan Kou, Zhenjiang Zech Xu, Yang‐Yu Liu, Yan Tan, and Lei Dai. 2022. "StrainPanDA: Linked reconstruction of strain composition and gene content profiles via pangenome‐based decomposition of metagenomic data." iMeta. e41. https://doi.org/10.1002/imt2.41

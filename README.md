@@ -237,6 +237,8 @@ Main outputs of the pipeline:
 
 All the examples used in the manuscript can be viewed [here](https://github.com/xbiome/StrainPanDA-data/tree/main/example#readme)
 
+## [FAQs](FAQs.md)
+
 
 **citation**
 

@@ -34,7 +34,7 @@ The name of referece database must following the correct rule.
 To double check, you can `ls -l <the path of error log>`
 
 For example as the following:
-![image](panphlan_error.)
+![image](panphlan_error.png)
 
 
 ## Setup the number of processors.
