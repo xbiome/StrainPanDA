@@ -119,6 +119,8 @@ tar -zxvf Escherichia-coli-202009.tar.gz #解压Escherichia-coli-202009的数据
 
 对于未建库的菌种，或者需要对已有菌种更新重建时，可参考以下中文教程进行重建[StrainPanDA/中文README.md at main · xbiome/StrainPanDA (github.com)](https://github.com/xbiome/StrainPanDA/blob/main/custom_db/%E4%B8%AD%E6%96%87README.md)
 
+如果需要分析自有菌株，请参考[常见问题](https://github.com/xbiome/StrainPanDA/blob/main/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.md#%E5%A6%82%E4%BD%95%E5%B0%86%E8%87%AA%E6%9C%89%E8%8F%8C%E6%A0%AA%E8%87%AA%E5%B7%B1%E8%AF%95%E9%AA%8C%E6%89%80%E7%94%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%B2%A1%E6%9C%89%E7%9A%84%E8%8F%8C%E6%A0%AA%E5%8A%A0%E5%85%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E8%BF%9B%E8%A1%8C%E5%88%86%E6%9E%90)
+
 ## **运行**
 
 ### **运行完整分析**
@@ -250,6 +252,7 @@ strainpanda_out
 
 2.2 菌株组成矩阵（菌株-样品矩阵 **S** ）：{species-version}.strainpanda.strain_sample.csv：每一行是一个菌株，每一列是一个样品，数值是菌株在样品里的相对丰度。
 
+要获得每个预测菌株的功能注释，可以通过菌株基因成分谱的ID和参考数据库里的注释文件进行匹配获取。参加 [常见问题](https://github.com/xbiome/StrainPanDA/blob/main/FAQs.md#get-the-functional-annotation-of-gene-families)
 
 **示例**
 
