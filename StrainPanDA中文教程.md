@@ -252,7 +252,7 @@ strainpanda_out
 
 2.2 菌株组成矩阵（菌株-样品矩阵 **S** ）：{species-version}.strainpanda.strain_sample.csv：每一行是一个菌株，每一列是一个样品，数值是菌株在样品里的相对丰度。
 
-要获得每个预测菌株的功能注释，可以通过菌株基因成分谱的ID和参考数据库里的注释文件进行匹配获取。参加 [常见问题](https://github.com/xbiome/StrainPanDA/blob/main/FAQs.md#get-the-functional-annotation-of-gene-families)
+要获得每个预测菌株的功能注释，可以通过菌株基因成分谱的ID和参考数据库里的注释文件进行匹配获取。参加 [常见问题](https://github.com/xbiome/StrainPanDA/blob/main/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.md#%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%9F%BA%E5%9B%A0%E5%AE%B6%E6%97%8F%E7%9A%84%E5%8A%9F%E8%83%BD%E6%B3%A8%E9%87%8A)
 
 **示例**
 
