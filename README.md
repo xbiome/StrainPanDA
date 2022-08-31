@@ -47,6 +47,9 @@ docker run -u $(id -u):$(id -g) strainpanda-mapping:dev panphlan_profile.py -h
 docker run -u $(id -u):$(id -g) strainpanda-strainpandar:dev R --no-save
 ```
 
+If docker pulling failed，please have a look at [FAQs](https://github.com/xbiome/StrainPanDA/blob/main/FAQs.md#errors-pulling-docker-images)
+
+
 **Local installation** （only use it if docker is not available）
 
 Step1：install PanPhlAn using the following link (for mapping short reads to pan-genome databases)
@@ -133,6 +136,8 @@ nextflow <PATH_TO_PANDA>/StrainPanDA/main.nf \
  --path <PATH_TO_FASTQ> \
  --ref_list species_list.txt 
 ```
+
+If PanPhlAN failed, please have a look at [FAQs](https://github.com/xbiome/StrainPanDA/blob/main/FAQs.md#failing-to-run-panphlan).
 
 ### **Run only strainpandar (for rerunning StrainPanDA with modified parameters)**
 
@@ -232,6 +237,7 @@ Main outputs of the pipeline:
    - Gene family-strain matrix (**P**) `{species-version}.strainpanda.genefamily_strain.csv`: each row is one gene family, each column is one strain, values (binary) are presence (1) or absence (0) of the gene family.
    - Strain-sample matrix (**S**) `{species-version}.strainpanda.strain_sample.csv`: each row is one strain, each column is one sample, values are the relative abundances of the strain (in fraction).
 
+You can get the functional annotation of predicted strains by using the ID from the Gene family-strain matrix with the database annotation, see [FAQs](https://github.com/xbiome/StrainPanDA/blob/main/FAQs.md#get-the-functional-annotation-of-gene-families)
 
 ## Examples
 

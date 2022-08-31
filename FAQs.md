@@ -44,3 +44,6 @@ You can set it by changing the cpus value in the conf/base.config file, followin
 ## Get the functional annotation of gene families 
 
 You can get the annotation of gene families in the prebuild databases by using the "anno.csv" files. In the real practice, you can use "merge" function in R to get the annotation of the gene family profile.
+
+## How to analysis your own strains (strains used in your own experiments that are not in the database) using StrainPanDA?
+First, you can compare the pangenome of the references in the database with your own strain, and calculate AJI (Average Jacard Index). If AJI >=99, your self-owned strain will be merged with the existing strains in the database during the reconstruction process, therefore database reconstruction is meanningless. If AJI < 99, you may consider rebuilding the database. Or without regeneration, you can compare the predicted gene profile of strains with you own strain to see their similarity. 

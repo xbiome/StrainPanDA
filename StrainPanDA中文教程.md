@@ -60,6 +60,8 @@ docker run -u $(id -u):$(id -g) strainpanda-mapping:dev panphlan_profile.py -h
 docker run -u $(id -u):$(id -g) strainpanda-strainpandar:dev R --no-save 
 ```
 
+如果镜像拉取仍有问题，请看[常见问题](https://github.com/xbiome/StrainPanDA/blob/main/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.md#%E6%97%A0%E6%B3%95%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F)
+
 **备选本地安装方式** （建议仅在无法使用docker时使用）
 
 第一步：参考以下链接安装PanPhlAn（用于将测序数据比对到范基因组数据库）
@@ -148,6 +150,8 @@ nextflow <PATH_TO_PANDA>/StrainPanDA/main.nf \
  --path <PATH_TO_FASTQ> \
  --ref_list species_list.txt 
 ```
+
+如果PanPhlAN运行报错，请参考[常见问题](https://github.com/xbiome/StrainPanDA/blob/main/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.md#%E8%B7%91panphlan%E6%97%B6%E5%A4%B1%E8%B4%A5)
 
 ### **仅运行strainpandar(供调试用)**
 
