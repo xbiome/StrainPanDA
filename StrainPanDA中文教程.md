@@ -127,7 +127,7 @@ tar -zxvf Escherichia-coli-202009.tar.gz #解压Escherichia-coli-202009的数据
 
 下载测试数据集到文件夹（以<PATH_TO_FASTQ>指代)，测试数据可以从[该链接](https://zenodo.org/deposit/6997716)下载，是20个使用E. coli基因组进行模拟的样品。
 
-注意：输入文件后缀可以是.fq,.fastq或者.fq.gz, .fastq.gz的任意一种。但是必须是phred33质量分系统的数据。（以前旧的数据可能是phred64系统，PanPhlAN流程会报错）
+注意：输入文件后缀可以是1或2接着.fq,.fastq或者.fq.gz, .fastq.gz的任意一种。但是必须是phred33质量分系统的数据。（以前旧的数据可能是phred64系统，PanPhlAN流程会报错）
 
 创建菌种列表（列表菌种必须对应数据库下面的菌种子目录，可以输入多行，每行一个菌种名，则StrainPanDA会依次分析每个菌种）
 
