@@ -4,16 +4,7 @@
 
 ## Errors pulling docker images
 
-### Reason1: Did not login in docker.
-![image](docker_pull_login_error.png)
-
-Register an account in [docker hub](https://hub.docker.com/).
-
-Login as the following [instruction](https://www.runoob.com/docker/docker-login-command.html)
-
-<br>
-
-### Reason2: the authorization of docker is not set correctly to the user.
+### Reason: the authorization of docker is not set correctly to the user.
 ![image](docker_pull_error.png)
 
 Solution1: sudo docker pull
