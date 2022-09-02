@@ -113,6 +113,8 @@ Download the test data into folder（<PATH_TO_FASTQ>). Test data is in [Zenodo](
 
 Note: the input files could be 1 or 2 with .fq, .fastq or .fq.gz, .fastq.gz. However, only the newly generated fastq files in phred33 scoring system could be run by panphlan, while some old datasets were in phred64 system which is not accepted by PanPhlAN.
 
+StrainPanDA requires at least 5 samples to run properly and the minimum recommended number of samples is 20.
+
 Create a species list (the name of species much corresponding to the name of subfolders in the pangenome database folder. The list could have multiply lines and one species per line. StrainPanDA will analyze these species one by one.)
 
 ```

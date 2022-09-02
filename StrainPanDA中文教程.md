@@ -129,6 +129,8 @@ tar -zxvf Escherichia-coli-202009.tar.gz #解压Escherichia-coli-202009的数据
 
 注意：输入文件后缀可以是1或2接着.fq,.fastq或者.fq.gz, .fastq.gz的任意一种。但是必须是phred33质量分系统的数据。（以前旧的数据可能是phred64系统，PanPhlAN流程会报错）
 
+StrainPanDA需要最少5个样品才能正常运行。如果要得到比较可靠的结果，建议最少提供20个符合假设（这些样品中具有共同菌株或亚种）的关联样品。
+
 创建菌种列表（列表菌种必须对应数据库下面的菌种子目录，可以输入多行，每行一个菌种名，则StrainPanDA会依次分析每个菌种）
 
 ```
