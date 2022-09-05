@@ -12,6 +12,8 @@ StrainPanDA主要针对宏基因组纵向数据，能同时实现共存菌株的
 
 全文翻译和视频简介见：《[iMeta | 深圳先进院戴磊组开发可同时提取共存菌株的组成和基因成分谱的菌株分析工具](https://mp.weixin.qq.com/s?__biz=MzU2NDY5MjIyMg==&mid=2247485040&idx=1&sn=3c421ac04326791a853354cd76dc5677&chksm=fc4653e1cb31daf7497246d68319ceca4f626e14bd4caaa2f6778ee97a9a2c6138e2ddfcc25e&scene=178&cur_album_id=2140899408157147136#rd)》
 
+中文视频教程见：[iMeta视频教程 | StrainPanDA分析宏基因组共存菌株的组成和基因成分谱](https://mp.weixin.qq.com/s/zNnwZqhnCaA4j-kxjKOjOg)
+
 欢迎大家添加微信huhan_2008，备注StrainPanDA包加入菌株分析用户交流群。
 
 

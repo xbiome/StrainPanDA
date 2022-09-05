@@ -38,3 +38,6 @@ You can get the annotation of gene families in the prebuild databases by using t
 
 ## How to analysis your own strains (strains used in your own experiments that are not in the database) using StrainPanDA?
 First, you can compare the pangenome of the references in the database with your own strain, and calculate AJI (Average Jacard Index). If AJI >=99, your self-owned strain will be merged with the existing strains in the database during the reconstruction process, therefore database reconstruction is meanningless. If AJI < 99, you may consider rebuilding the database. Or without regeneration, you can compare the predicted gene profile of strains with you own strain to see their similarity. 
+
+## Why some of the input sample was lost in the final result?
+StrainPanDA has two filter steps: first, if the sample has insufficient coverage of the species, the sample will be filtered out. The second filtering rule is as following: Samples were filtered out if the number of gene families detected was below 0.9 × gmin (gmin is the minimum number of gene families found in all reference genomes). Therefore, the .counts.csv table will generally have all samples (but may be filtered if the sample does not have the species), and some samples may not be present in the strain composition result.
