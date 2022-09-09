@@ -41,3 +41,8 @@ First, you can compare the pangenome of the references in the database with your
 
 ## Why some of the input sample was lost in the final result?
 StrainPanDA has two filter steps: first, if the sample has insufficient coverage of the species, the sample will be filtered out. The second filtering rule is as following: Samples were filtered out if the number of gene families detected was below 0.9 × gmin (gmin is the minimum number of gene families found in all reference genomes). Therefore, the .counts.csv table will generally have all samples (but may be filtered if the sample does not have the species), and some samples may not be present in the strain composition result.
+
+## In StrainPanDA, how to calculate the lower threshold of relative abundance of target species according to the amount of sequencing data?
+According to the discussion in the paper, for a typical metagenomic data (6GB), assuming that the average genome size of the species is 6MB, then the target species should have at least 1% relative abundance, that is, 60MB data volume. This amount of data corresponds to a sequencing depth of approximately 10x, where the lower limit of expected detection of the strain is 10%.
+
+The corresponding formula is: The relative abundance threshold of species Lspecies (%) = 100%/ (Sdata / Sgenome / (100%/Lstrain (%)) ), where the metagenomic data is Sdata (1GB=1000MB), the average genome size of strains is Sgenome (MB), and the expected lower limit of strain detection is Lstrain (%).Users can adjust the variables of this fomular to obtain the target value.
