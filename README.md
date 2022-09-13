@@ -109,7 +109,7 @@ If you want to analyze your own strain, please refer to [FAQs](https://github.co
 
 ### Run full analysis
 
-Download the test data into folder（<PATH_TO_FASTQ>). Test data is in [Zenodo](https://zenodo.org/deposit/6997716), which a simulation dataset with 20 samples from E. coli genome.
+Download the test data into folder（<PATH_TO_FASTQ>). Test data is in [Zenodo](https://zenodo.org/record/6997716#.YyAxU6TiuUk), which a simulation dataset with 20 samples from E. coli genome.
 
 Note: the input files could be 1 or 2 with .fq, .fastq or .fq.gz, .fastq.gz. However, only the newly generated fastq files in phred33 scoring system could be run by panphlan, while some old datasets were in phred64 system which is not accepted by PanPhlAN.
 
