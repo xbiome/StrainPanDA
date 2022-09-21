@@ -72,7 +72,7 @@ docker run -u $(id -u):$(id -g) strainpanda-strainpandar:dev R --no-save
 
 第二步：安装[R](https://www.r-project.org/)及[strainpandar](https://github.com/xbiome/StrainPanDA/blob/main/src/strainpandar)（用于将比对的结果分解为菌株）
 
-安装下列依赖的R包：dplyr, foreach, MASS, NMF, pracma, vegan
+安装下列依赖的R包：`dplyr`, `foreach`, `MASS`, `NMF`, `pracma`, `vegan`,`getopt`,`data.table`,`R.utils`
 
 在命令行运行下列命令安装strainpandar：
 

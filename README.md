@@ -58,7 +58,7 @@ Step1：install PanPhlAn using the following link (for mapping short reads to pa
 
 Step2. install [R](https://www.r-project.org/) and [strainpandar](https://github.com/xbiome/StrainPanDA/blob/main/src/strainpandar): decomposing pangenome into strains
 
-Install required packages `dplyr`, `foreach`, `MASS`, `NMF`, `pracma`, `vegan`
+Install required packages `dplyr`, `foreach`, `MASS`, `NMF`, `pracma`, `vegan`,`getopt`,`data.table`,`R.utils`
 
 ```sh
 cd <PATH_TO_PANDA>/StrainPanDA/src
