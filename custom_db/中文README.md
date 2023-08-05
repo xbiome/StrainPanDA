@@ -6,7 +6,9 @@
 
 可以从Genome List in NCBI下载相关的信息
 
-例如, 对 *E. coli*, 可以从此下载： [Genome List - Genome - NCBI (nih.gov)](https://www.ncbi.nlm.nih.gov/genome/browse#!/prokaryotes/Escherichia coli)
+例如, 对 *B. longum*, 可以从此下载： [Genome List - Genome - NCBI (nih.gov)](https://www.ncbi.nlm.nih.gov/genome/browse#!/prokaryotes/Bifidobacterium longum)
+
+下载后的文件一般是直接命名为prokaryotes.csv，为了记录方便，可以重命名为菌属-种名-下载日期.csv的格式，如下面使用的Bifidobacterium-longum-20200915.csv
 
 ### Step2:
 
