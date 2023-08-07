@@ -39,7 +39,7 @@ Bifidobacterium-longum-202009 是泛基因组数据库的名字，他有固定�
 
 > **注意**
 > 1. 如果同时建多个库，每个建库需要在分开的文件夹，否则互相之间会影响.
-> 2. 如果panphlan报类似如下错误 "zlib.error: Error -3 while decompressing: invalid block type", 这是因为wget下载的基因组不完整。此时，需要手动修正这些文件。用户可以通过下述命令`check_gz_integrity.sh`,检查文件的完整性。然后利用 `broken_ID.txt` 去重新下载(例如, `cd strain-pan;grep -f broken_ID.txt $fileout"_ref_dl_list.txt_sel.txt" > broken_ref_dl_list.txt; wget -c broken_ref_dl_list.txt`). 有时候，失败文件是由于`wget -c`造成的,此时你可以直接用wget重新下载，例如上述例子改成 `cd strain-pan;grep -f broken_ID.txt $fileout"_ref_dl_list.txt_sel.txt" > broken_ref_dl_list.txt; wget -i broken_ref_dl_list.txt`.
+> 2. 如果panphlan报类似如下错误 "zlib.error: Error -3 while decompressing: invalid block type", 这是因为wget下载的基因组不完整。此时，需要手动修正这些文件。用户可以通过下述命令`check_gz_integrity.sh`,检查文件的完整性。然后利用 `broken_ID.txt` 去重新下载(例如, `cd strain-pan;grep -f broken_ID.txt "../"$fileout"_ref_dl_list.txt_sel.txt" > broken_ref_dl_list.txt; wget -c -i broken_ref_dl_list.txt`). 有时候，失败文件是由于`wget -c`造成的,此时你可以直接用wget重新下载，例如上述例子改成 `cd strain-pan;grep -f broken_ID.txt "../"$fileout"_ref_dl_list.txt_sel.txt" > broken_ref_dl_list.txt; wget -i broken_ref_dl_list.txt`.
 > 3. 此外，如果panphlan失败了，需要先删除所有和panphlan相关的输出文件夹再重新跑流程, 否则panphlan会报错说文件夹已存在.  (一般来说, 主要有下载不完整引起,此时用户可以下载完了以后，直接单独跑panphlan: 如: `panphlan_pangenome_generation.py -c $fileout --i_fna strain-pan/ --i_gff strain-pan/ -o $fileout`. 在本案例里, file_out 是 `Bifidobacterium-longum-202009`
 > 4. 构建时使用的源于step1的 `.csv` 文件必须是最新的，否则有些下载链接可能因为NCBI更新而已经失效。
 
