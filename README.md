@@ -69,7 +69,7 @@ R CMD INSTALL strainpandar.tar.gz
 
 
 ## **DataBase Preparation**
-The file system of StrainPanDA Database should follow: folder (<PATH_TO_REFERENCE>) must end with the version number (e.g. 202009), such as ref202009.
+The file system of StrainPanDA Database should follow: folder (<PATH_TO_REFERENCE>) must end with the version number (e.g. 202009), such as ref202009. If not, "index is out of range 0..-1 (index = 0)" will be reported as error.
 
 Each species (e.g. Escherichia-coli-202009) corresponding to a sub-folder, as the following example:
 
