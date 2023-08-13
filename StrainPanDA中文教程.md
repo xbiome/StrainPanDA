@@ -84,7 +84,7 @@ R CMD INSTALL strainpandar.tar.gz
 
 ## **数据库准备**
 
-数据库的文件布局需要遵循这样的规范：文件夹(<PATH_TO_REFERENCE>)需要以版本数(示例为202009)结尾，如ref202009。每个菌种版本（例如Escherichia-coli-202009）对应一个子文件夹。具体示例如下：
+数据库的文件布局需要遵循这样的规范：文件夹(<PATH_TO_REFERENCE>)需要以版本数(示例为202009)结尾，如ref202009，否则会出现“index is out of range 0..-1 (index = 0)“的报错。每个菌种版本（例如Escherichia-coli-202009）对应一个子文件夹。具体示例如下：
 
 ```
 ref202009
